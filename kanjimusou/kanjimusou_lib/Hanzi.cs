@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Kanjimusou_lib
+namespace Kanjimusou.Lib
 {
     class Hanzi
     {
