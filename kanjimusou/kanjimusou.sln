@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kanjimusou", "kanjimusou\kanjimusou.csproj", "{DE36A6CB-C0EC-4C7A-8129-DA3E28A01882}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kanjimusou_lib", "kanjimusou_lab\kanjimusou_lib.csproj", "{051C48E4-98C1-4F68-B609-94B7950A7197}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kanjimusou_lib", "kanjimusou_lib\kanjimusou_lib.csproj", "{051C48E4-98C1-4F68-B609-94B7950A7197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
