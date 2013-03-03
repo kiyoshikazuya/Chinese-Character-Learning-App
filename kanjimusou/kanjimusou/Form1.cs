@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace kanjimusou
+namespace Kanjimusou
 {
     public partial class Form1 : Form
     {

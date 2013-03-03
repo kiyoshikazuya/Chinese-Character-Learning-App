@@ -1,4 +1,4 @@
-﻿namespace kanjimusou
+﻿namespace Kanjimusou
 {
     partial class Form1
     {
