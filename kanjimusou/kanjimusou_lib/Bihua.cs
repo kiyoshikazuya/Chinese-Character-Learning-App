@@ -8,6 +8,8 @@ namespace Kanjimusou_lib
 {
     class Bihua
     {
+        public static const int Resolution = 500 ;
+
         private readonly List<Point> gjdian;
 
         public List<Point> Gjdian
