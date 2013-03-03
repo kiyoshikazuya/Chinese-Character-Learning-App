@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Bihua.cs" />
     <Compile Include="Hanzi.cs" />
+    <Compile Include="HanziOp.cs" />
     <Compile Include="HanziPanel.cs">
       <SubType>Component</SubType>
     </Compile>
