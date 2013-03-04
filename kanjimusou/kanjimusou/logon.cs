@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace Kanjimusou
 {
-    public partial class Form1 : Form
+    public partial class logon : Form
     {
-        public Form1()
+        public logon()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
