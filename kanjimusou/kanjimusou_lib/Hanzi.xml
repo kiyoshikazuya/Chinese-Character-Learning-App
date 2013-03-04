@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Hanzis>
+  <Node zi="戒">
+    <Bihua count="7" >
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+    </Bihua>
+    <info>告诫之心</info>
+    <path>/test/shin-niporri/kai.jpg</path>
+  </Node>
+  
+  <Node zi="赞">
+    <Bihua count="16" >
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+      <checkpoint>810 810</checkpoint>
+    </Bihua>
+    <info>赞美之心</info>
+    <path>/test/shin-niporri/zan.jpg</path>
+  </Node>
+  
+</Hanzis>
