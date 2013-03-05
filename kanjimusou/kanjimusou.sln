@@ -6,7 +6,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kanjimusou_lib", "kanjimusou_lib\kanjimusou_lib.csproj", "{051C48E4-98C1-4F68-B609-94B7950A7197}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{D72E69B7-726A-4CF1-8275-7B9F995972B8}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,16 +47,6 @@ Global
 		{D72E69B7-726A-4CF1-8275-7B9F995972B8}.Release|Mixed Platforms.Build.0 = Release|x86
 		{D72E69B7-726A-4CF1-8275-7B9F995972B8}.Release|x86.ActiveCfg = Release|x86
 		{D72E69B7-726A-4CF1-8275-7B9F995972B8}.Release|x86.Build.0 = Release|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Debug|x86.ActiveCfg = Debug|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Debug|x86.Build.0 = Debug|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Release|Any CPU.ActiveCfg = Release|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Release|Mixed Platforms.Build.0 = Release|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Release|x86.ActiveCfg = Release|x86
-		{A8E0D7FA-B15D-49BD-AFD1-52A93328CA1B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
