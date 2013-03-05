@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Hanzis>
+  <Node zi="戒">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="810" y ="810"/>
+        <checkpoint x ="810" y ="810"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="810" y ="810"/>
+        <checkpoint x ="810" y ="810"/>
+      </bihua>
+    </bihualist>
+    <info>告诫之心</info>
+    <path>/test/shin-niporri/kai.jpg</path>
+  </Node>
+  
+  <Node zi="赞">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="810" y ="810"/>
+        <checkpoint x ="810" y ="810"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="810" y ="810"/>
+        <checkpoint x ="810" y ="810"/>
+      </bihua>
+    </bihualist>
+    <info>赞美之心</info>
+    <path>/test/shin-niporri/zan.jpg</path>
+  </Node>
+  
+</Hanzis>

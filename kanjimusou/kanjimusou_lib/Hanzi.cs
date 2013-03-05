@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace Kanjimusou.Lib
 {
-    class Hanzi
+    public class Hanzi
     {
         private readonly List<Bihua> bihuaBiao;
 

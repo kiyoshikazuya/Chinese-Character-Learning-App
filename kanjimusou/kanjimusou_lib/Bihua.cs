@@ -6,9 +6,9 @@ using System.Drawing;
 
 namespace Kanjimusou.Lib
 {
-    class Bihua
+    public class Bihua
     {
-        public static const int Resolution = 500 ;
+        public static int Resolution = 500 ;
 
         private readonly List<Point> gjdian;
 
