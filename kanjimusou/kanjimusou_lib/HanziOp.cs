@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 
-namespace Kanjimusou_lib
+namespace Kanjimusou.Lib
 {
     class HanziOp
     {
