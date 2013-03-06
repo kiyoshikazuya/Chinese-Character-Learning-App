@@ -59,8 +59,5 @@ namespace Kanjimusou.Lib
             this.info = info;
             this.path = path;
         }
-
-
-
     }
 }
