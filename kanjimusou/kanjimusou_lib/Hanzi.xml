@@ -24,7 +24,7 @@
     </bihualist>
     <info>告诫之心</info>
     <path>./hzImage/中.png</path>
-</Node>
+  </Node>
 
   <Node zi="华" ziti="雅黑">
     <bihualist>
@@ -60,6 +60,78 @@
     </bihualist>
     <info>告诫之心</info>
     <path>./hzImage/华.png</path>
+  </Node>
+
+  <Node zi="民" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="174" y ="82"/>
+        <checkpoint x ="81" y ="181"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="147" y ="144"/>
+        <checkpoint x ="147" y ="258"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="106" y ="288"/>
+        <checkpoint x ="401" y ="283"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="399" y ="107"/>
+        <checkpoint x ="199" y ="204"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="285" y ="84"/>
+        <checkpoint x ="299" y ="246"/>
+        <checkpoint x ="427" y ="192"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="82" y ="333"/>
+        <checkpoint x ="426" y ="334"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="255" y ="284"/>
+        <checkpoint x ="250" y ="426"/>
+      </bihua>
+    </bihualist>
+    <info>告诫之心</info>
+    <path>./hzImage/民.png</path>
+  </Node>
+
+  <Node zi="国" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="174" y ="82"/>
+        <checkpoint x ="81" y ="181"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="147" y ="144"/>
+        <checkpoint x ="147" y ="258"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="106" y ="288"/>
+        <checkpoint x ="401" y ="283"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="399" y ="107"/>
+        <checkpoint x ="199" y ="204"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="285" y ="84"/>
+        <checkpoint x ="299" y ="246"/>
+        <checkpoint x ="427" y ="192"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="82" y ="333"/>
+        <checkpoint x ="426" y ="334"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="255" y ="284"/>
+        <checkpoint x ="250" y ="426"/>
+      </bihua>
+    </bihualist>
+    <info>告诫之心</info>
+    <path>./hzImage/国.png</path>
   </Node>
   
 </Hanzis>
