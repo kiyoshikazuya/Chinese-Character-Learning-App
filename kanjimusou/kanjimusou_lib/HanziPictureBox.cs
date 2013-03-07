@@ -9,39 +9,20 @@ using System.ComponentModel;
 
 namespace Kanjimusou.Lib
 {
-    public delegate void BihuaHandler(Object sender, BihuaEventArgs e);
-
-    /// <summary>
-    /// 用于封装笔画书写事件参数的类
-    /// </summary>
-    public class BihuaEventArgs : EventArgs
-    {
-        private int bihuashu;
-
-        public int Bihuashu
-        {
-            get { return bihuashu; }
-        }
-
-        public BihuaEventArgs(int Bihuashu)
-        {
-            bihuashu = Bihuashu;
-        }
-    }
-
     /// <summary>
     /// 用于显示汉字并响应用户鼠标事件完成笔画绘制与识别的类
     /// </summary>
     public class HanziPictureBox : PictureBox, IComponent
     {
         public const int DrawSensitive = 10;
-        public const int DetectSensitive = 30;
+        public const int DetectSensitive = 50;
 
         private Stack<Image> drawStack = new Stack<Image>();
         private Image drawTmp;
         private Point lastPoint;
         private Hanzi hanzi;
-        private int penWidth = 10;
+        private Color drawColor = Color.SkyBlue;
+        private int penWidth = 30;
         private int stage;
         private int step;
 
@@ -103,9 +84,9 @@ namespace Kanjimusou.Lib
         public void UndoDraw()
         {
             if (drawStack.Count != 0) drawStack.Pop();
-            this.Refresh();
-
             stage--;
+
+            this.Refresh();
         }
 
         /// <summary>
@@ -118,10 +99,10 @@ namespace Kanjimusou.Lib
                 draw.Dispose();
             }
             drawStack.Clear();
-            this.Refresh();
-
             stage = 0;
             step = 0;
+
+            this.Refresh();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -133,7 +114,22 @@ namespace Kanjimusou.Lib
             {
                 g.DrawImage(draw, 0, 0);
             }
-            if (drawTmp != null) g.DrawImage(drawTmp, 0, 0);
+            if (drawTmp != null) g.DrawImage(drawTmp, 0, 0, Width, Height);
+            /// <debug>
+            if (hanzi != null && stage < hanzi.BihuaBiao.Count)
+            {
+                for (int i = 0; i < hanzi.BihuaBiao[stage].Gjdian.Count; i++)
+                {
+                    Pen pen = null;
+                    if (i < step) pen = new Pen(Color.Silver);
+                    else if (i == step) pen = new Pen(Color.Blue);
+                    else if (i > step) pen = new Pen(Color.Red);
+                    g.DrawArc(pen,
+                            hanzi.BihuaBiao[stage].Gjdian[i].X - DetectSensitive / 2, hanzi.BihuaBiao[stage].Gjdian[i].Y - DetectSensitive / 2,
+                            DetectSensitive, DetectSensitive, 0, 360);
+                }
+            }
+            /// </debug>
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
@@ -143,6 +139,8 @@ namespace Kanjimusou.Lib
                 lastPoint = e.Location;
             }
             drawTmp = new Bitmap(this.Width, this.Height);
+
+            step = 0;
 
             base.OnMouseDown(e);
         }
@@ -154,7 +152,7 @@ namespace Kanjimusou.Lib
                 if (Math.Sqrt(Math.Pow(e.X - lastPoint.X, 2) + Math.Pow(e.Y - lastPoint.Y, 2)) > DrawSensitive)
                 {
                     Graphics g = Graphics.FromImage(drawTmp);
-                    Pen p = new Pen(Color.Black, penWidth);
+                    Pen p = new Pen(drawColor, penWidth);
                     p.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
                     g.DrawLine(p, lastPoint, e.Location);
                     lastPoint = e.Location;
@@ -162,7 +160,7 @@ namespace Kanjimusou.Lib
                 }
                 if (stage < hanzi.BihuaBiao.Count && step < hanzi.BihuaBiao[stage].Gjdian.Count
                     && Math.Sqrt(Math.Pow(e.X - hanzi.BihuaBiao[stage].Gjdian[step].X, 2)
-                    + Math.Pow(e.Y - hanzi.BihuaBiao[stage].Gjdian[step].Y, 2)) > DetectSensitive)
+                    + Math.Pow(e.Y - hanzi.BihuaBiao[stage].Gjdian[step].Y, 2)) < DetectSensitive)
                 {
                     step++;
                 }
@@ -178,13 +176,14 @@ namespace Kanjimusou.Lib
                 drawStack.Push(drawTmp);
             }
             drawTmp = null;
-            this.Refresh();
 
             if (stage < hanzi.BihuaBiao.Count)
             {
-                if (step >= hanzi.BihuaBiao[stage].Gjdian.Count)
+                stage++;
+                if (step >= hanzi.BihuaBiao[stage-1].Gjdian.Count)
                 {
-                    if (++stage >= hanzi.BihuaBiao.Count)
+                    step = 0;
+                    if (stage >= hanzi.BihuaBiao.Count)
                     {
                         if (Completed != null) Completed(this, new BihuaEventArgs(stage));
                     }
@@ -193,10 +192,38 @@ namespace Kanjimusou.Lib
                         if (CorrectDrew != null) CorrectDrew(this, new BihuaEventArgs(stage));
                     }
                 }
-                else if (WrongDrew != null) WrongDrew(this, new BihuaEventArgs(stage));
+                else
+                {
+                    UndoDraw();
+                    if (WrongDrew != null) WrongDrew(this, new BihuaEventArgs(stage));
+                }
             }
-            
+            this.Refresh();
+
             base.OnMouseUp(e);
+        }
+    }
+
+    public delegate void BihuaHandler(Object sender, BihuaEventArgs e);
+
+    /// <summary>
+    /// 用于封装笔画书写事件参数的类
+    /// </summary>
+    public class BihuaEventArgs : EventArgs
+    {
+        private int bihuashu;
+
+        /// <summary>
+        /// 获得当前已正确完成的笔画数
+        /// </summary>
+        public int Bihuashu
+        {
+            get { return bihuashu; }
+        }
+
+        public BihuaEventArgs(int Bihuashu)
+        {
+            bihuashu = Bihuashu;
         }
     }
 }
