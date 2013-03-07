@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="canvas .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="canvas .Designer.cs">
+      <DependentUpon>canvas .cs</DependentUpon>
+    </Compile>
+    <Compile Include="learn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="learn.Designer.cs">
+      <DependentUpon>learn.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +76,20 @@
     <Compile Include="main_page.Designer.cs">
       <DependentUpon>main_page.cs</DependentUpon>
     </Compile>
+    <Compile Include="myCalligraphy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myCalligraphy.Designer.cs">
+      <DependentUpon>myCalligraphy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="canvas .resx">
+      <DependentUpon>canvas .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="learn.resx">
+      <DependentUpon>learn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="main_page.resx">
       <DependentUpon>main_page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myCalligraphy.resx">
+      <DependentUpon>myCalligraphy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
