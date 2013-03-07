@@ -16,10 +16,24 @@ namespace Kanjimusou
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            learn Aform = new learn();
+            Aform.Show();
 
         }
+
+        private void calligraphy_Click(object sender, EventArgs e)
+        {
+            myCalligraphy ACalligraphy = new myCalligraphy();
+            ACalligraphy.Show();
+        }
+
+     
+
+        
+
+        
 
         
 
