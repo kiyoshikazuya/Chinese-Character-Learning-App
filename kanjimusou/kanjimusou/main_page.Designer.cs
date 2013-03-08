@@ -55,7 +55,7 @@
             // 
             // calligraphy
             // 
-            this.calligraphy.Location = new System.Drawing.Point(178, 242);
+            this.calligraphy.Location = new System.Drawing.Point(178, 262);
             this.calligraphy.Name = "calligraphy";
             this.calligraphy.Size = new System.Drawing.Size(113, 35);
             this.calligraphy.TabIndex = 3;

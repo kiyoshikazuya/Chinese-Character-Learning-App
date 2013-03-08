@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
+using Kanjimusou.Lib;
 using System.Runtime.InteropServices;
 
 namespace Kanjimusou
@@ -28,6 +30,13 @@ namespace Kanjimusou
         public learn()
         {
             InitializeComponent();
+            InitializeComponent();
+            HanziIO hanzi = new HanziIO();
+            hanzi.OpenFile("Hanzi.xml");
+            hanziPictureBox1.Hanzi = hanzi.Read("中");
+            //hanziPictureBox1.CorrectDrew += new BihuaHandler(OnCorrectDrew);
+           // hanziPictureBox1.WrongDrew += new BihuaHandler(OnWrongDrew);
+           // hanziPictureBox1.Completed += new BihuaHandler(OnCompleted);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,6 +48,21 @@ namespace Kanjimusou
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backspace_Click(object sender, EventArgs e)
+        {
+            hanziPictureBox1.UndoDraw();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            hanziPictureBox1.ClearDraw();
         }
 
         
