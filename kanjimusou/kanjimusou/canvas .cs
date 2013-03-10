@@ -36,5 +36,7 @@ namespace Kanjimusou
             this.Close();
         }
 
+        
+
     }
 }
