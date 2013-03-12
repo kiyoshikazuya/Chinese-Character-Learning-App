@@ -16,12 +16,14 @@ namespace Kanjimusou.Lib
     {
         public const int DrawSensitive = 10;
         public const int DetectSensitive = 50;
+        public const double LengthSensitive = 0.2;
 
         private Stack<Image> drawStack = new Stack<Image>();
         private Image drawTmp;
+        private double drawLength;
         private Point lastPoint;
         private Hanzi hanzi;
-        private Color drawColor = Color.SkyBlue;
+        private Color drawColor = Color.Black;
         private int penWidth = 30;
         private int stage;
         private int step;
@@ -84,7 +86,7 @@ namespace Kanjimusou.Lib
         public void UndoDraw()
         {
             if (drawStack.Count != 0) drawStack.Pop();
-            stage--;
+            stage = drawStack.Count;
 
             this.Refresh();
         }
@@ -134,6 +136,9 @@ namespace Kanjimusou.Lib
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
+            base.OnMouseDown(e);
+            if (stage >= hanzi.BihuaBiao.Count) return;
+
             if (e.Button == MouseButtons.Left)
             {
                 lastPoint = e.Location;
@@ -141,12 +146,14 @@ namespace Kanjimusou.Lib
             drawTmp = new Bitmap(this.Width, this.Height);
 
             step = 0;
-
-            base.OnMouseDown(e);
+            drawLength = 0;
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
+            base.OnMouseMove(e);
+            if (stage >= hanzi.BihuaBiao.Count) return;
+
             if (e.Button == MouseButtons.Left)
             {
                 if (Math.Sqrt(Math.Pow(e.X - lastPoint.X, 2) + Math.Pow(e.Y - lastPoint.Y, 2)) > DrawSensitive)
@@ -155,6 +162,8 @@ namespace Kanjimusou.Lib
                     Pen p = new Pen(drawColor, penWidth);
                     p.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
                     g.DrawLine(p, lastPoint, e.Location);
+                    drawLength += Math.Sqrt(Math.Pow(e.X - lastPoint.X, 2) + Math.Pow(e.Y - lastPoint.Y, 2));
+
                     lastPoint = e.Location;
                     this.Refresh();
                 }
@@ -165,42 +174,54 @@ namespace Kanjimusou.Lib
                     step++;
                 }
             }
-
-            base.OnMouseMove(e);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
+            base.OnMouseUp(e);
+            if (stage >= hanzi.BihuaBiao.Count) return;
+
             if (e.Button == MouseButtons.Left)
             {
                 drawStack.Push(drawTmp);
             }
             drawTmp = null;
 
-            if (stage < hanzi.BihuaBiao.Count)
+            //校验笔画长度
+            double bihuaLength = 0;
+            bool flag = false;
+            Point lastPt = new Point();
+            foreach (Point pt in hanzi.BihuaBiao[stage].Gjdian)
             {
-                stage++;
-                if (step >= hanzi.BihuaBiao[stage-1].Gjdian.Count)
+                if (flag)
                 {
-                    step = 0;
-                    if (stage >= hanzi.BihuaBiao.Count)
-                    {
-                        if (Completed != null) Completed(this, new HanziEventArgs(stage));
-                    }
-                    else
-                    {
-                        if (CorrectDrew != null) CorrectDrew(this, new HanziEventArgs(stage));
-                    }
+                    bihuaLength += Math.Sqrt(Math.Pow(pt.X - lastPt.X, 2) + Math.Pow(pt.Y - lastPt.Y, 2));
+                }
+                flag = true;
+                lastPt = pt;
+            }
+
+            stage++;
+
+            if (step >= hanzi.BihuaBiao[stage-1].Gjdian.Count && drawLength > bihuaLength * (1 - LengthSensitive)
+                    && drawLength < bihuaLength * (1 + LengthSensitive))
+            {
+                if (stage >= hanzi.BihuaBiao.Count)
+                {
+                    if (Completed != null) Completed(this, new HanziEventArgs(stage));
                 }
                 else
                 {
-                    UndoDraw();
-                    if (WrongDrew != null) WrongDrew(this, new HanziEventArgs(stage));
+                    if (CorrectDrew != null) CorrectDrew(this, new HanziEventArgs(stage));
                 }
             }
+            else
+            {
+                UndoDraw();
+                if (WrongDrew != null) WrongDrew(this, new HanziEventArgs(stage));
+            }
+            step = 0;
             this.Refresh();
-
-            base.OnMouseUp(e);
         }
     }
 
