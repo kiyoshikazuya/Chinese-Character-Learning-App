@@ -77,6 +77,7 @@
             this.Controls.Add(this.label1);
             this.Name = "myCalligraphy";
             this.Text = "myCalligraphy";
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.ResumeLayout(false);
             this.PerformLayout();
 

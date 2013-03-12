@@ -20,6 +20,7 @@ namespace Kanjimusou
         {
             canvas ACanvas = new canvas();
             ACanvas.Show();
+            this.Close();
         }
 
        

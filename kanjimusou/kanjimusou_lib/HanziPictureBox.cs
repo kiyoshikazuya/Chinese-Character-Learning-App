@@ -185,17 +185,17 @@ namespace Kanjimusou.Lib
                     step = 0;
                     if (stage >= hanzi.BihuaBiao.Count)
                     {
-                        if (Completed != null) Completed(this, new BihuaEventArgs(stage));
+                        if (Completed != null) Completed(this, new HanziEventArgs(stage));
                     }
                     else
                     {
-                        if (CorrectDrew != null) CorrectDrew(this, new BihuaEventArgs(stage));
+                        if (CorrectDrew != null) CorrectDrew(this, new HanziEventArgs(stage));
                     }
                 }
                 else
                 {
                     UndoDraw();
-                    if (WrongDrew != null) WrongDrew(this, new BihuaEventArgs(stage));
+                    if (WrongDrew != null) WrongDrew(this, new HanziEventArgs(stage));
                 }
             }
             this.Refresh();
@@ -204,12 +204,12 @@ namespace Kanjimusou.Lib
         }
     }
 
-    public delegate void BihuaHandler(Object sender, BihuaEventArgs e);
+    public delegate void BihuaHandler(Object sender, HanziEventArgs e);
 
     /// <summary>
     /// 用于封装笔画书写事件参数的类
     /// </summary>
-    public class BihuaEventArgs : EventArgs
+    public class HanziEventArgs : EventArgs
     {
         private int bihuashu;
 
@@ -221,7 +221,7 @@ namespace Kanjimusou.Lib
             get { return bihuashu; }
         }
 
-        public BihuaEventArgs(int Bihuashu)
+        public HanziEventArgs(int Bihuashu)
         {
             bihuashu = Bihuashu;
         }
