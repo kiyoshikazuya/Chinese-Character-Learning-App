@@ -16,16 +16,19 @@ namespace Kanjimusou.Lib
         private XmlDocument xmldoc;
         private XmlNode xmlnode, root;
         private XmlElement xmlelem;
+        private String filepath;
 
         public HanziIO()
         {
         } 
         /// <summary>
         /// 该方法初始化一个XMLDOC对象，以读取文件内容，参数即为打开文件的路径
+        /// 在进行READ,READLL,SAVEFILE操作前一定要先执行该方法
         /// </summary>
         /// <param name="filepath"></param>
         public void OpenFile ( String filepath )
         {
+            this.filepath = filepath;
             xmldoc = new XmlDocument();
             xmldoc.Load(filepath);
             root = xmldoc.SelectSingleNode("/Hanzis");
@@ -136,9 +139,61 @@ namespace Kanjimusou.Lib
         {
             return Read(zi, "雅黑");
         }
-
-        public bool SaveFile(String filepath, List<Hanzi> hanziList)
+        /// <summary>
+        /// 该方法是向打开的XML文档中插入一个汉字
+        /// </summary>
+        /// <returns></returns>
+        public bool SaveFile()
         {
+            XmlElement hz = xmldoc.CreateElement("Node");
+            System.Console.WriteLine("输入插入的汉字名：");
+            String tmp = System.Console.ReadLine();
+            hz.SetAttribute("zi", tmp);
+            System.Console.WriteLine("输入字体：");
+            tmp = System.Console.ReadLine();
+            hz.SetAttribute("ziti", tmp);
+
+            XmlElement bhlist = xmldoc.CreateElement("bihualist");
+            XmlElement bh = xmldoc.CreateElement("bihua");
+            XmlElement cp = xmldoc.CreateElement("checkpoint");
+            String x, y;
+            System.Console.WriteLine("输入笔画关键点 格式x y 输入-1结束一笔 -2结束笔画输入：");
+            while (true)
+            {
+                x = System.Console.ReadLine();
+                if (x == "-2") break;
+                if (x == "-1")
+                {
+                    bhlist.AppendChild(bh);
+                    bh = xmldoc.CreateElement("bihua");
+                }
+                else
+                {
+                    y = System.Console.ReadLine();
+                    cp.SetAttribute("x", x);
+                    cp.SetAttribute("y", y);
+                    bh.AppendChild(cp);
+                    cp = xmldoc.CreateElement("checkpoint");
+                }
+                
+            }
+
+            System.Console.WriteLine("输入汉字信息：");
+            tmp = System.Console.ReadLine();
+            XmlElement info = xmldoc.CreateElement("info");
+            info.InnerText = tmp;
+
+            System.Console.WriteLine("输入汉字图片相对路径：");
+            tmp = System.Console.ReadLine();
+            XmlElement path = xmldoc.CreateElement("path");
+            path.InnerText = tmp;
+
+            hz.AppendChild(bhlist);
+            hz.AppendChild(info);
+            hz.AppendChild(path);
+            root.AppendChild(hz);
+
+            xmldoc.Save(filepath);
 
             return true;
         }

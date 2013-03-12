@@ -70,6 +70,7 @@ namespace Kanjimusou.Lib
         {
             get { return info; }
         }
+
         /// <summary>
         /// 该类的构造函数，参数有5个，分别是字名、字体、笔画表、信息、图片路径
         /// </summary>
