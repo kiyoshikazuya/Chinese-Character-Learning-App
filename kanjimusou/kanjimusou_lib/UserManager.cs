@@ -33,8 +33,23 @@ namespace Kanjimusou.Lib
             }
         } 
 
-        public bool Register( String username, String password )
+        /// <summary>
+        /// 以用户名和密码注册一个新的用户
+        /// </summary>
+        /// <param name="username">用户名</param>
+        /// <param name="password">密码</param>
+        /// <returns>构建的User对象，若用户名已存在则返回null</returns>
+        public User Register( String username, String password )
         {
+            if (!IsExisted(username))
+            {
+                User user = new User(username, GetMD5(password));
+                SaveFile(user);
+                return user;
+            }
+            else return null;
+            
+            /*
             User user = new User(username, GetMD5(password));
             try {
                 String filepath = path + "/" + username + ".xml";
@@ -47,6 +62,7 @@ namespace Kanjimusou.Lib
                 return true;
             }
             return false;
+            */
         }
 
         public void SaveFile( User user )
@@ -71,6 +87,8 @@ namespace Kanjimusou.Lib
 
         public bool IsExisted(String username)
         {
+            return File.Exists(path + "/" + username + ".xml");
+            /*
             try
             {
                 String filepath = path + "/" + username + ".xml";
@@ -82,6 +100,7 @@ namespace Kanjimusou.Lib
             {
                 return false;
             }
+            */
         }
 
         public void Delete( String username )
