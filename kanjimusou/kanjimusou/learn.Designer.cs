@@ -89,7 +89,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "学习";
             this.tabPage1.UseWaitCursor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // panel1
             // 
