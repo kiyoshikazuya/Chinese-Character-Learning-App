@@ -49,7 +49,7 @@ namespace Kanjimusou.Lib
             return false;
         }
 
-        private void SaveFile( User user )
+        public void SaveFile( User user )
         {
             String filepath = path + "/" + user.Username + ".xml";
             FileStream fs = new FileStream(filepath,FileMode.OpenOrCreate);
@@ -58,7 +58,7 @@ namespace Kanjimusou.Lib
             fs.Close();
         }
 
-        private User LoadFile( String username )
+        public User LoadFile( String username )
         {
             String filepath = path + "/" + username + ".xml";
             FileStream fs = new FileStream(filepath, FileMode.Open);
@@ -69,7 +69,28 @@ namespace Kanjimusou.Lib
             return ret;
         }
 
-        private String GetMD5(String source)
+        public bool IsExisted(String username)
+        {
+            try
+            {
+                String filepath = path + "/" + username + ".xml";
+                FileStream fs = new FileStream(filepath, FileMode.Open);
+                fs.Close();
+                return true;
+            }
+            catch ( FileNotFoundException )
+            {
+                return false;
+            }
+        }
+
+        public void Delete( String username )
+        {
+            String filepath = path + "/" + username + ".xml";
+            File.Delete(filepath);
+        }
+
+        public String GetMD5(String source)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] ret = md5.ComputeHash(System.Text.Encoding.Default.GetBytes(source));
