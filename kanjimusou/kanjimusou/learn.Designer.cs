@@ -98,7 +98,6 @@
             this.tabPage1.Text = "学习";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.UseWaitCursor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // linkLabel1
             // 
