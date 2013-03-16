@@ -33,8 +33,23 @@ namespace Kanjimusou.Lib
             }
         } 
 
-        public bool Register( String username, String password )
+        /// <summary>
+        /// 以用户名和密码注册一个新的用户
+        /// </summary>
+        /// <param name="username">用户名</param>
+        /// <param name="password">密码</param>
+        /// <returns>构建的User对象，若用户名已存在则返回null</returns>
+        public User Register( String username, String password )
         {
+            if (!IsExisted(username))
+            {
+                User user = new User(username, GetMD5(password));
+                SaveFile(user);
+                return user;
+            }
+            else return null;
+            
+            /*
             User user = new User(username, GetMD5(password));
             try {
                 String filepath = path + "/" + username + ".xml";
@@ -47,9 +62,10 @@ namespace Kanjimusou.Lib
                 return true;
             }
             return false;
+            */
         }
 
-        private void SaveFile( User user )
+        public void SaveFile( User user )
         {
             String filepath = path + "/" + user.Username + ".xml";
             FileStream fs = new FileStream(filepath,FileMode.OpenOrCreate);
@@ -58,7 +74,7 @@ namespace Kanjimusou.Lib
             fs.Close();
         }
 
-        private User LoadFile( String username )
+        public User LoadFile( String username )
         {
             String filepath = path + "/" + username + ".xml";
             FileStream fs = new FileStream(filepath, FileMode.Open);
@@ -69,7 +85,31 @@ namespace Kanjimusou.Lib
             return ret;
         }
 
-        private String GetMD5(String source)
+        public bool IsExisted(String username)
+        {
+            return File.Exists(path + "/" + username + ".xml");
+            /*
+            try
+            {
+                String filepath = path + "/" + username + ".xml";
+                FileStream fs = new FileStream(filepath, FileMode.Open);
+                fs.Close();
+                return true;
+            }
+            catch ( FileNotFoundException )
+            {
+                return false;
+            }
+            */
+        }
+
+        public void Delete( String username )
+        {
+            String filepath = path + "/" + username + ".xml";
+            File.Delete(filepath);
+        }
+
+        public String GetMD5(String source)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] ret = md5.ComputeHash(System.Text.Encoding.Default.GetBytes(source));
