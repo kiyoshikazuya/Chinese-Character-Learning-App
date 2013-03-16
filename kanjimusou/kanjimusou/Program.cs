@@ -15,7 +15,7 @@ namespace Kanjimusou
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new main_page());
+            Application.Run(new login());
         }
     }
 }

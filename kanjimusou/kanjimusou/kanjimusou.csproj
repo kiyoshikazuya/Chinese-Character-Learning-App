@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="canvas .cs">
+    <Compile Include="achievement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="canvas .Designer.cs">
-      <DependentUpon>canvas .cs</DependentUpon>
+    <Compile Include="achievement.Designer.cs">
+      <DependentUpon>achievement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exercise_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exercise_form.Designer.cs">
+      <DependentUpon>exercise_form.cs</DependentUpon>
     </Compile>
     <Compile Include="learn.cs">
       <SubType>Form</SubType>
@@ -58,49 +64,46 @@
     <Compile Include="learn.Designer.cs">
       <DependentUpon>learn.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
-    </Compile>
     <Compile Include="logon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="logon.Designer.cs">
       <DependentUpon>logon.cs</DependentUpon>
     </Compile>
-    <Compile Include="main_page.cs">
+    <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main_page.Designer.cs">
-      <DependentUpon>main_page.cs</DependentUpon>
-    </Compile>
-    <Compile Include="myCalligraphy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="myCalligraphy.Designer.cs">
-      <DependentUpon>myCalligraphy.cs</DependentUpon>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="canvas .resx">
-      <DependentUpon>canvas .cs</DependentUpon>
+    <Compile Include="welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="welcome.Designer.cs">
+      <DependentUpon>welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wrong.Designer.cs">
+      <DependentUpon>wrong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="achievement.resx">
+      <DependentUpon>achievement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exercise_form.resx">
+      <DependentUpon>exercise_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="learn.resx">
       <DependentUpon>learn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="logon.resx">
       <DependentUpon>logon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main_page.resx">
-      <DependentUpon>main_page.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="myCalligraphy.resx">
-      <DependentUpon>myCalligraphy.cs</DependentUpon>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,6 +115,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="welcome.resx">
+      <DependentUpon>welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wrong.resx">
+      <DependentUpon>wrong.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

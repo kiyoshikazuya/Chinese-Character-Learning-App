@@ -34,6 +34,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.submit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -84,11 +85,21 @@
             this.textBox3.Size = new System.Drawing.Size(179, 21);
             this.textBox3.TabIndex = 3;
             // 
+            // submit
+            // 
+            this.submit.Location = new System.Drawing.Point(111, 220);
+            this.submit.Name = "submit";
+            this.submit.Size = new System.Drawing.Size(99, 33);
+            this.submit.TabIndex = 4;
+            this.submit.Text = "submit";
+            this.submit.UseVisualStyleBackColor = true;
+            // 
             // logon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 293);
+            this.ClientSize = new System.Drawing.Size(324, 293);
+            this.Controls.Add(this.submit);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -110,5 +121,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button submit;
     }
 }

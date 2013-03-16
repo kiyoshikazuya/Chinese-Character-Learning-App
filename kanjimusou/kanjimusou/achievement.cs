@@ -9,20 +9,11 @@ using System.Windows.Forms;
 
 namespace Kanjimusou
 {
-    public partial class myCalligraphy : Form
+    public partial class achievement : Form
     {
-        public myCalligraphy()
+        public achievement()
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            canvas ACanvas = new canvas();
-            ACanvas.Show();
-            this.Close();
-        }
-
-       
     }
 }
