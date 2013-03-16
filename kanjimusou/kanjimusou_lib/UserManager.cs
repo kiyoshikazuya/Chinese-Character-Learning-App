@@ -8,18 +8,26 @@ using System.Security.Cryptography;
 
 namespace Kanjimusou.Lib
 {
-    public class UserManager
+    public static class UserManager
     {
+        public const String Path = "user/";
+        //{0}: username
+        public const String UserDirFormat = Path + "{0}/";
+        public const String XmlPathFormat = UserDirFormat + "{0}.xml";
 
-        private String path;
-
-        public UserManager( String path )
+        /// <summary>
+        /// 以用户名和密码进行登录
+        /// </summary>
+        /// <param name="username">用户名</param>
+        /// <param name="password">密码</param>
+        /// <returns>用户存在且密码正确则返回对应的User对象，否则返回null</returns>
+        public static User Login(String username, String password)
         {
-            this.path = path;
-        }
-
-        public bool Login(String username, String password)
-        {
+            if (!IsExisted(username)) return null;
+            User user = LoadFile(username);
+            if (user.Password == GetMD5(password)) return user;
+            else return null;
+            /*
             try
             {
                 User user = LoadFile(username);
@@ -31,6 +39,7 @@ namespace Kanjimusou.Lib
             {
                 return false;
             }
+            */
         } 
 
         /// <summary>
@@ -39,7 +48,7 @@ namespace Kanjimusou.Lib
         /// <param name="username">用户名</param>
         /// <param name="password">密码</param>
         /// <returns>构建的User对象，若用户名已存在则返回null</returns>
-        public User Register( String username, String password )
+        public static User Register(String username, String password)
         {
             if (!IsExisted(username))
             {
@@ -65,18 +74,24 @@ namespace Kanjimusou.Lib
             */
         }
 
-        public void SaveFile( User user )
+        /// <summary>
+        /// 保存用户数据
+        /// </summary>
+        /// <param name="user">要保存的User对象</param>
+        public static void SaveFile(User user)
         {
-            String filepath = path + "/" + user.Username + ".xml";
+            if (!Directory.Exists(String.Format(UserDirFormat, user.Username)))
+                Directory.CreateDirectory(Path + user.Username);
+            String filepath = String.Format(XmlPathFormat, user.Username);
             FileStream fs = new FileStream(filepath,FileMode.OpenOrCreate);
             SoapFormatter sp = new SoapFormatter();
             sp.Serialize(fs, user);
             fs.Close();
         }
 
-        public User LoadFile( String username )
+        private static User LoadFile(String username)
         {
-            String filepath = path + "/" + username + ".xml";
+            String filepath = String.Format(XmlPathFormat, username);
             FileStream fs = new FileStream(filepath, FileMode.Open);
             SoapFormatter sp = new SoapFormatter();
             User ret;
@@ -85,9 +100,9 @@ namespace Kanjimusou.Lib
             return ret;
         }
 
-        public bool IsExisted(String username)
+        public static bool IsExisted(String username)
         {
-            return File.Exists(path + "/" + username + ".xml");
+            return File.Exists(String.Format(XmlPathFormat, username));
             /*
             try
             {
@@ -103,18 +118,17 @@ namespace Kanjimusou.Lib
             */
         }
 
-        public void Delete( String username )
+        public static void Delete( String username )
         {
-            String filepath = path + "/" + username + ".xml";
+            String filepath = String.Format(XmlPathFormat, username);
             File.Delete(filepath);
         }
 
-        public String GetMD5(String source)
+        public static String GetMD5(String source)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] ret = md5.ComputeHash(System.Text.Encoding.Default.GetBytes(source));
             return System.Text.Encoding.Default.GetString(ret);
         }
-
     }
 }
