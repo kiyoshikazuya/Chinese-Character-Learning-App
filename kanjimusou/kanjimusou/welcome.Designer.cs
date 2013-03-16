@@ -44,7 +44,7 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(65, 108);
+            this.start.Location = new System.Drawing.Point(65, 100);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(164, 29);
             this.start.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // information
             // 
-            this.information.Location = new System.Drawing.Point(65, 175);
+            this.information.Location = new System.Drawing.Point(65, 172);
             this.information.Name = "information";
             this.information.Size = new System.Drawing.Size(164, 27);
             this.information.TabIndex = 2;
@@ -66,10 +66,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 262);
+            this.ClientSize = new System.Drawing.Size(295, 262);
             this.Controls.Add(this.information);
             this.Controls.Add(this.start);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "welcome";
             this.Text = "welcome";
             this.ResumeLayout(false);

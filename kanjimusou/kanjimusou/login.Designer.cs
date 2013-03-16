@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.log_on = new System.Windows.Forms.Button();
             this.name = new System.Windows.Forms.TextBox();
             this.passwd = new System.Windows.Forms.TextBox();
+            this.Atimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -99,11 +101,15 @@
             this.passwd.Size = new System.Drawing.Size(136, 21);
             this.passwd.TabIndex = 7;
             // 
+            // Atimer
+            // 
+            this.Atimer.Tick += new System.EventHandler(this.Atimer_Tick);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 306);
+            this.ClientSize = new System.Drawing.Size(310, 306);
             this.Controls.Add(this.passwd);
             this.Controls.Add(this.name);
             this.Controls.Add(this.log_on);
@@ -114,7 +120,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "login";
             this.Text = "CCLF";
-            this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +134,7 @@
         private System.Windows.Forms.Button log_on;
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.TextBox passwd;
+        private System.Windows.Forms.Timer Atimer;
 
 
     }

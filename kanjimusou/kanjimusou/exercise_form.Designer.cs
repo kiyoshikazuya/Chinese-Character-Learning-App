@@ -96,7 +96,9 @@
             this.Controls.Add(this.hanziPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "exercise_form";
+            this.Opacity = 0.85D;
             this.Text = "exercise_form";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.exercise_form_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.hanziPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

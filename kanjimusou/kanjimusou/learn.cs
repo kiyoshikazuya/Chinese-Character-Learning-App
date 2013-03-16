@@ -6,14 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
-using Kanjimusou.Lib;
 using System.Runtime.InteropServices;
 
 namespace Kanjimusou
 {
     public partial class learn : Form
     {
+
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         [DllImport("user32.dll")]
@@ -23,42 +22,31 @@ namespace Kanjimusou
         public const int HTCAPTTION = 0x0002;
 
 
-
-
-
-
         public learn()
         {
             InitializeComponent();
-
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void learn_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void exercise_Click(object sender, EventArgs e)
         {
-            exercise_form ExerciseForm = new exercise_form();
-            ExerciseForm.Show();
+            exercise_form AnexerciseForm = new exercise_form();
+            AnexerciseForm.Show();
+        }
+
+        private void close_it_Click(object sender, EventArgs e)
+        {
+            prompt Prompt = new prompt();
+            Prompt.Show();
         }
 
 
-       
 
-        
     }
 }

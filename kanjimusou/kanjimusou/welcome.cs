@@ -20,12 +20,17 @@ namespace Kanjimusou
         {
             learn Learn = new learn();
             Learn.Show();
+            login.counts++;
+            this.Close();
         }
 
         private void information_Click(object sender, EventArgs e)
         {
             achievement Achievement = new achievement();
             Achievement.Show();
+            login.counts++;
+            this.Close();
         }
+
     }
 }
