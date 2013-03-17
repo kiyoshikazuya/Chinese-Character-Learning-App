@@ -23,7 +23,7 @@ namespace Kanjimusou.Lib
 
         private int hanziWeekPlan;
         private int hanziWeekFinished;
-        private int weekCount;
+        private int weekCount = 1;
         private DateTime planStartTime;
 
         private int hanziTotalFinished;
@@ -126,7 +126,7 @@ namespace Kanjimusou.Lib
         {
             if ((((System.DateTime.Now.Ticks - planStartTime.Ticks) / 10000000) / 604800) > weekCount)
             {
-                weekCount++;
+                weekCount = (int)(((System.DateTime.Now.Ticks - planStartTime.Ticks) / 10000000) / 604800);
                 hanziWeekFinished = 0;
             }
         }
