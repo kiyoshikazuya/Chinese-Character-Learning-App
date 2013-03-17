@@ -17,6 +17,7 @@ namespace Kanjimusou.Lib
         public const int DrawSensitive = 10;
         public const int DetectSensitive = 50;
         public const double LengthSensitive = 0.2;
+        public const int AnimateRate = 20;
 
         private Stack<Image> drawStack = new Stack<Image>();
         private Image drawTmp;
@@ -27,6 +28,9 @@ namespace Kanjimusou.Lib
         private int penWidth = 30;
         private int stage;
         private int step;
+
+        private Timer timer;
+        private int animeStep;
 
         /// <summary>
         /// 获得或设置画板显示的汉字，设置新汉字后会清空并刷新画板
@@ -107,6 +111,26 @@ namespace Kanjimusou.Lib
             this.Refresh();
         }
 
+        public void StartAnimation()
+        {
+            timer = new Timer();
+            timer.Interval = 100;
+            timer.Tick += OnTimerTick;
+            timer.Start();
+            animeStep = 0;
+        }
+
+        public void StopAnimation()
+        {
+            if (timer != null) timer.Stop();
+        }
+
+        private void OnTimerTick(object sender, EventArgs e)
+        {
+            animeStep++;
+            Refresh();
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -117,7 +141,7 @@ namespace Kanjimusou.Lib
                 g.DrawImage(draw, 0, 0);
             }
             if (drawTmp != null) g.DrawImage(drawTmp, 0, 0, Width, Height);
-            /// <debug>
+            // <debug>
             if (hanzi != null && stage < hanzi.BihuaBiao.Count)
             {
                 for (int i = 0; i < hanzi.BihuaBiao[stage].Gjdian.Count; i++)
@@ -131,7 +155,28 @@ namespace Kanjimusou.Lib
                             DetectSensitive, DetectSensitive, 0, 360);
                 }
             }
-            /// </debug>
+            // </debug>
+
+            //绘制路径动画
+            for (int i = 0; stage < hanzi.BihuaBiao.Count && i <= (animeStep / AnimateRate) % (hanzi.BihuaBiao[stage].Gjdian.Count - 1); i++)
+            {
+                Pen pen = new Pen(Color.Red, 10);
+                
+                if (i < (animeStep / AnimateRate) % (hanzi.BihuaBiao[stage].Gjdian.Count - 1))
+                {
+                    pen.EndCap = LineCap.Round;
+                    g.DrawLine(pen, hanzi.BihuaBiao[stage].Gjdian[i], hanzi.BihuaBiao[stage].Gjdian[i + 1]);
+                }
+                else
+                {
+                    pen.EndCap = LineCap.ArrowAnchor;
+                    g.DrawLine(pen, hanzi.BihuaBiao[stage].Gjdian[i],
+                        new Point(hanzi.BihuaBiao[stage].Gjdian[i].X
+                        + (hanzi.BihuaBiao[stage].Gjdian[i + 1].X - hanzi.BihuaBiao[stage].Gjdian[i].X) * ((animeStep % AnimateRate) + 1) / AnimateRate,
+                        hanzi.BihuaBiao[stage].Gjdian[i].Y
+                        + (hanzi.BihuaBiao[stage].Gjdian[i + 1].Y - hanzi.BihuaBiao[stage].Gjdian[i].Y) * ((animeStep % AnimateRate) + 1) / AnimateRate));
+                }
+            }
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
@@ -200,6 +245,8 @@ namespace Kanjimusou.Lib
                 flag = true;
                 lastPt = pt;
             }
+
+            animeStep = 0;
 
             stage++;
 
