@@ -45,19 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bihua.cs" />
-    <Compile Include="Hanzi.cs" />
-    <Compile Include="HanziIO.cs" />
-    <Compile Include="HanziOp.cs" />
-    <Compile Include="HanziPictureBox.cs">
+    <Compile Include="hanzi\Bihua.cs" />
+    <Compile Include="hanzi\Hanzi.cs" />
+    <Compile Include="hanzi\HanziIO.cs" />
+    <Compile Include="hanzi\HanziOp.cs" />
+    <Compile Include="hanzi\HanziPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserManager.cs" />
+    <Compile Include="user\User.cs" />
+    <Compile Include="user\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Hanzi.xml">
+    <Content Include="hanzi\Hanzi.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

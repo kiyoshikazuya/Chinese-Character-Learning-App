@@ -18,16 +18,21 @@ namespace Kanjimusou.Lib
     public class User
     {
         private Dictionary<String, HanziLearnLog> learnDic = new Dictionary<String, HanziLearnLog>();
-
         private String username;
+        private String password;
+
+        private int hanziWeekPlan;
+        private int hanziWeekFinished;
+        private int weekCount = 1;
+        private DateTime planStartTime;
+
+        private int hanziTotalFinished;
 
         public String Username
         {
             get { return username; }
             set { username = value; }
         }
-
-        private String password;
 
         public String Password
         {
@@ -38,6 +43,36 @@ namespace Kanjimusou.Lib
         public Dictionary<String, HanziLearnLog> LearnLog
         {
             get { return new Dictionary<string, HanziLearnLog>(learnDic); }
+        }
+
+        public int HanziWeekPlan
+        {
+            get { return hanziWeekPlan; }
+            set { hanziWeekPlan = value; }
+        }
+
+        public int HanziWeekFinished
+        {
+            get { return hanziWeekFinished; }
+            set { hanziWeekFinished = value; }
+        }
+
+        public DateTime PlanStartTime
+        {
+            get { return planStartTime; }
+            set { planStartTime = value; }
+        }
+
+        public int WeekCount
+        {
+            get { return weekCount; }
+            set { weekCount = value; }
+        }
+
+        public int HanziTotalFinished
+        {
+            get { return hanziTotalFinished; }
+            set { hanziTotalFinished = value; }
         }
 
         public User(String name, String pass)
@@ -72,6 +107,31 @@ namespace Kanjimusou.Lib
             image.Save(path);
             log.pathList.Add(path);
         }
+
+        /// <summary>
+        /// 计算用户已完成的汉字数与计划完成的总数之差 
+        /// </summary>
+        /// <returns>已完成的汉字数 - 计划完成的总数</returns>
+        public int PlanFinishedCount()
+        {
+            return hanziWeekFinished - hanziWeekPlan;
+        }
+
+        /// <summary>
+        /// 如果时间满一周，则重置用户每周完成的字数
+        /// 如果不满，则不重置
+        /// 登录时调用即可
+        /// </summary>
+        public void ResetHanziWeekFinished()
+        {
+            if ((((System.DateTime.Now.Ticks - planStartTime.Ticks) / 10000000) / 604800) > weekCount)
+            {
+                weekCount = (int)(((System.DateTime.Now.Ticks - planStartTime.Ticks) / 10000000) / 604800);
+                hanziWeekFinished = 0;
+            }
+        }
+
+
     }
 
     [Serializable]
@@ -100,4 +160,5 @@ namespace Kanjimusou.Lib
             }
         }
     }
+
 }
