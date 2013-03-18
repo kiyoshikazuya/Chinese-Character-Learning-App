@@ -109,3 +109,6 @@ UpgradeLog*.XML
 
 # Test
 Test/
+
+#temp resource
+*.wav
