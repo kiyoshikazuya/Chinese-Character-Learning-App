@@ -55,51 +55,55 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="user\User.cs" />
     <Compile Include="user\UserManager.cs" />
+    <Compile Include="util\Sound.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="hanzi\Hanzi.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\中.png">
+    <Content Include="resource\hzImage\中.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\亲.png">
+    <Content Include="resource\hzImage\亲.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\华.png">
+    <Content Include="resource\hzImage\华.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\国.png">
+    <Content Include="resource\hzImage\国.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\國.png">
+    <Content Include="resource\hzImage\國.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\愛.png">
+    <Content Include="resource\hzImage\愛.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\民.png">
+    <Content Include="resource\hzImage\民.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\爱.png">
+    <Content Include="resource\hzImage\爱.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\精.png">
+    <Content Include="resource\hzImage\精.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\華.png">
+    <Content Include="resource\hzImage\華.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\親.png">
+    <Content Include="resource\hzImage\親.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\誠.png">
+    <Content Include="resource\hzImage\誠.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="hzImage\诚.png">
+    <Content Include="resource\hzImage\诚.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resource\sound\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
