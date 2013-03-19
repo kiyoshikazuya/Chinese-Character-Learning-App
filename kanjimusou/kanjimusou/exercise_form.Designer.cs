@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hanziPictureBox1 = new Kanjimusou.Lib.HanziPictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(exercise_form));
             this.backspace = new System.Windows.Forms.Button();
             this.clean = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
             this.tips = new System.Windows.Forms.Label();
+            this.hanziPictureBox1 = new Kanjimusou.Lib.HanziPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.hanziPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // hanziPictureBox1
-            // 
-            this.hanziPictureBox1.Hanzi = null;
-            this.hanziPictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.hanziPictureBox1.Name = "hanziPictureBox1";
-            this.hanziPictureBox1.Size = new System.Drawing.Size(500, 500);
-            this.hanziPictureBox1.TabIndex = 0;
-            this.hanziPictureBox1.TabStop = false;
-            // 
             // backspace
             // 
-            this.backspace.Location = new System.Drawing.Point(526, 12);
+            this.backspace.Location = new System.Drawing.Point(526, 36);
             this.backspace.Name = "backspace";
             this.backspace.Size = new System.Drawing.Size(43, 36);
             this.backspace.TabIndex = 1;
@@ -67,7 +59,7 @@
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(526, 467);
+            this.close.Location = new System.Drawing.Point(527, 453);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(42, 44);
             this.close.TabIndex = 3;
@@ -84,10 +76,22 @@
             this.tips.TabIndex = 4;
             this.tips.Text = "label1";
             // 
+            // hanziPictureBox1
+            // 
+            this.hanziPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.hanziPictureBox1.Hanzi = null;
+            this.hanziPictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.hanziPictureBox1.Name = "hanziPictureBox1";
+            this.hanziPictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.hanziPictureBox1.TabIndex = 0;
+            this.hanziPictureBox1.TabStop = false;
+            // 
             // exercise_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(579, 547);
             this.Controls.Add(this.tips);
             this.Controls.Add(this.close);
@@ -96,7 +100,7 @@
             this.Controls.Add(this.hanziPictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "exercise_form";
-            this.Opacity = 0.85D;
+            this.Opacity = 0.9D;
             this.Text = "exercise_form";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.exercise_form_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.hanziPictureBox1)).EndInit();

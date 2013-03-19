@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Kanjimusou.Lib;
 
 namespace Kanjimusou
 {
@@ -14,6 +15,17 @@ namespace Kanjimusou
     {
 
 
+        [DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("user32.dll")]
+        public static extern bool SendMessage(IntPtr hwnd, int wMsg, int mParam, int lParam);
+        public const int WM_SYSCOMMAND = 0x0112;
+        public const int SC_MOVE = 0xF010;
+        public const int HTCAPTTION = 0x0002;
+
+
+
+        public static User Auser;
         public static int counts = 0;
         //计数判断窗体个数
 
@@ -36,10 +48,12 @@ namespace Kanjimusou
 
         private void log_in_Click(object sender, EventArgs e)
         {
-            if (name.Text == "root" && passwd.Text == "123456")
+           
+            if (UserManager.Login(name.Text,passwd.Text)!=null)
             {
+                Auser = UserManager.Login(name.Text, passwd.Text);
                 welcome Welcome = new welcome();
-                Welcome.Show(); counts++;
+                Welcome.Show();
                 //隐藏窗体
                 if (counts == 0) this.Close();
 
@@ -62,9 +76,9 @@ namespace Kanjimusou
             double d = 0.30;
             if (showing)
             {
-                if (Opacity + d >= 1.0)
+                if (Opacity + d >= 0.9)
                 {
-                    Opacity = 1.0;
+                    Opacity = 0.85;
                     Atimer.Stop();
                 }
                 else
@@ -75,7 +89,7 @@ namespace Kanjimusou
             else
             {
                 
-                if (Opacity - d <= 0.0)
+                if (Opacity - d <= 0.9)
                 {
                     Opacity = 0.0;
                     Atimer.Stop();
@@ -85,6 +99,22 @@ namespace Kanjimusou
                     Opacity -= d;
                 }
             }
+        }
+
+        private void closethis_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void login_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
         }
 
 
