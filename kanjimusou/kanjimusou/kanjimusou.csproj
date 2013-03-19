@@ -64,17 +64,17 @@
     <Compile Include="learn.Designer.cs">
       <DependentUpon>learn.cs</DependentUpon>
     </Compile>
-    <Compile Include="logon.cs">
+    <Compile Include="ZC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="logon.Designer.cs">
-      <DependentUpon>logon.cs</DependentUpon>
+    <Compile Include="ZC.Designer.cs">
+      <DependentUpon>ZC.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="DL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
+    <Compile Include="DL.Designer.cs">
+      <DependentUpon>DL.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,11 +105,11 @@
     <EmbeddedResource Include="learn.resx">
       <DependentUpon>learn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="logon.resx">
-      <DependentUpon>logon.cs</DependentUpon>
+    <EmbeddedResource Include="ZC.resx">
+      <DependentUpon>ZC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="DL.resx">
+      <DependentUpon>DL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

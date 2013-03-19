@@ -10,10 +10,8 @@ using System.Runtime.InteropServices;
 
 namespace Kanjimusou
 {
-    public partial class wrong : Form
-        //用来显示异常
+    public partial class ZC : Form
     {
-
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         [DllImport("user32.dll")]
@@ -22,17 +20,17 @@ namespace Kanjimusou
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
 
-        public wrong()
+
+        public ZC()
         {
             InitializeComponent();
-        }
-        public wrong(string S)
-        {
-            InitializeComponent();
-            this.label1.Text = S;
         }
 
-        private void wrong_MouseDown(object sender, MouseEventArgs e)
+        private void submit_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void logon_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);

@@ -45,7 +45,7 @@
             this.picture.BackColor = System.Drawing.Color.Transparent;
             this.picture.BackgroundImage = global::Kanjimusou.Properties.Resources.中;
             this.picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picture.Location = new System.Drawing.Point(12, 30);
+            this.picture.Location = new System.Drawing.Point(12, 39);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(300, 300);
             this.picture.TabIndex = 0;
@@ -66,10 +66,11 @@
             this.close_it.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("close_it.BackgroundImage")));
             this.close_it.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.close_it.FlatAppearance.BorderSize = 0;
+            this.close_it.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_it.ForeColor = System.Drawing.Color.Transparent;
-            this.close_it.Location = new System.Drawing.Point(1, -2);
+            this.close_it.Location = new System.Drawing.Point(2, 0);
             this.close_it.Name = "close_it";
-            this.close_it.Size = new System.Drawing.Size(28, 23);
+            this.close_it.Size = new System.Drawing.Size(20, 18);
             this.close_it.TabIndex = 2;
             this.close_it.UseVisualStyleBackColor = false;
             this.close_it.Click += new System.EventHandler(this.close_it_Click);
@@ -105,7 +106,7 @@
             // paraphrase
             // 
             this.paraphrase.AutoSize = true;
-            this.paraphrase.Location = new System.Drawing.Point(10, 333);
+            this.paraphrase.Location = new System.Drawing.Point(10, 349);
             this.paraphrase.Name = "paraphrase";
             this.paraphrase.Size = new System.Drawing.Size(65, 12);
             this.paraphrase.TabIndex = 6;
@@ -127,7 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(368, 435);
+            this.ClientSize = new System.Drawing.Size(368, 442);
             this.Controls.Add(this.more);
             this.Controls.Add(this.paraphrase);
             this.Controls.Add(this.next);

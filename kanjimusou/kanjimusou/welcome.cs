@@ -30,7 +30,7 @@ namespace Kanjimusou
         {
             learn Learn = new learn();
             Learn.Show();
-            login.counts++;
+            DL.counts++;
             this.Close();
         }
 
@@ -38,7 +38,7 @@ namespace Kanjimusou
         {
             achievement Achievement = new achievement();
             Achievement.Show();
-            login.counts++;
+            DL.counts++;
             this.Close();
         }
 
@@ -47,6 +47,11 @@ namespace Kanjimusou
 
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

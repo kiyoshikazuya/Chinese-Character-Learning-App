@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(achievement));
             this.nameOfAch = new System.Windows.Forms.Label();
             this.course = new System.Windows.Forms.Label();
             this.ach = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameOfAch
             // 
             this.nameOfAch.AutoSize = true;
-            this.nameOfAch.Location = new System.Drawing.Point(50, 88);
+            this.nameOfAch.Location = new System.Drawing.Point(100, 82);
             this.nameOfAch.Name = "nameOfAch";
             this.nameOfAch.Size = new System.Drawing.Size(29, 12);
             this.nameOfAch.TabIndex = 0;
@@ -45,7 +47,7 @@
             // course
             // 
             this.course.AutoSize = true;
-            this.course.Location = new System.Drawing.Point(50, 143);
+            this.course.Location = new System.Drawing.Point(100, 129);
             this.course.Name = "course";
             this.course.Size = new System.Drawing.Size(41, 12);
             this.course.TabIndex = 1;
@@ -54,22 +56,42 @@
             // ach
             // 
             this.ach.AutoSize = true;
-            this.ach.Location = new System.Drawing.Point(50, 228);
+            this.ach.Location = new System.Drawing.Point(100, 194);
             this.ach.Name = "ach";
             this.ach.Size = new System.Drawing.Size(125, 12);
             this.ach.TabIndex = 2;
             this.ach.Text = "achievement of today";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(2, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(17, 17);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // achievement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 389);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(367, 473);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.ach);
             this.Controls.Add(this.course);
             this.Controls.Add(this.nameOfAch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "achievement";
+            this.Opacity = 0.9D;
             this.Text = "achievement";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.achievement_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -80,5 +102,6 @@
         private System.Windows.Forms.Label nameOfAch;
         private System.Windows.Forms.Label course;
         private System.Windows.Forms.Label ach;
+        private System.Windows.Forms.Button button1;
     }
 }
