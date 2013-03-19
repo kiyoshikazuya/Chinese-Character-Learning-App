@@ -36,6 +36,7 @@
             this.name = new System.Windows.Forms.TextBox();
             this.passwd = new System.Windows.Forms.TextBox();
             this.Atimer = new System.Windows.Forms.Timer(this.components);
+            this.closethis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -52,8 +53,9 @@
             this.log_in.BackColor = System.Drawing.Color.Transparent;
             this.log_in.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("log_in.BackgroundImage")));
             this.log_in.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.log_in.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.log_in.Location = new System.Drawing.Point(287, 208);
+            this.log_in.FlatAppearance.BorderSize = 0;
+            this.log_in.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log_in.Location = new System.Drawing.Point(332, 208);
             this.log_in.Name = "log_in";
             this.log_in.Size = new System.Drawing.Size(46, 29);
             this.log_in.TabIndex = 4;
@@ -62,13 +64,17 @@
             // 
             // log_on
             // 
+            this.log_on.BackColor = System.Drawing.Color.Transparent;
             this.log_on.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("log_on.BackgroundImage")));
             this.log_on.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.log_on.Location = new System.Drawing.Point(223, 208);
+            this.log_on.FlatAppearance.BorderSize = 0;
+            this.log_on.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log_on.ForeColor = System.Drawing.Color.Transparent;
+            this.log_on.Location = new System.Drawing.Point(269, 208);
             this.log_on.Name = "log_on";
-            this.log_on.Size = new System.Drawing.Size(45, 29);
+            this.log_on.Size = new System.Drawing.Size(46, 29);
             this.log_on.TabIndex = 5;
-            this.log_on.UseVisualStyleBackColor = true;
+            this.log_on.UseVisualStyleBackColor = false;
             this.log_on.Click += new System.EventHandler(this.log_on_Click);
             // 
             // name
@@ -91,6 +97,19 @@
             // 
             this.Atimer.Tick += new System.EventHandler(this.Atimer_Tick);
             // 
+            // closethis
+            // 
+            this.closethis.BackColor = System.Drawing.Color.Transparent;
+            this.closethis.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closethis.BackgroundImage")));
+            this.closethis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.closethis.FlatAppearance.BorderSize = 0;
+            this.closethis.Location = new System.Drawing.Point(1, -1);
+            this.closethis.Name = "closethis";
+            this.closethis.Size = new System.Drawing.Size(22, 21);
+            this.closethis.TabIndex = 8;
+            this.closethis.UseVisualStyleBackColor = false;
+            this.closethis.Click += new System.EventHandler(this.closethis_Click);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -98,14 +117,18 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(390, 249);
+            this.Controls.Add(this.closethis);
             this.Controls.Add(this.passwd);
             this.Controls.Add(this.name);
             this.Controls.Add(this.log_on);
             this.Controls.Add(this.log_in);
             this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "login";
+            this.Opacity = 0.85D;
             this.Text = "CCLF";
+            this.Load += new System.EventHandler(this.login_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.login_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +142,7 @@
         private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.TextBox passwd;
         private System.Windows.Forms.Timer Atimer;
+        private System.Windows.Forms.Button closethis;
 
 
     }
