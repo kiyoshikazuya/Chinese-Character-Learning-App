@@ -55,6 +55,7 @@ namespace Kanjimusou.Lib
             if (!IsExisted(username))
             {
                 User user = new User(username, GetMD5(password));
+                user.achievement = new Achievement(user);
                 SaveFile(user);
                 return user;
             }

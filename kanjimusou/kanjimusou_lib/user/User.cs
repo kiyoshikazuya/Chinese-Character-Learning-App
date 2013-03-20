@@ -26,7 +26,7 @@ namespace Kanjimusou.Lib
         private int weekCount = 1;
         private DateTime planStartTime;
 
-        private int hanziTotalFinished = 0;
+        internal Achievement achievement;
 
         public event AchievementHandler FinishHanzi;
 
@@ -58,6 +58,16 @@ namespace Kanjimusou.Lib
             get { return hanziWeekFinished; }
         }
 
+        public int HanziWeekPlanRest
+        {
+            get { return (hanziWeekPlan - hanziWeekFinished < 0? 0 : hanziWeekPlan - hanziWeekFinished); }
+        }
+
+        public bool IsHanziWeekPlanFinish
+        {
+            get { return (HanziWeekPlanRest == 0); }
+        }
+
         public DateTime PlanStartTime
         {
             get { return planStartTime; }
@@ -66,7 +76,20 @@ namespace Kanjimusou.Lib
 
         public int HanziTotalFinished
         {
-            get { return hanziTotalFinished; }
+            get
+            {
+                int count = 0;
+                foreach (HanziLearnLog log in learnDic.Values)
+                {
+                    count += log.Count;
+                }
+                return count;
+            }
+        }
+
+        public Achievement Achievement
+        {
+            get { return achievement; }
         }
 
         public User(String name, String pass)
@@ -82,7 +105,6 @@ namespace Kanjimusou.Lib
         /// <param name="image">所书写的图像，可以为null</param>
         public void addLearnLog(String zi, Image image)
         {
-            hanziTotalFinished++;
             hanziWeekFinished++;
             FinishHanzi(this, new AchievementArgs (zi));
 
@@ -104,15 +126,6 @@ namespace Kanjimusou.Lib
                     zi, now.ToShortDateString(), now.Hour, now.Minute, now.Second);
             image.Save(path);
             log.pathList.Add(path);
-        }
-
-        /// <summary>
-        /// 计算用户已完成的汉字数与计划完成的总数之差 
-        /// </summary>
-        /// <returns>已完成的汉字数 - 计划完成的总数</returns>
-        public int PlanFinishedCount()
-        {
-            return hanziWeekFinished - hanziWeekPlan;
         }
 
         /// <summary>

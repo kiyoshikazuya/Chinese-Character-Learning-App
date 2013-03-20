@@ -54,6 +54,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user\Achievement.cs" />
     <Compile Include="user\User.cs" />
     <Compile Include="user\UserException.cs" />
     <Compile Include="user\UserManager.cs" />
