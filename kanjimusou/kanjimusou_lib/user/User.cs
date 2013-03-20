@@ -26,7 +26,9 @@ namespace Kanjimusou.Lib
         private int weekCount = 1;
         private DateTime planStartTime;
 
-        private int hanziTotalFinished;
+        private int hanziTotalFinished = 0;
+
+        public event AchievementHandler FinishHanzi;
 
         public String Username
         {
@@ -54,7 +56,6 @@ namespace Kanjimusou.Lib
         public int HanziWeekFinished
         {
             get { return hanziWeekFinished; }
-            set { hanziWeekFinished = value; }
         }
 
         public DateTime PlanStartTime
@@ -63,16 +64,9 @@ namespace Kanjimusou.Lib
             set { planStartTime = value; }
         }
 
-        public int WeekCount
-        {
-            get { return weekCount; }
-            set { weekCount = value; }
-        }
-
         public int HanziTotalFinished
         {
             get { return hanziTotalFinished; }
-            set { hanziTotalFinished = value; }
         }
 
         public User(String name, String pass)
@@ -88,6 +82,10 @@ namespace Kanjimusou.Lib
         /// <param name="image">所书写的图像，可以为null</param>
         public void addLearnLog(String zi, Image image)
         {
+            hanziTotalFinished++;
+            hanziWeekFinished++;
+            FinishHanzi(this, new AchievementArgs (zi));
+
             HanziLearnLog log;
             if (!learnDic.ContainsKey(zi))
             {
@@ -131,7 +129,6 @@ namespace Kanjimusou.Lib
             }
         }
 
-
     }
 
     [Serializable]
@@ -159,6 +156,24 @@ namespace Kanjimusou.Lib
                 return list;
             }
         }
+    }
+
+    public delegate void AchievementHandler(Object sender, AchievementArgs e);
+
+    public class AchievementArgs : EventArgs
+    {
+        private String zi;
+
+        public String Zi
+        {
+            get { return zi; }
+        }
+
+        public AchievementArgs( String zi )
+        {
+            this.zi = zi;
+        }
+
     }
 
 }
