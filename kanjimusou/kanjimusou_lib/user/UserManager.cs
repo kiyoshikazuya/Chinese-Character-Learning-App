@@ -20,13 +20,15 @@ namespace Kanjimusou.Lib
         /// </summary>
         /// <param name="username">用户名</param>
         /// <param name="password">密码</param>
-        /// <returns>用户存在且密码正确则返回对应的User对象，否则返回null</returns>
+        /// <returns>用户存在且密码正确则返回对应的User对象</returns>
+        /// <exception cref="UserException">若登录验证失败</exception>
         public static User Login(String username, String password)
         {
-            if (!IsExisted(username)) return null;
+            if (!IsExisted(username)) throw new UserException("用户名不存在");
             User user = LoadFile(username);
+            user.ResetHanziWeekFinished();
             if (user.Password == GetMD5(password)) return user;
-            else return null;
+            else throw new UserException("密码错误");
             /*
             try
             {
