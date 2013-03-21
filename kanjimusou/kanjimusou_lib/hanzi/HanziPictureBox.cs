@@ -28,6 +28,7 @@ namespace Kanjimusou.Lib
         private int penWidth = 30;
         private int stage;
         private int step;
+        private bool showHelper = false;
 
         private Timer timer;
         private int animeStep;
@@ -61,6 +62,26 @@ namespace Kanjimusou.Lib
         }
 
         /// <summary>
+        /// 指定是否显示提示动画
+        /// </summary>
+        public bool IsShowHelper
+        {
+            get { return showHelper; }
+            set
+            {
+                showHelper = value;
+                if (value)
+                {
+                    StartAnimation();
+                }
+                else
+                {
+                    StopAnimation();
+                }
+            }
+        }
+
+        /// <summary>
         /// 当用户正确的绘制了一个笔画时产生的事件
         /// </summary>
         public event BihuaHandler CorrectDrew;
@@ -75,8 +96,9 @@ namespace Kanjimusou.Lib
         /// </summary>
         public event BihuaHandler Completed;
 
-        public HanziPictureBox()
+        public HanziPictureBox() : this(null)
         {
+            Image = new Bitmap(1, 1);
         }
 
         public HanziPictureBox(Hanzi hanzi)
@@ -111,16 +133,21 @@ namespace Kanjimusou.Lib
             this.Refresh();
         }
 
-        public void StartAnimation()
+        private void StartAnimation()
         {
             timer = new Timer();
             timer.Interval = 100;
             timer.Tick += OnTimerTick;
             timer.Start();
+            ResetAnimation();
+        }
+
+        private void ResetAnimation()
+        {
             animeStep = 0;
         }
 
-        public void StopAnimation()
+        private void StopAnimation()
         {
             if (timer != null) timer.Stop();
         }
@@ -141,7 +168,10 @@ namespace Kanjimusou.Lib
                 g.DrawImage(draw, 0, 0);
             }
             if (drawTmp != null) g.DrawImage(drawTmp, 0, 0, Width, Height);
-            // <debug>
+
+            //若未设置汉字引用则剩下的操作全部跳过
+            if (hanzi == null) return;
+#if DEBUG
             if (hanzi != null && stage < hanzi.BihuaBiao.Count)
             {
                 for (int i = 0; i < hanzi.BihuaBiao[stage].Gjdian.Count; i++)
@@ -155,26 +185,29 @@ namespace Kanjimusou.Lib
                             DetectSensitive, DetectSensitive, 0, 360);
                 }
             }
-            // </debug>
+#endif
 
             //绘制路径动画
-            for (int i = 0; stage < hanzi.BihuaBiao.Count && i <= (animeStep / AnimateRate) % (hanzi.BihuaBiao[stage].Gjdian.Count - 1); i++)
+            if (showHelper)
             {
-                Pen pen = new Pen(Color.Red, 10);
-                
-                if (i < (animeStep / AnimateRate) % (hanzi.BihuaBiao[stage].Gjdian.Count - 1))
+                for (int i = 0; stage < hanzi.BihuaBiao.Count && i <= (animeStep / AnimateRate) % (hanzi.BihuaBiao[stage].Gjdian.Count - 1); i++)
                 {
-                    pen.EndCap = LineCap.Round;
-                    g.DrawLine(pen, hanzi.BihuaBiao[stage].Gjdian[i], hanzi.BihuaBiao[stage].Gjdian[i + 1]);
-                }
-                else
-                {
-                    pen.EndCap = LineCap.ArrowAnchor;
-                    g.DrawLine(pen, hanzi.BihuaBiao[stage].Gjdian[i],
-                        new Point(hanzi.BihuaBiao[stage].Gjdian[i].X
-                        + (hanzi.BihuaBiao[stage].Gjdian[i + 1].X - hanzi.BihuaBiao[stage].Gjdian[i].X) * ((animeStep % AnimateRate) + 1) / AnimateRate,
-                        hanzi.BihuaBiao[stage].Gjdian[i].Y
-                        + (hanzi.BihuaBiao[stage].Gjdian[i + 1].Y - hanzi.BihuaBiao[stage].Gjdian[i].Y) * ((animeStep % AnimateRate) + 1) / AnimateRate));
+                    Pen pen = new Pen(Color.Red, 10);
+
+                    if (i < (animeStep / AnimateRate) % (hanzi.BihuaBiao[stage].Gjdian.Count - 1))
+                    {
+                        pen.EndCap = LineCap.Round;
+                        g.DrawLine(pen, hanzi.BihuaBiao[stage].Gjdian[i], hanzi.BihuaBiao[stage].Gjdian[i + 1]);
+                    }
+                    else
+                    {
+                        pen.EndCap = LineCap.ArrowAnchor;
+                        g.DrawLine(pen, hanzi.BihuaBiao[stage].Gjdian[i],
+                            new Point(hanzi.BihuaBiao[stage].Gjdian[i].X
+                            + (hanzi.BihuaBiao[stage].Gjdian[i + 1].X - hanzi.BihuaBiao[stage].Gjdian[i].X) * ((animeStep % AnimateRate) + 1) / AnimateRate,
+                            hanzi.BihuaBiao[stage].Gjdian[i].Y
+                            + (hanzi.BihuaBiao[stage].Gjdian[i + 1].Y - hanzi.BihuaBiao[stage].Gjdian[i].Y) * ((animeStep % AnimateRate) + 1) / AnimateRate));
+                    }
                 }
             }
         }
@@ -246,7 +279,7 @@ namespace Kanjimusou.Lib
                 lastPt = pt;
             }
 
-            animeStep = 0;
+            ResetAnimation();
 
             stage++;
 
