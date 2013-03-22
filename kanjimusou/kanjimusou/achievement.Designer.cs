@@ -33,12 +33,14 @@
             this.course = new System.Windows.Forms.Label();
             this.ach = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.allHanzi = new System.Windows.Forms.Label();
+            this.share = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameOfAch
             // 
             this.nameOfAch.AutoSize = true;
-            this.nameOfAch.Location = new System.Drawing.Point(100, 82);
+            this.nameOfAch.Location = new System.Drawing.Point(100, 62);
             this.nameOfAch.Name = "nameOfAch";
             this.nameOfAch.Size = new System.Drawing.Size(29, 12);
             this.nameOfAch.TabIndex = 0;
@@ -47,7 +49,7 @@
             // course
             // 
             this.course.AutoSize = true;
-            this.course.Location = new System.Drawing.Point(100, 129);
+            this.course.Location = new System.Drawing.Point(184, 110);
             this.course.Name = "course";
             this.course.Size = new System.Drawing.Size(41, 12);
             this.course.TabIndex = 1;
@@ -56,7 +58,7 @@
             // ach
             // 
             this.ach.AutoSize = true;
-            this.ach.Location = new System.Drawing.Point(100, 194);
+            this.ach.Location = new System.Drawing.Point(79, 301);
             this.ach.Name = "ach";
             this.ach.Size = new System.Drawing.Size(125, 12);
             this.ach.TabIndex = 2;
@@ -76,6 +78,28 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // allHanzi
+            // 
+            this.allHanzi.AutoSize = true;
+            this.allHanzi.Location = new System.Drawing.Point(79, 218);
+            this.allHanzi.Name = "allHanzi";
+            this.allHanzi.Size = new System.Drawing.Size(41, 12);
+            this.allHanzi.TabIndex = 4;
+            this.allHanzi.Text = "label1";
+            // 
+            // share
+            // 
+            this.share.BackColor = System.Drawing.Color.Transparent;
+            this.share.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("share.BackgroundImage")));
+            this.share.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.share.FlatAppearance.BorderSize = 0;
+            this.share.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.share.Location = new System.Drawing.Point(330, 402);
+            this.share.Name = "share";
+            this.share.Size = new System.Drawing.Size(34, 59);
+            this.share.TabIndex = 5;
+            this.share.UseVisualStyleBackColor = false;
+            // 
             // achievement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -83,6 +107,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(367, 473);
+            this.Controls.Add(this.share);
+            this.Controls.Add(this.allHanzi);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ach);
             this.Controls.Add(this.course);
@@ -103,5 +129,7 @@
         private System.Windows.Forms.Label course;
         private System.Windows.Forms.Label ach;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label allHanzi;
+        private System.Windows.Forms.Button share;
     }
 }

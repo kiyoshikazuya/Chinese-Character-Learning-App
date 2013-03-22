@@ -41,7 +41,7 @@
             this.closeAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.closeAll.FlatAppearance.BorderSize = 0;
             this.closeAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeAll.Location = new System.Drawing.Point(12, 166);
+            this.closeAll.Location = new System.Drawing.Point(14, 175);
             this.closeAll.Name = "closeAll";
             this.closeAll.Size = new System.Drawing.Size(77, 30);
             this.closeAll.TabIndex = 1;
@@ -55,7 +55,7 @@
             this.doNotClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.doNotClose.FlatAppearance.BorderSize = 0;
             this.doNotClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doNotClose.Location = new System.Drawing.Point(128, 168);
+            this.doNotClose.Location = new System.Drawing.Point(134, 175);
             this.doNotClose.Name = "doNotClose";
             this.doNotClose.Size = new System.Drawing.Size(144, 27);
             this.doNotClose.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(284, 217);
+            this.ClientSize = new System.Drawing.Size(328, 239);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.doNotClose);
             this.Controls.Add(this.closeAll);
