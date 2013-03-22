@@ -11,32 +11,24 @@ namespace Kanjimusou.Lib
     /// 该类使用XML处理汉字信息的I/O
     /// 首先实例化一个对象，然后调用OpenFile方法打开XML文件即可读取Hanzi对象
     /// </summary>
-    public class HanziIO
+    public static class HanziIO
     {
-        private XmlDocument xmldoc;
-        private XmlNode xmlnode, root;
-        private XmlElement xmlelem;
-        private String filepath;
+        private static XmlDocument xmldoc;
+        private static XmlNode xmlnode, root;
+        private static XmlElement xmlelem;
+        private static String filepath = "./hanzi/Hanzi.xml";
 
-        public HanziIO()
-        {
-        } 
-        /// <summary>
-        /// 该方法初始化一个XMLDOC对象，以读取文件内容，参数即为打开文件的路径
-        /// </summary>
-        /// <param name="filepath"></param>
-        public void OpenFile ( String filepath )
+        static HanziIO()
         {
             xmldoc = new XmlDocument();
             xmldoc.Load(filepath);
             root = xmldoc.SelectSingleNode("/Hanzis");
-            this.filepath = filepath;
-        }
+        } 
         /// <summary>
         /// 该方法返回文件中所有的Hanzi对象，返回值是一个Hanzi类型的LIST
         /// </summary>
         /// <returns></returns>
-        public List<Hanzi> ReadAll()
+        public static List<Hanzi> ReadAll()
         {
             List<Hanzi> ret = new List<Hanzi>() ; 
             List<Bihua> bihuabiao = new List<Bihua>();
@@ -84,7 +76,7 @@ namespace Kanjimusou.Lib
         /// <param name="zi"></param>
         /// <param name="ziti"></param>
         /// <returns></returns>
-        public Hanzi Read(String zi, String ziti)
+        public static Hanzi Read(String zi, String ziti)
         {
             Hanzi ret = null;
             XmlNodeList hzlist = root.ChildNodes;
@@ -134,7 +126,7 @@ namespace Kanjimusou.Lib
         /// </summary>
         /// <param name="zi"></param>
         /// <returns></returns>
-        public Hanzi Read(String zi)
+        public static Hanzi Read(String zi)
         {
             return Read(zi, "雅黑");
         }
@@ -143,7 +135,7 @@ namespace Kanjimusou.Lib
         /// 该方法是向打开的XML文档中插入一个汉字
         /// </summary>
         /// <returns></returns>
-        public bool SaveFile()
+        public static bool SaveFile()
          {
             XmlElement hz = xmldoc.CreateElement("Node");
             System.Console.WriteLine("输入插入的汉字名：");
