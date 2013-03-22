@@ -66,7 +66,7 @@
             // name
             // 
             this.name.BackColor = System.Drawing.Color.White;
-            this.name.Location = new System.Drawing.Point(71, 159);
+            this.name.Location = new System.Drawing.Point(71, 160);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(136, 21);
             this.name.TabIndex = 6;
