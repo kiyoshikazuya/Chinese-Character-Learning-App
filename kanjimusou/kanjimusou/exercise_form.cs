@@ -26,10 +26,10 @@ namespace Kanjimusou
         public exercise_form()
         {
             InitializeComponent();
-
+            /*
             HanziIO hanzi = new HanziIO();
             hanzi.OpenFile("Hanzi.xml");
-            hanziPictureBox1.Hanzi = hanzi.Read("中");
+            hanziPictureBox1.Hanzi = hanzi.Read("中");*/
             hanziPictureBox1.CorrectDrew += new BihuaHandler(OnCorrectDrew);
             hanziPictureBox1.WrongDrew += new BihuaHandler(OnWrongDrew);
             hanziPictureBox1.Completed += new BihuaHandler(OnCompleted);
