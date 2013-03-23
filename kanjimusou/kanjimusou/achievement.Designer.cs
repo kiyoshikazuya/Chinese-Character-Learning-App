@@ -99,6 +99,7 @@
             this.share.Size = new System.Drawing.Size(34, 59);
             this.share.TabIndex = 5;
             this.share.UseVisualStyleBackColor = false;
+            this.share.Click += new System.EventHandler(this.share_Click);
             // 
             // achievement
             // 

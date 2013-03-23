@@ -70,6 +70,7 @@
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(136, 21);
             this.name.TabIndex = 6;
+            this.name.TextChanged += new System.EventHandler(this.name_TextChanged);
             // 
             // passwd
             // 

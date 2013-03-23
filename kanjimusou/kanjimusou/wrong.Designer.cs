@@ -36,10 +36,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("楷体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(112, 122);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(54, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 14);
+            this.label1.Size = new System.Drawing.Size(70, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "wrong";
             // 

@@ -24,6 +24,10 @@ namespace Kanjimusou
         public achievement()
         {
             InitializeComponent();
+            this.nameOfAch.Text = DL.Auser.Username;
+            //课程
+            //今日
+            //总
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +39,11 @@ namespace Kanjimusou
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
+        }
+
+        private void share_Click(object sender, EventArgs e)
+        {
+
         }
 
 

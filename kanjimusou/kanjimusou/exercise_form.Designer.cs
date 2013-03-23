@@ -80,6 +80,8 @@
             // 
             this.hanziPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.hanziPictureBox1.Hanzi = null;
+            this.hanziPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("hanziPictureBox1.Image")));
+            this.hanziPictureBox1.IsShowHelper = false;
             this.hanziPictureBox1.Location = new System.Drawing.Point(12, 12);
             this.hanziPictureBox1.Name = "hanziPictureBox1";
             this.hanziPictureBox1.Size = new System.Drawing.Size(500, 500);

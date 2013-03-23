@@ -70,6 +70,7 @@ namespace Kanjimusou
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
         }
 
+        
 
 
 

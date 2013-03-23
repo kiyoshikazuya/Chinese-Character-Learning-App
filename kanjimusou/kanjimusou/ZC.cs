@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Kanjimusou.Lib;
 
 namespace Kanjimusou
 {
@@ -28,6 +29,15 @@ namespace Kanjimusou
 
         private void submit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                UserManager.Register(this.Username.Text, this.passwd1.Text);
+            }
+            catch (UserException a)
+            {
+                wrong Wrong = new wrong(a.Message);
+                Wrong.Show();
+            }
         }
 
         private void logon_MouseDown(object sender, MouseEventArgs e)
@@ -39,6 +49,21 @@ namespace Kanjimusou
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void passwd2_TextChanged(object sender, EventArgs e)
+        {
+            
+            if (passwd1.Text == passwd2.Text)
+            {
+                this.Error.Visible = false;
+                this.submit.Visible = true;
+            }
+        }
+
+        private void passwd1_TextChanged(object sender, EventArgs e)
+        {
+            this.Error.Visible = true;
         }
     }
 }

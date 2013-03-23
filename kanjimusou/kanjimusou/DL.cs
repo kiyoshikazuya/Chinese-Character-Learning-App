@@ -23,9 +23,8 @@ namespace Kanjimusou
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
 
-
-
         public static User Auser;
+
         public static int counts = 0;
         //计数判断窗体个数
 
@@ -97,8 +96,20 @@ namespace Kanjimusou
 
         private void dlu_Click(object sender, EventArgs e)
         {
-            welcome Welcome = new welcome();
-            Welcome.Show();
+            try
+            {
+               Auser=UserManager.Login(this.name.Text,this.passwd.Text);
+            }
+            catch(UserException a)
+            {
+                wrong Awrong = new wrong(a.Message);
+                Awrong.Show();
+            }
+        }
+
+        private void name_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

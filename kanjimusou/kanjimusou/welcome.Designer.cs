@@ -42,7 +42,7 @@
             this.start.FlatAppearance.BorderSize = 0;
             this.start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.start.ForeColor = System.Drawing.Color.Transparent;
-            this.start.Location = new System.Drawing.Point(119, 126);
+            this.start.Location = new System.Drawing.Point(119, 172);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(114, 29);
             this.start.TabIndex = 1;
@@ -56,7 +56,7 @@
             this.information.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.information.FlatAppearance.BorderSize = 0;
             this.information.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.information.Location = new System.Drawing.Point(119, 173);
+            this.information.Location = new System.Drawing.Point(113, 212);
             this.information.Name = "information";
             this.information.Size = new System.Drawing.Size(122, 39);
             this.information.TabIndex = 2;
@@ -83,7 +83,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(368, 267);
+            this.ClientSize = new System.Drawing.Size(368, 293);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.information);
             this.Controls.Add(this.start);

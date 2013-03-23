@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kanjimusou.Lib
 {
-    class UserException: Exception
+    public class UserException: Exception
     {
         public UserException()
             : base()
