@@ -14,10 +14,12 @@ namespace Kanjimusou.Lib
     /// </summary>
     public class HanziPictureBox : PictureBox, IComponent
     {
-        public const int DrawSensitive = 10;
+        public const int DrawSensitive = 20;
         public const int DetectSensitive = 50;
         public const double LengthSensitive = 0.2;
         public const int AnimateRate = 20;
+        public const int DrawingWidthMin = 10;
+        public const int DrawingWidthMax = 20;
 
         private Stack<Image> drawStack = new Stack<Image>();
         private Image drawTmp;
@@ -25,9 +27,13 @@ namespace Kanjimusou.Lib
         private Point lastPoint;
         private Hanzi hanzi;
         private Color drawColor = Color.Black;
-        private int penWidth = 30;
+        private int penWidth = 40;
         private int stage;
         private int step;
+        private bool drawing = false;
+        private Point drawingPoint;
+        private int drawingWidth;
+        private bool inkMode = true;
         private bool showHelper = false;
 
         private Timer timer;
@@ -72,13 +78,23 @@ namespace Kanjimusou.Lib
                 showHelper = value;
                 if (value)
                 {
-                    StartAnimation();
+                    StartTimer();
+                    ResetAnimation();
                 }
                 else
                 {
-                    StopAnimation();
+                    StopTimer();
                 }
             }
+        }
+
+        /// <summary>
+        /// 指定是否启动墨水模式
+        /// </summary>
+        public bool IsInkMode
+        {
+            get { return inkMode; }
+            set { inkMode = value; }
         }
 
         /// <summary>
@@ -130,16 +146,25 @@ namespace Kanjimusou.Lib
             stage = 0;
             step = 0;
 
+            if (showHelper) ResetAnimation();
+
             this.Refresh();
         }
 
-        private void StartAnimation()
+        private void StartTimer()
         {
-            timer = new Timer();
-            timer.Interval = 100;
-            timer.Tick += OnTimerTick;
+            if (timer == null)
+            {
+                timer = new Timer();
+                timer.Interval = 50;
+                timer.Tick += OnTimerTick;
+            }
             timer.Start();
-            ResetAnimation();
+        }
+
+        private void StopTimer()
+        {
+            if (timer != null && !showHelper && !drawing) timer.Stop();
         }
 
         private void ResetAnimation()
@@ -147,14 +172,10 @@ namespace Kanjimusou.Lib
             animeStep = 0;
         }
 
-        private void StopAnimation()
-        {
-            if (timer != null) timer.Stop();
-        }
-
         private void OnTimerTick(object sender, EventArgs e)
         {
-            animeStep++;
+            if (showHelper) animeStep++;
+            if (drawing && drawingWidth <= DrawingWidthMax) drawingWidth++;
             Refresh();
         }
 
@@ -163,11 +184,20 @@ namespace Kanjimusou.Lib
             base.OnPaint(e);
 
             Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
             foreach (Image draw in drawStack)
             {
                 g.DrawImage(draw, 0, 0);
             }
             if (drawTmp != null) g.DrawImage(drawTmp, 0, 0, Width, Height);
+
+            if (drawing)
+            {
+                Graphics gDraw = Graphics.FromImage(drawTmp);
+                gDraw.SmoothingMode = SmoothingMode.AntiAlias;
+                gDraw.FillPie(new SolidBrush(drawColor), drawingPoint.X - drawingWidth, drawingPoint.Y - drawingWidth,
+                    drawingWidth * 2, drawingWidth * 2, 0, 360);
+            }
 
             //若未设置汉字引用则剩下的操作全部跳过
             if (hanzi == null) return;
@@ -215,16 +245,21 @@ namespace Kanjimusou.Lib
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
+            if (e.Button != MouseButtons.Left) return;
             if (stage >= hanzi.BihuaBiao.Count) return;
 
-            if (e.Button == MouseButtons.Left)
-            {
-                lastPoint = e.Location;
-            }
+            lastPoint = drawingPoint = e.Location;
             drawTmp = new Bitmap(this.Width, this.Height);
 
             step = 0;
             drawLength = 0;
+
+            if (inkMode)
+            {
+                drawing = true;
+                drawingWidth = penWidth / 2;
+                StartTimer();
+            }
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
@@ -232,17 +267,22 @@ namespace Kanjimusou.Lib
             base.OnMouseMove(e);
             if (stage >= hanzi.BihuaBiao.Count) return;
 
+            drawingPoint = e.Location;
+
             if (e.Button == MouseButtons.Left)
             {
                 if (Math.Sqrt(Math.Pow(e.X - lastPoint.X, 2) + Math.Pow(e.Y - lastPoint.Y, 2)) > DrawSensitive)
                 {
                     Graphics g = Graphics.FromImage(drawTmp);
-                    Pen p = new Pen(drawColor, penWidth);
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    Pen p = new Pen(drawColor, (inkMode? drawingWidth * 2: penWidth));
                     p.SetLineCap(LineCap.Round, LineCap.Round, DashCap.Round);
                     g.DrawLine(p, lastPoint, e.Location);
                     drawLength += Math.Sqrt(Math.Pow(e.X - lastPoint.X, 2) + Math.Pow(e.Y - lastPoint.Y, 2));
 
                     lastPoint = e.Location;
+                    drawingWidth--;
+                    if (drawingWidth < DrawingWidthMin) drawingWidth = DrawingWidthMin;
                     this.Refresh();
                 }
                 if (stage < hanzi.BihuaBiao.Count && step < hanzi.BihuaBiao[stage].Gjdian.Count
@@ -257,34 +297,31 @@ namespace Kanjimusou.Lib
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
+            if (e.Button != MouseButtons.Left) return;
             if (stage >= hanzi.BihuaBiao.Count) return;
 
-            if (e.Button == MouseButtons.Left)
-            {
-                drawStack.Push(drawTmp);
-            }
+            drawStack.Push(drawTmp);
             drawTmp = null;
 
             //校验笔画长度
             double bihuaLength = 0;
-            bool flag = false;
-            Point lastPt = new Point();
-            foreach (Point pt in hanzi.BihuaBiao[stage].Gjdian)
+            for (int i = 1; i < hanzi.BihuaBiao[stage].Gjdian.Count; i++)
             {
-                if (flag)
-                {
-                    bihuaLength += Math.Sqrt(Math.Pow(pt.X - lastPt.X, 2) + Math.Pow(pt.Y - lastPt.Y, 2));
-                }
-                flag = true;
-                lastPt = pt;
+                bihuaLength += Math.Sqrt(Math.Pow(hanzi.BihuaBiao[stage].Gjdian[i].X - hanzi.BihuaBiao[stage].Gjdian[i-1].X, 2)
+                    + Math.Pow(hanzi.BihuaBiao[stage].Gjdian[i].Y - hanzi.BihuaBiao[stage].Gjdian[i-1].Y, 2));
             }
+            bool checkLength = drawLength - bihuaLength * (1.0 + LengthSensitive) < 100;
 
-            ResetAnimation();
+            if (inkMode)
+            {
+                drawing = false;
+                StopTimer();
+            }
+            if (showHelper) ResetAnimation();
 
             stage++;
 
-            if (step >= hanzi.BihuaBiao[stage-1].Gjdian.Count && drawLength > bihuaLength * (1 - LengthSensitive)
-                    && drawLength < bihuaLength * (1 + LengthSensitive))
+            if (step >= hanzi.BihuaBiao[stage-1].Gjdian.Count && checkLength)
             {
                 if (stage >= hanzi.BihuaBiao.Count)
                 {
