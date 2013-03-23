@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Soap;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 
 namespace Kanjimusou.Lib
@@ -59,7 +59,7 @@ namespace Kanjimusou.Lib
                 SaveFile(user);
                 return user;
             }
-            else return null;
+            else throw new UserException ("用户名已存在");
             
             /*
             User user = new User(username, GetMD5(password));
@@ -87,8 +87,8 @@ namespace Kanjimusou.Lib
                 Directory.CreateDirectory(Path + user.Username);
             String filepath = String.Format(XmlPathFormat, user.Username);
             FileStream fs = new FileStream(filepath,FileMode.OpenOrCreate);
-            SoapFormatter sp = new SoapFormatter();
-            sp.Serialize(fs, user);
+            BinaryFormatter bp = new BinaryFormatter();
+            bp.Serialize(fs, user);
             fs.Close();
         }
 
@@ -96,9 +96,9 @@ namespace Kanjimusou.Lib
         {
             String filepath = String.Format(XmlPathFormat, username);
             FileStream fs = new FileStream(filepath, FileMode.Open);
-            SoapFormatter sp = new SoapFormatter();
+            BinaryFormatter bp = new BinaryFormatter();
             User ret;
-            ret = sp.Deserialize(fs) as User;
+            ret = bp.Deserialize(fs) as User;
             fs.Close();
             return ret;
         }
