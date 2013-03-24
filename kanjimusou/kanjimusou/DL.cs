@@ -24,6 +24,7 @@ namespace Kanjimusou
         public const int HTCAPTTION = 0x0002;
 
         public static User Auser;
+        public static DL ADL;
 
         public static int counts = 0;
         //计数判断窗体个数
@@ -37,6 +38,7 @@ namespace Kanjimusou
             InitializeComponent();
              Opacity = 0.0;      //窗体透明度为0
             Atimer.Start(); //计时开始
+            ADL = this;
 
         }
 
@@ -96,15 +98,18 @@ namespace Kanjimusou
 
         private void dlu_Click(object sender, EventArgs e)
         {
-            try
-            {
-               Auser=UserManager.Login(this.name.Text,this.passwd.Text);
-            }
-            catch(UserException a)
-            {
-                wrong Awrong = new wrong(a.Message);
-                Awrong.Show();
-            }
+            //try
+            //{
+              // Auser=UserManager.Login(this.name.Text,this.passwd.Text);
+               welcome Awelcom = new welcome();
+               Awelcom.Show();
+               this.Visible = false;
+            //}
+            //catch(UserException a)
+            //{
+            //    wrong Awrong = new wrong(a.Message);
+            //    Awrong.Show();
+            //}
         }
 
         private void name_TextChanged(object sender, EventArgs e)

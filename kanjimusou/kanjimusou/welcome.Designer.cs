@@ -32,6 +32,7 @@
             this.start = new System.Windows.Forms.Button();
             this.information = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.userName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // start
@@ -77,6 +78,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // userName
+            // 
+            this.userName.AutoSize = true;
+            this.userName.Location = new System.Drawing.Point(155, 109);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(41, 12);
+            this.userName.TabIndex = 4;
+            this.userName.Text = "label1";
+            // 
             // welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -84,14 +94,17 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(368, 293);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.information);
             this.Controls.Add(this.start);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "welcome";
+            this.Opacity = 0.9D;
             this.Text = "welcome";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.welcome_MouseDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +113,6 @@
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.Button information;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label userName;
     }
 }
