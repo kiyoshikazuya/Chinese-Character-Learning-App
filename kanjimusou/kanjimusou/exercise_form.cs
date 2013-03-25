@@ -70,6 +70,11 @@ namespace Kanjimusou
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
         }
 
+        private void hanziPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
 
 

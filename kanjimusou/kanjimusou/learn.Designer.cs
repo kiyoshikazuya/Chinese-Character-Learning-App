@@ -53,12 +53,14 @@
             // 
             // sound
             // 
-            this.sound.Location = new System.Drawing.Point(319, 60);
+            this.sound.BackColor = System.Drawing.Color.Transparent;
+            this.sound.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sound.BackgroundImage")));
+            this.sound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sound.Location = new System.Drawing.Point(327, 60);
             this.sound.Name = "sound";
-            this.sound.Size = new System.Drawing.Size(49, 23);
+            this.sound.Size = new System.Drawing.Size(29, 29);
             this.sound.TabIndex = 1;
-            this.sound.Text = "s";
-            this.sound.UseVisualStyleBackColor = true;
+            this.sound.UseVisualStyleBackColor = false;
             // 
             // close_it
             // 

@@ -29,7 +29,7 @@ namespace Kanjimusou
 
         private void closeAll_Click(object sender, EventArgs e)
         {
-            
+            DL.ADL.Close();
         }
 
         private void prompt_MouseDown(object sender, MouseEventArgs e)
@@ -41,6 +41,12 @@ namespace Kanjimusou
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void doNotClose_Click(object sender, EventArgs e)
+        {
+            welcome Welcome = new welcome();
+            Welcome.Show();
         }
     }
 }

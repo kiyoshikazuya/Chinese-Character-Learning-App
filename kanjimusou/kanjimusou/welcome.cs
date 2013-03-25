@@ -24,6 +24,7 @@ namespace Kanjimusou
         public welcome()
         {
             InitializeComponent();
+            //this.userName.Text = DL.Auser.Username;
         }
 
         private void start_Click(object sender, EventArgs e)

@@ -81,12 +81,13 @@
             this.hanziPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.hanziPictureBox1.Hanzi = null;
             this.hanziPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("hanziPictureBox1.Image")));
-            this.hanziPictureBox1.IsShowHelper = false;
+            this.hanziPictureBox1.IsShowHelper = true;
             this.hanziPictureBox1.Location = new System.Drawing.Point(12, 12);
             this.hanziPictureBox1.Name = "hanziPictureBox1";
             this.hanziPictureBox1.Size = new System.Drawing.Size(500, 500);
             this.hanziPictureBox1.TabIndex = 0;
             this.hanziPictureBox1.TabStop = false;
+            this.hanziPictureBox1.Click += new System.EventHandler(this.hanziPictureBox1_Click);
             // 
             // exercise_form
             // 

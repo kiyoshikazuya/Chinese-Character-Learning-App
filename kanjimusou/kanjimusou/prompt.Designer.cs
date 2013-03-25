@@ -60,6 +60,7 @@
             this.doNotClose.Size = new System.Drawing.Size(144, 27);
             this.doNotClose.TabIndex = 2;
             this.doNotClose.UseVisualStyleBackColor = false;
+            this.doNotClose.Click += new System.EventHandler(this.doNotClose_Click);
             // 
             // button1
             // 
