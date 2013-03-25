@@ -14,8 +14,7 @@ namespace Kanjimusou.Lib
     public static class HanziIO
     {
         private static XmlDocument xmldoc;
-        private static XmlNode xmlnode, root;
-        private static XmlElement xmlelem;
+        private static XmlNode root;
         private static String filepath = "./hanzi/Hanzi.xml";
 
         static HanziIO()
