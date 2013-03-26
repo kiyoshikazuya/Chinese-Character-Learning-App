@@ -20,23 +20,25 @@ namespace Kanjimusou
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
+        public Form Aform;
 
 
         public prompt()
         {
             InitializeComponent();
         }
+        public prompt(Form A): this()
+        {
+            Aform = A;
+
+        }
 
         private void closeAll_Click(object sender, EventArgs e)
         {
             DL.ADL.Close();
+
         }
 
-        private void prompt_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -47,6 +49,13 @@ namespace Kanjimusou
         {
             welcome Welcome = new welcome();
             Welcome.Show();
+            Aform.Close();
+            this.Close();
+        }
+        private void prompt_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
         }
     }
 }

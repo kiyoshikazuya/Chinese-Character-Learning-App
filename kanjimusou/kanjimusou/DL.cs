@@ -26,9 +26,6 @@ namespace Kanjimusou
         public static User Auser;
         public static DL ADL;
 
-        public static int counts = 0;
-        //计数判断窗体个数
-
         private bool showing = true;
 
 
@@ -98,18 +95,18 @@ namespace Kanjimusou
 
         private void dlu_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-              // Auser=UserManager.Login(this.name.Text,this.passwd.Text);
-               welcome Awelcom = new welcome();
+            try
+           {
+              Auser=UserManager.Login(this.name.Text,this.passwd.Text);
+               welcome Awelcom = new welcome(Auser);
                Awelcom.Show();
                this.Visible = false;
-            //}
-            //catch(UserException a)
-            //{
-            //    wrong Awrong = new wrong(a.Message);
-            //    Awrong.Show();
-            //}
+            }
+            catch(UserException a)
+            {
+                wrong Awrong = new wrong(a.Message);
+                Awrong.Show();
+            }
         }
 
         private void name_TextChanged(object sender, EventArgs e)

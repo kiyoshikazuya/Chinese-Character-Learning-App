@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(achievement));
             this.nameOfAch = new System.Windows.Forms.Label();
             this.course = new System.Windows.Forms.Label();
-            this.ach = new System.Windows.Forms.Label();
+            this.achOfToday = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.allHanzi = new System.Windows.Forms.Label();
             this.share = new System.Windows.Forms.Button();
@@ -40,29 +40,33 @@
             // nameOfAch
             // 
             this.nameOfAch.AutoSize = true;
-            this.nameOfAch.Location = new System.Drawing.Point(100, 62);
+            this.nameOfAch.BackColor = System.Drawing.Color.Transparent;
+            this.nameOfAch.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.nameOfAch.Location = new System.Drawing.Point(100, 57);
             this.nameOfAch.Name = "nameOfAch";
-            this.nameOfAch.Size = new System.Drawing.Size(29, 12);
+            this.nameOfAch.Size = new System.Drawing.Size(53, 21);
             this.nameOfAch.TabIndex = 0;
             this.nameOfAch.Text = "name";
             // 
             // course
             // 
             this.course.AutoSize = true;
-            this.course.Location = new System.Drawing.Point(184, 110);
+            this.course.BackColor = System.Drawing.Color.Transparent;
+            this.course.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.course.Location = new System.Drawing.Point(184, 105);
             this.course.Name = "course";
-            this.course.Size = new System.Drawing.Size(41, 12);
+            this.course.Size = new System.Drawing.Size(73, 21);
             this.course.TabIndex = 1;
-            this.course.Text = "course";
+            this.course.Text = "HSK甲级";
             // 
-            // ach
+            // achOfToday
             // 
-            this.ach.AutoSize = true;
-            this.ach.Location = new System.Drawing.Point(79, 301);
-            this.ach.Name = "ach";
-            this.ach.Size = new System.Drawing.Size(125, 12);
-            this.ach.TabIndex = 2;
-            this.ach.Text = "achievement of today";
+            this.achOfToday.AutoSize = true;
+            this.achOfToday.Location = new System.Drawing.Point(79, 317);
+            this.achOfToday.Name = "achOfToday";
+            this.achOfToday.Size = new System.Drawing.Size(125, 12);
+            this.achOfToday.TabIndex = 2;
+            this.achOfToday.Text = "achievement of today";
             // 
             // button1
             // 
@@ -81,7 +85,7 @@
             // allHanzi
             // 
             this.allHanzi.AutoSize = true;
-            this.allHanzi.Location = new System.Drawing.Point(79, 218);
+            this.allHanzi.Location = new System.Drawing.Point(79, 208);
             this.allHanzi.Name = "allHanzi";
             this.allHanzi.Size = new System.Drawing.Size(41, 12);
             this.allHanzi.TabIndex = 4;
@@ -111,13 +115,13 @@
             this.Controls.Add(this.share);
             this.Controls.Add(this.allHanzi);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.ach);
+            this.Controls.Add(this.achOfToday);
             this.Controls.Add(this.course);
             this.Controls.Add(this.nameOfAch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "achievement";
             this.Opacity = 0.9D;
-            this.Text = "achievement";
+            this.Text = "   ";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.achievement_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,7 +132,7 @@
 
         private System.Windows.Forms.Label nameOfAch;
         private System.Windows.Forms.Label course;
-        private System.Windows.Forms.Label ach;
+        private System.Windows.Forms.Label achOfToday;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label allHanzi;
         private System.Windows.Forms.Button share;

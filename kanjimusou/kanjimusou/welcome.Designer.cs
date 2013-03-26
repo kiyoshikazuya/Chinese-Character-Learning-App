@@ -81,11 +81,13 @@
             // userName
             // 
             this.userName.AutoSize = true;
+            this.userName.BackColor = System.Drawing.Color.Transparent;
+            this.userName.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.userName.ForeColor = System.Drawing.Color.Red;
             this.userName.Location = new System.Drawing.Point(155, 109);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(41, 12);
+            this.userName.Size = new System.Drawing.Size(0, 25);
             this.userName.TabIndex = 4;
-            this.userName.Text = "label1";
             // 
             // welcome
             // 

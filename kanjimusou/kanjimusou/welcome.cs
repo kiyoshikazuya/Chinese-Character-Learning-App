@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Kanjimusou.Lib;
 
 namespace Kanjimusou
 {
@@ -20,18 +21,22 @@ namespace Kanjimusou
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
+        User Auser;
 
         public welcome()
         {
             InitializeComponent();
-            //this.userName.Text = DL.Auser.Username;
+            this.userName.Text = DL.Auser.Username;
+        }
+        public welcome(User A):this()
+        {
+            Auser = A;
         }
 
         private void start_Click(object sender, EventArgs e)
         {
             learn Learn = new learn();
             Learn.Show();
-            DL.counts++;
             this.Close();
         }
 
@@ -39,7 +44,6 @@ namespace Kanjimusou
         {
             achievement Achievement = new achievement();
             Achievement.Show();
-            DL.counts++;
             this.Close();
         }
 
@@ -52,8 +56,10 @@ namespace Kanjimusou
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            prompt Apro = new prompt(this);
+            Apro.Show();
         }
+
 
     }
 }
