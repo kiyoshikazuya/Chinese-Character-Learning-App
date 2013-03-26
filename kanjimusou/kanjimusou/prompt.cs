@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Kanjimusou.Lib;
 
 namespace Kanjimusou
 {
@@ -21,15 +22,17 @@ namespace Kanjimusou
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
         public Form Aform;
+        public User Auser;
 
 
         public prompt()
         {
             InitializeComponent();
         }
-        public prompt(Form A): this()
+        public prompt(Form A,User user): this()
         {
             Aform = A;
+            Auser = user;
 
         }
 
@@ -47,7 +50,7 @@ namespace Kanjimusou
 
         private void doNotClose_Click(object sender, EventArgs e)
         {
-            welcome Welcome = new welcome();
+            welcome Welcome = new welcome(Auser);
             Welcome.Show();
             Aform.Close();
             this.Close();

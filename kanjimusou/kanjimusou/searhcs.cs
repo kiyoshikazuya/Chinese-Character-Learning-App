@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Kanjimusou
 {
-    public partial class success : Form
+    public partial class searhcs : Form
     {
-        public success()
+        public searhcs()
         {
             InitializeComponent();
         }

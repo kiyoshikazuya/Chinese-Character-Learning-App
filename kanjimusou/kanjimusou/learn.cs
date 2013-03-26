@@ -72,7 +72,7 @@ namespace Kanjimusou
 
         private void close_it_Click(object sender, EventArgs e)
         {
-            prompt Prompt = new prompt(this);
+            prompt Prompt = new prompt(this,Auser);
             Prompt.Show();
         }
 
@@ -82,7 +82,7 @@ namespace Kanjimusou
 
             try
             {
-                if (i - 1 >= Ahanzilist.Count())
+                if (i+1 >= Ahanzilist.Count())
                     throw new UserException("已学完当前所有课程！");
                 Ahanzi = HanziIO.Read(Ahanzilist[++i].Zi);
                 this.picture.Image = Ahanzi.Picture;
@@ -107,6 +107,11 @@ namespace Kanjimusou
         {
             string link = "http://zh.wikipedia.org/wiki/" + Ahanzi.Zi;
             System.Diagnostics.Process.Start("iexplore.exe", link); 
+        }
+
+        private void write_Click(object sender, EventArgs e)
+        {
+
         }
 
 

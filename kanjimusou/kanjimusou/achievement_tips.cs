@@ -36,5 +36,10 @@ namespace Kanjimusou
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
         }
+
+        private void closee_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
