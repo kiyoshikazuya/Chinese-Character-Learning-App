@@ -13,7 +13,7 @@ namespace Kanjimusou.Lib
         public const String Path = "user/";
         //{0}: username
         public const String UserDirFormat = Path + "{0}/";
-        public const String XmlPathFormat = UserDirFormat + "{0}.xml";
+        public const String ProfilePathFormat = UserDirFormat + "{0}.profile";
 
         /// <summary>
         /// 以用户名和密码进行登录
@@ -85,7 +85,7 @@ namespace Kanjimusou.Lib
         {
             if (!Directory.Exists(String.Format(UserDirFormat, user.Username)))
                 Directory.CreateDirectory(Path + user.Username);
-            String filepath = String.Format(XmlPathFormat, user.Username);
+            String filepath = String.Format(ProfilePathFormat, user.Username);
             FileStream fs = new FileStream(filepath,FileMode.OpenOrCreate);
             BinaryFormatter bp = new BinaryFormatter();
             bp.Serialize(fs, user);
@@ -94,7 +94,7 @@ namespace Kanjimusou.Lib
 
         private static User LoadFile(String username)
         {
-            String filepath = String.Format(XmlPathFormat, username);
+            String filepath = String.Format(ProfilePathFormat, username);
             FileStream fs = new FileStream(filepath, FileMode.Open);
             BinaryFormatter bp = new BinaryFormatter();
             User ret;
@@ -105,7 +105,7 @@ namespace Kanjimusou.Lib
 
         public static bool IsExisted(String username)
         {
-            return File.Exists(String.Format(XmlPathFormat, username));
+            return File.Exists(String.Format(ProfilePathFormat, username));
             /*
             try
             {
@@ -123,7 +123,7 @@ namespace Kanjimusou.Lib
 
         public static void Delete( String username )
         {
-            String filepath = String.Format(XmlPathFormat, username);
+            String filepath = String.Format(ProfilePathFormat, username);
             File.Delete(filepath);
         }
 
