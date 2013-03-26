@@ -43,11 +43,10 @@
             // picture
             // 
             this.picture.BackColor = System.Drawing.Color.Transparent;
-            this.picture.BackgroundImage = global::Kanjimusou.Properties.Resources.中;
             this.picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picture.Location = new System.Drawing.Point(12, 39);
+            this.picture.Location = new System.Drawing.Point(8, 20);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(300, 300);
+            this.picture.Size = new System.Drawing.Size(500, 500);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             // 
@@ -56,7 +55,7 @@
             this.sound.BackColor = System.Drawing.Color.Transparent;
             this.sound.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sound.BackgroundImage")));
             this.sound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.sound.Location = new System.Drawing.Point(327, 60);
+            this.sound.Location = new System.Drawing.Point(520, 460);
             this.sound.Name = "sound";
             this.sound.Size = new System.Drawing.Size(29, 29);
             this.sound.TabIndex = 1;
@@ -79,7 +78,7 @@
             // 
             // write
             // 
-            this.write.Location = new System.Drawing.Point(318, 134);
+            this.write.Location = new System.Drawing.Point(578, 464);
             this.write.Name = "write";
             this.write.Size = new System.Drawing.Size(49, 21);
             this.write.TabIndex = 3;
@@ -88,7 +87,7 @@
             // 
             // exercise
             // 
-            this.exercise.Location = new System.Drawing.Point(319, 212);
+            this.exercise.Location = new System.Drawing.Point(518, 414);
             this.exercise.Name = "exercise";
             this.exercise.Size = new System.Drawing.Size(48, 22);
             this.exercise.TabIndex = 4;
@@ -98,17 +97,18 @@
             // 
             // next
             // 
-            this.next.Location = new System.Drawing.Point(319, 291);
+            this.next.Location = new System.Drawing.Point(578, 414);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(48, 21);
             this.next.TabIndex = 5;
             this.next.Text = "next";
             this.next.UseVisualStyleBackColor = true;
+            this.next.Click += new System.EventHandler(this.next_Click);
             // 
             // paraphrase
             // 
             this.paraphrase.AutoSize = true;
-            this.paraphrase.Location = new System.Drawing.Point(10, 349);
+            this.paraphrase.Location = new System.Drawing.Point(518, 80);
             this.paraphrase.Name = "paraphrase";
             this.paraphrase.Size = new System.Drawing.Size(65, 12);
             this.paraphrase.TabIndex = 6;
@@ -117,7 +117,7 @@
             // more
             // 
             this.more.AutoSize = true;
-            this.more.Location = new System.Drawing.Point(255, 414);
+            this.more.Location = new System.Drawing.Point(518, 515);
             this.more.Name = "more";
             this.more.Size = new System.Drawing.Size(101, 12);
             this.more.TabIndex = 7;
@@ -130,7 +130,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(368, 442);
+            this.ClientSize = new System.Drawing.Size(630, 536);
             this.Controls.Add(this.more);
             this.Controls.Add(this.paraphrase);
             this.Controls.Add(this.next);

@@ -26,13 +26,17 @@ namespace Kanjimusou
         public exercise_form()
         {
             InitializeComponent();
-            /*
-            HanziIO hanzi = new HanziIO();
-            hanzi.OpenFile("Hanzi.xml");
-            hanziPictureBox1.Hanzi = hanzi.Read("中");*/
+        }
+
+
+
+        public exercise_form(Hanzi H):this()
+        {
+            hanziPictureBox1.Hanzi = HanziIO.Read(learn.Ahanzi.Zi);
             hanziPictureBox1.CorrectDrew += new BihuaHandler(OnCorrectDrew);
             hanziPictureBox1.WrongDrew += new BihuaHandler(OnWrongDrew);
             hanziPictureBox1.Completed += new BihuaHandler(OnCompleted);
+
         }
         public void OnCorrectDrew(Object sender, HanziEventArgs e)
         {
@@ -73,6 +77,11 @@ namespace Kanjimusou
         private void hanziPictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void write_Click(object sender, EventArgs e)
+        {
+            this.hanziPictureBox1.IsShowHelper = true;
         }
 
         

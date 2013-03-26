@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Kanjimusou.Lib;
+using System.Threading;
 
 namespace Kanjimusou
 {
@@ -20,7 +21,7 @@ namespace Kanjimusou
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
-
+        User Auser;
 
         public ZC()
         {
@@ -31,7 +32,15 @@ namespace Kanjimusou
         {
             try
             {
-                UserManager.Register(this.Username.Text, this.passwd1.Text);
+                Auser = UserManager.Register(this.Username.Text, this.passwd1.Text);
+                DL.ADL.Visible = false;
+                success hehe = new success();
+                this.Visible = false;
+                Thread.Sleep(1000);
+                hehe.Show();
+                welcome Awelcome = new welcome(Auser);
+                hehe.Close();
+                this.Close();
             }
             catch (UserException a)
             {
