@@ -642,7 +642,7 @@
     <info>愛情 友愛</info>
     <path>./resource/hzImage/愛.png</path>
   </Node>
-  
+
   <Node zi="" ziti="雅黑">
     <bihualist>
       <bihua>
@@ -689,5 +689,5 @@
     <info>華麗 中華</info>
     <path>./resource/hzImage/華.png</path>
   </Node>
-  
+    
 </Hanzis>

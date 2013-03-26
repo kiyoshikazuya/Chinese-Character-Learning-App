@@ -42,6 +42,7 @@ namespace Kanjimusou.Lib
             {
                 bihuabiao = new List<Bihua>();
                 name = xn.Attributes["zi"].Value;
+                if (name == "") continue;
                 zitiname = xn.Attributes["ziti"].Value;
                 elelist = xn.ChildNodes;
 

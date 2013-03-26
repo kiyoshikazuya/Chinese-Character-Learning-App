@@ -59,12 +59,5 @@ namespace Kanjimusou.Properties {
                 resourceCulture = value;
             }
         }
-        
-        internal static System.Drawing.Bitmap 中 {
-            get {
-                object obj = ResourceManager.GetObject("中", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
