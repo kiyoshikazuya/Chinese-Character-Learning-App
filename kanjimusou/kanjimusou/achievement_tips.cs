@@ -10,9 +10,8 @@ using System.Runtime.InteropServices;
 
 namespace Kanjimusou
 {
-    public partial class achievement : Form
+    public partial class achievement_tips : Form
     {
-
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
         [DllImport("user32.dll")]
@@ -21,33 +20,21 @@ namespace Kanjimusou
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
 
-        public achievement()
+
+
+        public achievement_tips()
         {
             InitializeComponent();
-            this.nameOfAch.Text = DL.Auser.Username;
-            //课程
-            //今日
-            //总
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public achievement_tips(string tip):this()
         {
-            prompt Apro = new prompt(this);
-            Apro.Show();
+            this.label1.Text = tip;
         }
 
-        private void achievement_MouseDown(object sender, MouseEventArgs e)
+        private void achievement_tips_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
         }
-
-        private void share_Click(object sender, EventArgs e)
-        {
-            prompt Apro = new prompt();
-            Apro.Show();
-        }
-
-
     }
 }
