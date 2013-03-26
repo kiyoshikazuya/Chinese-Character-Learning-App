@@ -85,6 +85,7 @@
             this.write.TabIndex = 3;
             this.write.Text = "w";
             this.write.UseVisualStyleBackColor = true;
+            this.write.Click += new System.EventHandler(this.write_Click);
             // 
             // exercise
             // 

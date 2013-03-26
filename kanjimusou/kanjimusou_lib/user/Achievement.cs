@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Kanjimusou;
 
 namespace Kanjimusou.Lib
 {
@@ -51,6 +52,8 @@ namespace Kanjimusou.Lib
                 if (AchievementReach != null) AchievementReach(this, String.Format(General,
                         String.Format(CompleteHanziStr, 1000)));
             }
+            
+
         }
     }
 }

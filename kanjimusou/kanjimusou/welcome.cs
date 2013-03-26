@@ -42,7 +42,7 @@ namespace Kanjimusou
 
         private void information_Click(object sender, EventArgs e)
         {
-            achievement Achievement = new achievement();
+            achievement Achievement = new achievement(Auser);
             Achievement.Show();
             this.Close();
         }
@@ -56,7 +56,7 @@ namespace Kanjimusou
 
         private void button1_Click(object sender, EventArgs e)
         {
-            prompt Apro = new prompt(this);
+            prompt Apro = new prompt(this,Auser);
             Apro.Show();
         }
 

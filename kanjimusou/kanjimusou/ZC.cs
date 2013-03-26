@@ -35,10 +35,11 @@ namespace Kanjimusou
                 Auser = UserManager.Register(this.Username.Text, this.passwd1.Text);
                 DL.ADL.Visible = false;
                 success hehe = new success();
-                this.Visible = false;
-                Thread.Sleep(1000);
                 hehe.Show();
+                this.Visible = false;
+                Thread.Sleep(500);
                 welcome Awelcome = new welcome(Auser);
+                Awelcome.Show();
                 hehe.Close();
                 this.Close();
             }
