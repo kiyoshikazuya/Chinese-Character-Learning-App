@@ -60,6 +60,7 @@
             this.sound.Size = new System.Drawing.Size(29, 29);
             this.sound.TabIndex = 1;
             this.sound.UseVisualStyleBackColor = false;
+            this.sound.Click += new System.EventHandler(this.sound_Click);
             // 
             // close_it
             // 
@@ -78,7 +79,7 @@
             // 
             // write
             // 
-            this.write.Location = new System.Drawing.Point(578, 464);
+            this.write.Location = new System.Drawing.Point(520, 307);
             this.write.Name = "write";
             this.write.Size = new System.Drawing.Size(49, 21);
             this.write.TabIndex = 3;
@@ -87,7 +88,7 @@
             // 
             // exercise
             // 
-            this.exercise.Location = new System.Drawing.Point(518, 414);
+            this.exercise.Location = new System.Drawing.Point(520, 379);
             this.exercise.Name = "exercise";
             this.exercise.Size = new System.Drawing.Size(48, 22);
             this.exercise.TabIndex = 4;
@@ -97,7 +98,7 @@
             // 
             // next
             // 
-            this.next.Location = new System.Drawing.Point(578, 414);
+            this.next.Location = new System.Drawing.Point(521, 244);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(48, 21);
             this.next.TabIndex = 5;
@@ -108,7 +109,8 @@
             // paraphrase
             // 
             this.paraphrase.AutoSize = true;
-            this.paraphrase.Location = new System.Drawing.Point(518, 80);
+            this.paraphrase.BackColor = System.Drawing.Color.Transparent;
+            this.paraphrase.Location = new System.Drawing.Point(518, 178);
             this.paraphrase.Name = "paraphrase";
             this.paraphrase.Size = new System.Drawing.Size(65, 12);
             this.paraphrase.TabIndex = 6;
@@ -117,12 +119,16 @@
             // more
             // 
             this.more.AutoSize = true;
-            this.more.Location = new System.Drawing.Point(518, 515);
+            this.more.BackColor = System.Drawing.Color.Transparent;
+            this.more.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.more.ForeColor = System.Drawing.Color.Transparent;
+            this.more.Location = new System.Drawing.Point(525, 502);
             this.more.Name = "more";
-            this.more.Size = new System.Drawing.Size(101, 12);
+            this.more.Size = new System.Drawing.Size(60, 25);
             this.more.TabIndex = 7;
             this.more.TabStop = true;
-            this.more.Text = "more information";
+            this.more.Text = "more";
+            this.more.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.more_LinkClicked);
             // 
             // learn
             // 
@@ -130,7 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(630, 536);
+            this.ClientSize = new System.Drawing.Size(597, 536);
             this.Controls.Add(this.more);
             this.Controls.Add(this.paraphrase);
             this.Controls.Add(this.next);

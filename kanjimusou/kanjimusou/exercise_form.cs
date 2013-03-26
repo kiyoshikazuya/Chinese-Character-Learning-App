@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using Kanjimusou.Lib;
 using System.Runtime.InteropServices;
 
+using System.Drawing.Imaging;
+
 namespace Kanjimusou
 {
     public partial class exercise_form : Form
@@ -20,7 +22,7 @@ namespace Kanjimusou
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
-
+        public static Image Zi = null;
 
 
         public exercise_form()
@@ -74,15 +76,22 @@ namespace Kanjimusou
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
         }
 
-        private void hanziPictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void write_Click(object sender, EventArgs e)
         {
             this.hanziPictureBox1.IsShowHelper = true;
         }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            Zi = this.hanziPictureBox1.DrawImage;
+            //测试
+            //Zi.Save(@"C:\Users\AOQI\Desktop\a.png", ImageFormat.Png);
+            //Zi.Dispose();
+        }
+
+
+
 
         
 

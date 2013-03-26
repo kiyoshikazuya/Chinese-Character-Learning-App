@@ -98,6 +98,7 @@ namespace Kanjimusou
             try
            {
               Auser=UserManager.Login(this.name.Text,this.passwd.Text);
+              Auser.ResetHanziWeekFinished();
                welcome Awelcom = new welcome(Auser);
                Awelcom.Show();
                this.Visible = false;

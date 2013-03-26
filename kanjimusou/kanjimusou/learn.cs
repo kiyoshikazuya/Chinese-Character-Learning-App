@@ -21,8 +21,16 @@ namespace Kanjimusou
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
-        string[] lists = { "中", "華", "华", "國", "国", "精", "诚", "誠", "愛", "爱", "民", "亲", "親" };
+
+
+        List<Hanzi> Ahanzilist = new List<Hanzi>(HanziIO.ReadAll());
+
+
+
         static public User Auser;
+
+
+
         static public Hanzi Ahanzi;
         int i = 0;
 
@@ -31,8 +39,9 @@ namespace Kanjimusou
         {
             InitializeComponent();
             Ale = this;
-            Ahanzi = HanziIO.Read(lists[i]);
+            Ahanzi = HanziIO.Read(Ahanzilist[i].Zi);
             this.picture.Image = Ahanzi.Picture;
+            this.paraphrase.Text = Ahanzi.Info;
         }
         public learn(User A):this()
         {
@@ -69,9 +78,37 @@ namespace Kanjimusou
 
         private void next_Click(object sender, EventArgs e)
         {
-            Ahanzi = HanziIO.Read(lists[++i]);
-            this.picture.Image = Ahanzi.Picture;
+            Auser.addLearnLog(Ahanzi.Zi, exercise_form.Zi);
+
+            try
+            {
+                if (i - 1 >= Ahanzilist.Count())
+                    throw new UserException("已学完当前所有课程！");
+                Ahanzi = HanziIO.Read(Ahanzilist[++i].Zi);
+                this.picture.Image = Ahanzi.Picture;
+
+                this.paraphrase.Text = Ahanzi.Info;
+            }
+
+            catch (UserException A)
+            {
+                wrong Awrong = new wrong(A.Message);
+                Awrong.Show();
+            }
+            
         }
+
+        private void sound_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void more_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string link = "http://zh.wikipedia.org/wiki/" + Ahanzi.Zi;
+            System.Diagnostics.Process.Start("iexplore.exe", link); 
+        }
+
 
 
 

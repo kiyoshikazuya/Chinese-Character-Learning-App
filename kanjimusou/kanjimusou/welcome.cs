@@ -26,16 +26,16 @@ namespace Kanjimusou
         public welcome()
         {
             InitializeComponent();
-            this.userName.Text = DL.Auser.Username;
         }
         public welcome(User A):this()
         {
             Auser = A;
+            this.userName.Text = Auser.Username;
         }
 
         private void start_Click(object sender, EventArgs e)
         {
-            learn Learn = new learn();
+            learn Learn = new learn(Auser);
             Learn.Show();
             this.Close();
         }
