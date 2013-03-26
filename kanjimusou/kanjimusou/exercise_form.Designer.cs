@@ -47,7 +47,11 @@
             this.backspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backspace.Location = new System.Drawing.Point(20, 19);
             this.backspace.Name = "backspace";
+<<<<<<< HEAD
             this.backspace.Size = new System.Drawing.Size(43, 41);
+=======
+            this.backspace.Size = new System.Drawing.Size(35, 35);
+>>>>>>> UI
             this.backspace.TabIndex = 1;
             this.backspace.UseVisualStyleBackColor = false;
             this.backspace.Click += new System.EventHandler(this.backspace_Click);
@@ -59,9 +63,15 @@
             this.clean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.clean.FlatAppearance.BorderSize = 0;
             this.clean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.clean.Location = new System.Drawing.Point(110, 18);
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(43, 41);
+=======
+            this.clean.Location = new System.Drawing.Point(73, 19);
+            this.clean.Name = "clean";
+            this.clean.Size = new System.Drawing.Size(35, 35);
+>>>>>>> UI
             this.clean.TabIndex = 2;
             this.clean.UseVisualStyleBackColor = false;
             this.clean.Click += new System.EventHandler(this.clean_Click);
@@ -73,9 +83,15 @@
             this.close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.close.FlatAppearance.BorderSize = 0;
             this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.close.Location = new System.Drawing.Point(301, 18);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(43, 41);
+=======
+            this.close.Location = new System.Drawing.Point(196, 19);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(35, 35);
+>>>>>>> UI
             this.close.TabIndex = 3;
             this.close.UseVisualStyleBackColor = false;
             this.close.Click += new System.EventHandler(this.close_Click);
@@ -114,9 +130,15 @@
             this.write.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.write.FlatAppearance.BorderSize = 0;
             this.write.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
             this.write.Location = new System.Drawing.Point(200, 18);
             this.write.Name = "write";
             this.write.Size = new System.Drawing.Size(43, 41);
+=======
+            this.write.Location = new System.Drawing.Point(128, 19);
+            this.write.Name = "write";
+            this.write.Size = new System.Drawing.Size(35, 35);
+>>>>>>> UI
             this.write.TabIndex = 5;
             this.write.UseVisualStyleBackColor = false;
             this.write.Click += new System.EventHandler(this.write_Click);
