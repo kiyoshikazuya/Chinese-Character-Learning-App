@@ -50,6 +50,7 @@
             this.hanziPictureBox1.Size = new System.Drawing.Size(500, 500);
             this.hanziPictureBox1.TabIndex = 0;
             this.hanziPictureBox1.TabStop = false;
+            this.hanziPictureBox1.Click += new System.EventHandler(this.hanziPictureBox1_Click);
             // 
             // backspace
             // 

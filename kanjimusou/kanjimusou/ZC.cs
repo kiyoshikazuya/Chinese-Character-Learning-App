@@ -37,7 +37,7 @@ namespace Kanjimusou
                 success hehe = new success();
                 hehe.Show();
                 this.Visible = false;
-                Thread.Sleep(500);
+                Thread.Sleep(2000);
                 welcome Awelcome = new welcome(Auser);
                 Awelcome.Show();
                 hehe.Close();

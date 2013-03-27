@@ -36,6 +36,8 @@ namespace Kanjimusou
              Opacity = 0.0;      //窗体透明度为0
             Atimer.Start(); //计时开始
             ADL = this;
+            chanllenge AAA = new chanllenge();
+            AAA.Show();
 
         }
 
@@ -58,7 +60,7 @@ namespace Kanjimusou
             {
                 if (Opacity + d >= 0.9)
                 {
-                    Opacity = 0.85;
+                    Opacity = 0.9;
                     Atimer.Stop();
                 }
                 else
@@ -112,7 +114,7 @@ namespace Kanjimusou
 
         private void name_TextChanged(object sender, EventArgs e)
         {
-
+            this.passwd.Text = "";
         }
 
 
