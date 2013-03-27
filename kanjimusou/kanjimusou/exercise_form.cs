@@ -90,6 +90,11 @@ namespace Kanjimusou
             //Zi.Dispose();
         }
 
+        private void hanziPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
