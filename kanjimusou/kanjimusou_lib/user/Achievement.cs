@@ -52,8 +52,12 @@ namespace Kanjimusou.Lib
         public Achievement(User user)
         {
             user.FinishHanzi += OnFinishHanzi;
-            user.Challenge.FinishLevel += OnFinishLevel; 
             arcList = new List<AchievementElement>();
+        }
+
+        public void setChallenge( Challenge cha )
+        {
+            cha.FinishLevel += OnFinishLevel;
         }
 
         public void OnFinishHanzi(Object sender, AchievementArgs args)
