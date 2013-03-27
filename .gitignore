@@ -108,7 +108,7 @@ Backup*/
 UpgradeLog*.XML
 
 # Test
-Test/
+ConsoleApplication1/
 
 #temp resource
 *.wav
