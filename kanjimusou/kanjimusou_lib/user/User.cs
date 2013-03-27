@@ -24,10 +24,10 @@ namespace Kanjimusou.Lib
         private int hanziWeekPlan;
         private int hanziWeekFinished;
         private int weekCount = 1;
+        private int maxReachedLevel = 0;
         private DateTime planStartTime;
 
         internal Achievement achievement;
-        internal Challenge challenge;
 
         public event AchievementHandler FinishHanzi;
 
@@ -47,6 +47,12 @@ namespace Kanjimusou.Lib
         {
             get { return password; }
             set { password = value; }
+        }
+
+        public int MaxReachedLevel
+        {
+            get { return maxReachedLevel; }
+            set { maxReachedLevel = value; }
         }
 
         /// <summary>
@@ -123,16 +129,10 @@ namespace Kanjimusou.Lib
             get { return achievement; }
         }
 
-        public Challenge Challenge
-        {
-            get { return challenge; }
-        }
-
         public User(String name, String pass)
         {
             this.username = name;
             this.password = pass;
-            this.challenge = new Challenge(this);
         }
 
         /// <summary>
