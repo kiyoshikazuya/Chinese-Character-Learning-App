@@ -31,10 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(achievement));
             this.nameOfAch = new System.Windows.Forms.Label();
             this.course = new System.Windows.Forms.Label();
-            this.achOfToday = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.allHanzi = new System.Windows.Forms.Label();
             this.share = new System.Windows.Forms.Button();
+            this.allHanzi = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // nameOfAch
@@ -59,15 +65,6 @@
             this.course.TabIndex = 1;
             this.course.Text = "HSK甲级";
             // 
-            // achOfToday
-            // 
-            this.achOfToday.AutoSize = true;
-            this.achOfToday.Location = new System.Drawing.Point(79, 317);
-            this.achOfToday.Name = "achOfToday";
-            this.achOfToday.Size = new System.Drawing.Size(125, 12);
-            this.achOfToday.TabIndex = 2;
-            this.achOfToday.Text = "achievement of today";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -81,15 +78,6 @@
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // allHanzi
-            // 
-            this.allHanzi.AutoSize = true;
-            this.allHanzi.Location = new System.Drawing.Point(79, 208);
-            this.allHanzi.Name = "allHanzi";
-            this.allHanzi.Size = new System.Drawing.Size(41, 12);
-            this.allHanzi.TabIndex = 4;
-            this.allHanzi.Text = "label1";
             // 
             // share
             // 
@@ -105,6 +93,55 @@
             this.share.UseVisualStyleBackColor = false;
             this.share.Click += new System.EventHandler(this.share_Click);
             // 
+            // allHanzi
+            // 
+            this.allHanzi.AutoSize = true;
+            this.allHanzi.BackColor = System.Drawing.Color.Transparent;
+            this.allHanzi.Location = new System.Drawing.Point(79, 216);
+            this.allHanzi.Name = "allHanzi";
+            this.allHanzi.Size = new System.Drawing.Size(41, 12);
+            this.allHanzi.TabIndex = 4;
+            this.allHanzi.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(44, 317);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Location = new System.Drawing.Point(139, 317);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Location = new System.Drawing.Point(224, 317);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(85, 317);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "无，先去学习吧~";
+            this.label1.Visible = false;
+            // 
             // achievement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -112,10 +149,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(367, 473);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.share);
             this.Controls.Add(this.allHanzi);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.achOfToday);
             this.Controls.Add(this.course);
             this.Controls.Add(this.nameOfAch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -123,6 +163,9 @@
             this.Opacity = 0.9D;
             this.Text = "   ";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.achievement_MouseDown);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,9 +175,12 @@
 
         private System.Windows.Forms.Label nameOfAch;
         private System.Windows.Forms.Label course;
-        private System.Windows.Forms.Label achOfToday;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label allHanzi;
         private System.Windows.Forms.Button share;
+        private System.Windows.Forms.Label allHanzi;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
     }
 }

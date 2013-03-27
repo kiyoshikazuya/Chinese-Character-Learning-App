@@ -54,9 +54,9 @@
             // 
             // backspace
             // 
-            this.backspace.Location = new System.Drawing.Point(537, 24);
+            this.backspace.Location = new System.Drawing.Point(537, 32);
             this.backspace.Name = "backspace";
-            this.backspace.Size = new System.Drawing.Size(65, 58);
+            this.backspace.Size = new System.Drawing.Size(53, 47);
             this.backspace.TabIndex = 1;
             this.backspace.Text = "backspace";
             this.backspace.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@
             // 
             // close
             // 
-            this.close.Location = new System.Drawing.Point(542, 120);
+            this.close.Location = new System.Drawing.Point(537, 126);
             this.close.Name = "close";
-            this.close.Size = new System.Drawing.Size(59, 61);
+            this.close.Size = new System.Drawing.Size(53, 47);
             this.close.TabIndex = 2;
             this.close.Text = "close";
             this.close.UseVisualStyleBackColor = true;
@@ -74,9 +74,9 @@
             // 
             // write
             // 
-            this.write.Location = new System.Drawing.Point(548, 207);
+            this.write.Location = new System.Drawing.Point(537, 213);
             this.write.Name = "write";
-            this.write.Size = new System.Drawing.Size(53, 65);
+            this.write.Size = new System.Drawing.Size(53, 51);
             this.write.TabIndex = 3;
             this.write.Text = "write";
             this.write.UseVisualStyleBackColor = true;
@@ -84,9 +84,9 @@
             // 
             // clean
             // 
-            this.clean.Location = new System.Drawing.Point(551, 299);
+            this.clean.Location = new System.Drawing.Point(537, 311);
             this.clean.Name = "clean";
-            this.clean.Size = new System.Drawing.Size(50, 69);
+            this.clean.Size = new System.Drawing.Size(53, 49);
             this.clean.TabIndex = 4;
             this.clean.Text = "clean";
             this.clean.UseVisualStyleBackColor = true;
@@ -94,9 +94,9 @@
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(548, 399);
+            this.save.Location = new System.Drawing.Point(537, 401);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(62, 74);
+            this.save.Size = new System.Drawing.Size(53, 48);
             this.save.TabIndex = 5;
             this.save.Text = "save";
             this.save.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // tips
             // 
             this.tips.AutoSize = true;
-            this.tips.Location = new System.Drawing.Point(549, 500);
+            this.tips.Location = new System.Drawing.Point(534, 500);
             this.tips.Name = "tips";
             this.tips.Size = new System.Drawing.Size(41, 12);
             this.tips.TabIndex = 6;
@@ -113,7 +113,7 @@
             // 
             // exercise_form
             // 
-            this.ClientSize = new System.Drawing.Size(658, 527);
+            this.ClientSize = new System.Drawing.Size(622, 527);
             this.Controls.Add(this.tips);
             this.Controls.Add(this.save);
             this.Controls.Add(this.clean);

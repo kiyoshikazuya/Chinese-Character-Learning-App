@@ -78,7 +78,7 @@ namespace Kanjimusou
 
         private void next_Click(object sender, EventArgs e)
         {
-            Auser.addLearnLog(Ahanzi.Zi, exercise_form.Zi);
+            //Auser.addLearnLog(Ahanzi.Zi, exercise_form.Zi);
 
             try
             {
