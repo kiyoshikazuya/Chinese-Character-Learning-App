@@ -58,6 +58,7 @@
     <Compile Include="user\User.cs" />
     <Compile Include="user\UserException.cs" />
     <Compile Include="user\UserManager.cs" />
+    <Compile Include="user\Challenge.cs" />
     <Compile Include="util\Sound.cs" />
   </ItemGroup>
   <ItemGroup>

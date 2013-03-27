@@ -27,6 +27,7 @@ namespace Kanjimusou.Lib
         private DateTime planStartTime;
 
         internal Achievement achievement;
+        internal Challenge challenge;
 
         public event AchievementHandler FinishHanzi;
 
@@ -92,10 +93,16 @@ namespace Kanjimusou.Lib
             get { return achievement; }
         }
 
+        public Challenge Challenge
+        {
+            get { return challenge; }
+        }
+
         public User(String name, String pass)
         {
             this.username = name;
             this.password = pass;
+            this.challenge = new Challenge(this);
         }
 
         /// <summary>
