@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Security.Cryptography;
+using System.IO;
 
 namespace Kanjimusou.Lib
 {
@@ -156,6 +157,7 @@ namespace Kanjimusou.Lib
             if (image == null) return;
             if (log.pathList.Count >= 5)
             {
+                File.Delete(log.pathList[0]);
                 log.pathList.RemoveAt(0);
             }
             DateTime now = DateTime.Now;
