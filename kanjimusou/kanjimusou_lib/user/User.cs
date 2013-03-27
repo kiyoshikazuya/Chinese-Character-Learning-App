@@ -31,50 +31,77 @@ namespace Kanjimusou.Lib
 
         public event AchievementHandler FinishHanzi;
 
+        /// <summary>
+        /// 取得和设置用户名
+        /// </summary>
         public String Username
         {
             get { return username; }
             set { username = value; }
         }
 
+        /// <summary>
+        /// 设置密码
+        /// </summary>
         public String Password
         {
             get { return password; }
             set { password = value; }
         }
 
+        /// <summary>
+        /// 取得学习记录
+        /// </summary>
         public Dictionary<String, HanziLearnLog> LearnLog
         {
             get { return new Dictionary<string, HanziLearnLog>(learnDic); }
         }
 
+        /// <summary>
+        /// 取得和设置汉字周计划数量
+        /// </summary>
         public int HanziWeekPlan
         {
             get { return hanziWeekPlan; }
             set { hanziWeekPlan = value; }
         }
 
+        /// <summary>
+        /// 取得本周已完成的汉字数
+        /// </summary>
         public int HanziWeekFinished
         {
             get { return hanziWeekFinished; }
         }
 
+        /// <summary>
+        /// 取得本周待完成的汉字数
+        /// </summary>
         public int HanziWeekPlanRest
         {
             get { return (hanziWeekPlan - hanziWeekFinished < 0? 0 : hanziWeekPlan - hanziWeekFinished); }
         }
 
+        /// <summary>
+        /// 检查是否已经完成周计划
+        /// </summary>
         public bool IsHanziWeekPlanFinish
         {
             get { return (HanziWeekPlanRest == 0); }
         }
 
+        /// <summary>
+        /// 取得和设置计划开始时间
+        /// </summary>
         public DateTime PlanStartTime
         {
             get { return planStartTime; }
             set { planStartTime = value; }
         }
-
+        
+        /// <summary>
+        /// 取得完成的汉字的总数量
+        /// </summary>
         public int HanziTotalFinished
         {
             get
@@ -88,6 +115,9 @@ namespace Kanjimusou.Lib
             }
         }
 
+        /// <summary>
+        /// 取得成就对象
+        /// </summary>
         public Achievement Achievement
         {
             get { return achievement; }

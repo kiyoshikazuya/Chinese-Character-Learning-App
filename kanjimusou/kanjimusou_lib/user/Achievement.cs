@@ -42,6 +42,9 @@ namespace Kanjimusou.Lib
 
         private List<AchievementElement> arcList;
 
+        /// <summary>
+        /// 当成就达成时产生的事件
+        /// </summary>
         public event Action<Object, String> AchievementReach;
 
         public List<AchievementElement> ArcList
