@@ -86,8 +86,8 @@ namespace Kanjimusou
         {
             Zi = this.hanziPictureBox1.DrawImage;
             //测试
-            //Zi.Save(@"C:\Users\AOQI\Desktop\a.png", ImageFormat.Png);
-            //Zi.Dispose();
+            Zi.Save(Application.StartupPath +"\\user\\" +learn.Auser.Username+"\\"+ this.hanziPictureBox1.Hanzi.Zi +DateTime.Now.DayOfYear.ToString()+ ".png", ImageFormat.Png);
+            Zi.Dispose();
         }
 
         private void hanziPictureBox1_Click(object sender, EventArgs e)

@@ -38,6 +38,7 @@ namespace Kanjimusou
 
         private void closeAll_Click(object sender, EventArgs e)
         {
+            UserManager.SaveFile(Auser);
             DL.ADL.Close();
 
         }
