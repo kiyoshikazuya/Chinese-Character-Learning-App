@@ -1,6 +1,6 @@
 ﻿namespace Kanjimusou
 {
-    partial class chanllenge
+    partial class challenge
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(chanllenge));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(challenge));
             this.next = new System.Windows.Forms.Button();
             this.hanziPictureBox1 = new Kanjimusou.Lib.HanziPictureBox();
             this.resttime = new System.Windows.Forms.PictureBox();
@@ -58,7 +58,7 @@
             this.hanziPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("hanziPictureBox1.Image")));
             this.hanziPictureBox1.IsInkMode = true;
             this.hanziPictureBox1.IsShowHelper = false;
-            this.hanziPictureBox1.Location = new System.Drawing.Point(12, 49);
+            this.hanziPictureBox1.Location = new System.Drawing.Point(27, 63);
             this.hanziPictureBox1.Name = "hanziPictureBox1";
             this.hanziPictureBox1.Size = new System.Drawing.Size(500, 500);
             this.hanziPictureBox1.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             this.resttime.BackColor = System.Drawing.Color.Transparent;
             this.resttime.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resttime.BackgroundImage")));
-            this.resttime.Location = new System.Drawing.Point(12, 566);
+            this.resttime.Location = new System.Drawing.Point(12, 555);
             this.resttime.Name = "resttime";
             this.resttime.Size = new System.Drawing.Size(500, 20);
             this.resttime.TabIndex = 2;
@@ -85,7 +85,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(7, 589);
+            this.label1.Location = new System.Drawing.Point(12, 589);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 4;
@@ -104,20 +104,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // chanllenge
+            // challenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(527, 632);
+            this.ClientSize = new System.Drawing.Size(558, 729);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.resttime);
             this.Controls.Add(this.hanziPictureBox1);
             this.Controls.Add(this.next);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "chanllenge";
+            this.Name = "challenge";
             this.Text = "chanllenge";
             ((System.ComponentModel.ISupportInitialize)(this.hanziPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resttime)).EndInit();

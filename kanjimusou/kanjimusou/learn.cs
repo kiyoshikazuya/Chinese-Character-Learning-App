@@ -183,6 +183,27 @@ namespace Kanjimusou
             
         }
 
+        private void prev_Click(object sender, EventArgs e)
+        {
+            Sound.PlaySE("se_buttonclick");
+
+            try
+            {
+                if (i - 1 < 0)
+                    throw new UserException("已返回字表顶端！");
+                Ahanzi = HanziIO.Read(Ahanzilist[--i].Zi);
+                this.hanziPictureBox1.Hanzi = Ahanzi;
+                this.paraphrase.Text = Ahanzi.Info;
+                this.infoLabel.Text = "已成功载入汉字 " + "'" + Ahanzi.Zi + "'";
+            }
+
+            catch (UserException A)
+            {
+                wrong Awrong = new wrong(A.Message);
+                Awrong.OnShow();
+            }
+        }
+
         private void sound_Click(object sender, EventArgs e)
         {
             Sound.PlaySE("se_buttonclick");
@@ -223,27 +244,6 @@ namespace Kanjimusou
             this.doClose = doClose;
             showing = false;
             Atimer.Start();
-        }
-
-        private void prev_Click(object sender, EventArgs e)
-        {
-            Sound.PlaySE("se_buttonclick");
-
-            try
-            {
-                if (i - 1 < 0 )
-                    throw new UserException("已返回字表顶端！");
-                Ahanzi = HanziIO.Read(Ahanzilist[--i].Zi);
-                this.hanziPictureBox1.Hanzi = Ahanzi;
-                this.paraphrase.Text = Ahanzi.Info;
-                this.infoLabel.Text = "已成功载入汉字 " + "'" + Ahanzi.Zi + "'";
-            }
-
-            catch (UserException A)
-            {
-                wrong Awrong = new wrong(A.Message);
-                Awrong.OnShow();
-            }
         }
 
     }

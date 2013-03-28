@@ -12,9 +12,11 @@ namespace Kanjimusou.Lib
 
         private User user;
         private List<Hanzi> hzlist;
-        private const int maxTime = 32;
+        private const double maxTime = 32;
         private int nowLevel = 0;
-        private int nowTime = 0;
+        private double nowTime = 0;
+        private double nowMaxTime = 0;
+
         private Hanzi nowZi = null;
         System.Timers.Timer t;
 
@@ -26,7 +28,7 @@ namespace Kanjimusou.Lib
             get { return nowLevel; }
         }
 
-        public int NowTime
+        public double NowTime
         {
             get { return nowTime; }
         }
@@ -34,6 +36,11 @@ namespace Kanjimusou.Lib
         public Hanzi NowZi
         {
             get { return nowZi; }
+        }
+
+        public double NowMaxTime
+        {
+            get { return nowMaxTime; }
         }
         
         public Challenge( User user )
@@ -48,9 +55,10 @@ namespace Kanjimusou.Lib
             nowLevel++; 
             Random ra = new Random();
             nowZi = hzlist.ElementAt(ra.Next(hzlist.Count));
-            nowTime = ( maxTime - nowLevel >= 5 ? maxTime-nowLevel : 5 );
+            nowMaxTime = ( maxTime - nowLevel >= 5 ? maxTime-nowLevel : 5 );
+            nowTime = nowMaxTime;
             t = new System.Timers.Timer();
-            t.Interval = 1000;
+            t.Interval = 25;
             t.Elapsed += NowTimeChange;
             t.AutoReset = true;
             t.Enabled = true;
@@ -58,8 +66,8 @@ namespace Kanjimusou.Lib
 
         public void NowTimeChange(object source, System.Timers.ElapsedEventArgs e)
         {
-            nowTime--;
-            if (nowTime == 0)
+            nowTime-=(25/1000);
+            if (nowTime <= 0)
             {
                 nowLevel--;
                 t.Close();
