@@ -41,8 +41,12 @@ namespace Kanjimusou
             Atimer.Interval = 25;
             Ale = this;
             Ahanzi = HanziIO.Read(Ahanzilist[i].Zi);
-            this.picture.Image = Ahanzi.Picture;
+            this.hanziPictureBox1.Hanzi = Ahanzi;
+            hanziPictureBox1.CorrectDrew += new BihuaHandler(OnCorrectDrew);
+            hanziPictureBox1.WrongDrew += new BihuaHandler(OnWrongDrew);
+            hanziPictureBox1.Completed += new BihuaHandler(OnCompleted);
             this.paraphrase.Text = Ahanzi.Info;
+            this.infoLabel.Text = "已成功载入汉字 " + "'" + Ahanzi.Zi + "'";
         }
 
         public learn(User A)
@@ -53,8 +57,12 @@ namespace Kanjimusou
             Atimer.Interval = 25;
             Ale = this;
             Ahanzi = HanziIO.Read(Ahanzilist[i].Zi);
-            this.picture.Image = Ahanzi.Picture;
+            this.hanziPictureBox1.Hanzi = Ahanzi;
+            hanziPictureBox1.CorrectDrew += new BihuaHandler(OnCorrectDrew);
+            hanziPictureBox1.WrongDrew += new BihuaHandler(OnWrongDrew);
+            hanziPictureBox1.Completed += new BihuaHandler(OnCompleted);
             this.paraphrase.Text = Ahanzi.Info;
+            this.infoLabel.Text = "已成功载入汉字 " + "'" + Ahanzi.Zi + "'";
         }
 
         public learn(User A,Hanzi H)
@@ -65,8 +73,44 @@ namespace Kanjimusou
             Atimer.Tick += Atimer_Tick;
             Atimer.Interval = 25;
             Ale = this;
-            this.picture.Image = Ahanzi.Picture;
+            this.hanziPictureBox1.Hanzi = Ahanzi;
+            hanziPictureBox1.CorrectDrew += new BihuaHandler(OnCorrectDrew);
+            hanziPictureBox1.WrongDrew += new BihuaHandler(OnWrongDrew);
+            hanziPictureBox1.Completed += new BihuaHandler(OnCompleted);
             this.paraphrase.Text = Ahanzi.Info;
+            this.infoLabel.Text = "已成功载入汉字 " + "'" + Ahanzi.Zi + "'";
+        }
+
+        public void OnCorrectDrew(Object sender, HanziEventArgs e)
+        {
+            infoLabel.Text = String.Format("成功画了一笔，已画了{0}画", e.Bihuashu);
+        }
+
+        public void OnWrongDrew(Object sender, HanziEventArgs e)
+        {
+            infoLabel.Text = String.Format("错误的一笔，已画了{0}画", e.Bihuashu);
+        }
+
+        public void OnCompleted(Object sender, HanziEventArgs e)
+        {
+            infoLabel.Text = String.Format("已完成整个汉字");
+        }
+
+        private void backspace_Click(object sender, EventArgs e)
+        {
+            hanziPictureBox1.UndoDraw();
+        }
+
+        private void clean_Click(object sender, EventArgs e)
+        {
+            hanziPictureBox1.ClearDraw();
+        }
+
+        private void tips_Click(object sender, EventArgs e)
+        {
+            if (this.hanziPictureBox1.IsShowHelper) this.hanziPictureBox1.IsShowHelper = false;
+            else this.hanziPictureBox1.IsShowHelper = true;
+            hanziPictureBox1.Refresh();
         }
 
         private void Atimer_Tick(object sender, EventArgs e)
@@ -108,14 +152,6 @@ namespace Kanjimusou
 
         }
 
-        private void exercise_Click(object sender, EventArgs e)
-        {   
-            Sound.PlaySE("se_buttonclick");
-            exercise_form AnexerciseForm = new exercise_form(Ahanzi);
-            
-            AnexerciseForm.Show();
-        }
-
         private void close_it_Click(object sender, EventArgs e)
         {   
             Sound.PlaySE("se_buttonclick");
@@ -128,16 +164,15 @@ namespace Kanjimusou
         private void next_Click(object sender, EventArgs e)
         {   
             Sound.PlaySE("se_buttonclick");
-            Auser.addLearnLog(Ahanzi.Zi, exercise_form.Zi);
            
             try
             {
                 if (i+1 >= Ahanzilist.Count())
                     throw new UserException("已学完当前所有课程！");
                 Ahanzi = HanziIO.Read(Ahanzilist[++i].Zi);
-                this.picture.Image = Ahanzi.Picture;
-
+                this.hanziPictureBox1.Hanzi = Ahanzi;
                 this.paraphrase.Text = Ahanzi.Info;
+                this.infoLabel.Text = "已成功载入汉字 " + "'" + Ahanzi.Zi + "'";
             }
 
             catch (UserException A)
@@ -160,11 +195,6 @@ namespace Kanjimusou
             Sound.PlaySE("se_buttonclick");
             string link = "http://zh.wikipedia.org/wiki/" + Ahanzi.Zi;
             System.Diagnostics.Process.Start("iexplore.exe", link); 
-        }
-
-        private void write_Click(object sender, EventArgs e)
-        {
-
         }
 
         void UnblockWindow(object sender, FormClosedEventArgs e)
@@ -195,6 +225,26 @@ namespace Kanjimusou
             Atimer.Start();
         }
 
+        private void prev_Click(object sender, EventArgs e)
+        {
+            Sound.PlaySE("se_buttonclick");
+
+            try
+            {
+                if (i - 1 < 0 )
+                    throw new UserException("已返回字表顶端！");
+                Ahanzi = HanziIO.Read(Ahanzilist[--i].Zi);
+                this.hanziPictureBox1.Hanzi = Ahanzi;
+                this.paraphrase.Text = Ahanzi.Info;
+                this.infoLabel.Text = "已成功载入汉字 " + "'" + Ahanzi.Zi + "'";
+            }
+
+            catch (UserException A)
+            {
+                wrong Awrong = new wrong(A.Message);
+                Awrong.OnShow();
+            }
+        }
 
     }
 }

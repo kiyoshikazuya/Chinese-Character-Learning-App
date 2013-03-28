@@ -58,12 +58,6 @@
     <Compile Include="achievement_tips.Designer.cs">
       <DependentUpon>achievement_tips.cs</DependentUpon>
     </Compile>
-    <Compile Include="exercise_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="exercise_form.Designer.cs">
-      <DependentUpon>exercise_form.cs</DependentUpon>
-    </Compile>
     <Compile Include="learn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +113,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="achievement_tips.resx">
       <DependentUpon>achievement_tips.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="exercise_form.resx">
-      <DependentUpon>exercise_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="learn.resx">
       <DependentUpon>learn.cs</DependentUpon>
