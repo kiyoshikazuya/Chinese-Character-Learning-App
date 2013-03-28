@@ -94,7 +94,7 @@ namespace Kanjimusou
         public void OnCompleted(Object sender, HanziEventArgs e)
         {
             infoLabel.Text = String.Format("已完成整个汉字");
-            Auser.addLearnLog(hanziPictureBox1.Hanzi.Zi,hanziPictureBox1.Hanzi.Picture);
+            Auser.addLearnLog(hanziPictureBox1.Hanzi.Zi,hanziPictureBox1.DrawImage);
         }
 
         private void backspace_Click(object sender, EventArgs e)
@@ -254,7 +254,16 @@ namespace Kanjimusou
         private void save_Click(object sender, EventArgs e)
         {
             saveFileDialog1.ShowDialog();
-
+            try
+            {
+                hanziPictureBox1.DrawImage.Save(saveFileDialog1.FileName);
+            }
+            catch (ExternalException ex)
+            {
+            }
+            catch (ArgumentException ex)
+            {
+            }
         }
 
     }
