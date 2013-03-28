@@ -161,8 +161,8 @@ namespace Kanjimusou.Lib
                 log.pathList.RemoveAt(0);
             }
             DateTime now = DateTime.Now;
-            String path = String.Format(UserManager.UserDirFormat + "{1}-{2}-{3}_{4}_{5}.png", username,
-                    zi, now.ToShortDateString(), now.Hour, now.Minute, now.Second);
+            String path = String.Format(UserManager.UserDirFormat + "{1}-{2}-{3}-{4}-{5}_{6}_{7}.png", username,
+                    zi, now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
             image.Save(path);
             log.pathList.Add(path);
         }
