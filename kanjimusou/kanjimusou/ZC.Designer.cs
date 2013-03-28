@@ -120,6 +120,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ZC";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "logon";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.logon_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();

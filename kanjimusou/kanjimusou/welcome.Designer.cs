@@ -103,6 +103,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "welcome";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "welcome";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.welcome_MouseDown);
             this.ResumeLayout(false);

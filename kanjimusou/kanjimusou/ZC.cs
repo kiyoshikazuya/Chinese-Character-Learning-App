@@ -21,11 +21,49 @@ namespace Kanjimusou
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MOVE = 0xF010;
         public const int HTCAPTTION = 0x0002;
+
         User Auser;
+        private bool showing = true;
+        private bool doClose = true;
+        private System.Windows.Forms.Timer Atimer = new System.Windows.Forms.Timer();
 
         public ZC()
         {
             InitializeComponent();
+            Atimer.Tick += Atimer_Tick;
+            Atimer.Interval = 25;
+        }
+
+        private void Atimer_Tick(object sender, EventArgs e)
+        {
+            double d = 0.05;
+            if (showing)
+            {
+                if (Opacity + d >= 0.9)
+                {
+                    Opacity = 0.85;
+                    Atimer.Stop();
+                }
+                else
+                {
+                    Opacity += d;
+                }
+            }
+            else
+            {
+
+                if (Opacity - d <= 0.0)
+                {
+                    Opacity = 0.0;
+                    Atimer.Stop();
+                    if (doClose) this.Close();
+                    else this.Visible = false;
+                }
+                else
+                {
+                    Opacity -= d;
+                }
+            }
         }
 
         private void submit_Click(object sender, EventArgs e)
@@ -34,20 +72,18 @@ namespace Kanjimusou
             try
             {
                 Auser = UserManager.Register(this.Username.Text, this.passwd1.Text);
-                DL.ADL.Visible = false;
-                success hehe = new success();
-                hehe.Show();
-                this.Visible = false;
-                Thread.Sleep(500);
+                this.OnClose(true);
+                DL.ADL.OnClose(false);
+     
                 welcome Awelcome = new welcome(Auser);
-                Awelcome.Show();
-                hehe.Close();
-                this.Close();
+                Awelcome.OnShow();
+                
             }
             catch (UserException a)
             {
                 wrong Wrong = new wrong(a.Message);
-                Wrong.Show();
+                Wrong.OnShow();
+             
             }
         }
 
@@ -60,7 +96,7 @@ namespace Kanjimusou
         private void button1_Click(object sender, EventArgs e)
         {
             Sound.PlaySE("se_buttonclick");
-            this.Close();
+            this.OnClose(true);
         }
 
         private void passwd2_TextChanged(object sender, EventArgs e)
@@ -77,5 +113,22 @@ namespace Kanjimusou
         {
             this.Error.Visible = true;
         }
+
+        public void OnShow()
+        {
+            this.Show();
+            showing = true;
+            Opacity = 0.0;      //窗体透明度为0
+            Atimer.Start(); //计时
+            this.Enabled = true;
+        }
+
+        public void OnClose(bool doClose)
+        {
+            this.doClose = doClose;
+            showing = false;
+            Atimer.Start();
+        }
+
     }
 }

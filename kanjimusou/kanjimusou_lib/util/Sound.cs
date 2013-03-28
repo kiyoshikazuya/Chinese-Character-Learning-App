@@ -33,6 +33,7 @@ namespace Kanjimusou.Lib
             fileDic.Add("se_study_hanzifinish", "se_study_hanzifinish.wav");
             fileDic.Add("se_write", "se_write.wav");
 
+            fileDic.Add("bgm_opening", "bgm_opening.mp3");
             fileDic.Add("bgm_study", "bgm_study.mp3");
             fileDic.Add("bgm_challenge", "bgm_challenge.mp3");
         }
@@ -45,9 +46,9 @@ namespace Kanjimusou.Lib
 
         public static void PlayBGM(String key)   
         {
-
-            mciSendString("open " + path + fileDic[key] + " alias song", "", 0, 0);
-            mciSendString("play song", "", 0, 0);
+            mciSendString("close song", "", 0, 0);
+            mciSendString("open " + path + fileDic[key] + " alias song", "0", 0, 0);
+            mciSendString("play song", "0", 0, 0);
 
             isPlayingBGM = true;
 

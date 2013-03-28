@@ -71,6 +71,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "wrong";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "wrong";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.wrong_MouseDown);
             this.ResumeLayout(false);

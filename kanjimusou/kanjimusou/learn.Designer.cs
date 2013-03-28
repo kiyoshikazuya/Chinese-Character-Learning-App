@@ -149,6 +149,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "learn";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "learn";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.learn_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();

@@ -70,6 +70,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "achievement_tips";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "achievement_tips";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.achievement_tips_MouseDown);
             this.ResumeLayout(false);

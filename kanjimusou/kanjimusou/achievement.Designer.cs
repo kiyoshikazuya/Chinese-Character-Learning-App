@@ -121,6 +121,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "achievement";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "   ";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.achievement_MouseDown);
             this.ResumeLayout(false);
