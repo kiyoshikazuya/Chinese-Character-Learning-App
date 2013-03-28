@@ -29,33 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(learn));
-            this.picture = new System.Windows.Forms.PictureBox();
             this.sound = new System.Windows.Forms.Button();
             this.close_it = new System.Windows.Forms.Button();
-            this.write = new System.Windows.Forms.Button();
-            this.exercise = new System.Windows.Forms.Button();
+            this.prev = new System.Windows.Forms.Button();
             this.next = new System.Windows.Forms.Button();
             this.paraphrase = new System.Windows.Forms.Label();
             this.more = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
+            this.backspace = new System.Windows.Forms.Button();
+            this.clean = new System.Windows.Forms.Button();
+            this.tips = new System.Windows.Forms.Button();
+            this.close = new System.Windows.Forms.Button();
+            this.hanziPictureBox1 = new Kanjimusou.Lib.HanziPictureBox();
+            this.infoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.hanziPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picture
-            // 
-            this.picture.BackColor = System.Drawing.Color.Transparent;
-            this.picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picture.Location = new System.Drawing.Point(8, 20);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(500, 500);
-            this.picture.TabIndex = 0;
-            this.picture.TabStop = false;
             // 
             // sound
             // 
             this.sound.BackColor = System.Drawing.Color.Transparent;
             this.sound.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sound.BackgroundImage")));
             this.sound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.sound.Location = new System.Drawing.Point(520, 460);
+            this.sound.Location = new System.Drawing.Point(548, 518);
             this.sound.Name = "sound";
             this.sound.Size = new System.Drawing.Size(29, 29);
             this.sound.TabIndex = 1;
@@ -77,29 +71,19 @@
             this.close_it.UseVisualStyleBackColor = false;
             this.close_it.Click += new System.EventHandler(this.close_it_Click);
             // 
-            // write
+            // prev
             // 
-            this.write.Location = new System.Drawing.Point(520, 307);
-            this.write.Name = "write";
-            this.write.Size = new System.Drawing.Size(49, 21);
-            this.write.TabIndex = 3;
-            this.write.Text = "w";
-            this.write.UseVisualStyleBackColor = true;
-            this.write.Click += new System.EventHandler(this.write_Click);
-            // 
-            // exercise
-            // 
-            this.exercise.Location = new System.Drawing.Point(520, 379);
-            this.exercise.Name = "exercise";
-            this.exercise.Size = new System.Drawing.Size(48, 22);
-            this.exercise.TabIndex = 4;
-            this.exercise.Text = "e";
-            this.exercise.UseVisualStyleBackColor = true;
-            this.exercise.Click += new System.EventHandler(this.exercise_Click);
+            this.prev.Location = new System.Drawing.Point(547, 304);
+            this.prev.Name = "prev";
+            this.prev.Size = new System.Drawing.Size(49, 21);
+            this.prev.TabIndex = 3;
+            this.prev.Text = "prev";
+            this.prev.UseVisualStyleBackColor = true;
+            this.prev.Click += new System.EventHandler(this.prev_Click);
             // 
             // next
             // 
-            this.next.Location = new System.Drawing.Point(521, 244);
+            this.next.Location = new System.Drawing.Point(548, 389);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(48, 21);
             this.next.TabIndex = 5;
@@ -111,9 +95,10 @@
             // 
             this.paraphrase.AutoSize = true;
             this.paraphrase.BackColor = System.Drawing.Color.Transparent;
-            this.paraphrase.Location = new System.Drawing.Point(518, 178);
+            this.paraphrase.Font = new System.Drawing.Font("仿宋", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.paraphrase.Location = new System.Drawing.Point(295, 613);
             this.paraphrase.Name = "paraphrase";
-            this.paraphrase.Size = new System.Drawing.Size(65, 12);
+            this.paraphrase.Size = new System.Drawing.Size(119, 19);
             this.paraphrase.TabIndex = 6;
             this.paraphrase.Text = "paraphrase";
             // 
@@ -123,7 +108,7 @@
             this.more.BackColor = System.Drawing.Color.Transparent;
             this.more.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.more.ForeColor = System.Drawing.Color.Transparent;
-            this.more.Location = new System.Drawing.Point(525, 502);
+            this.more.Location = new System.Drawing.Point(471, 607);
             this.more.Name = "more";
             this.more.Size = new System.Drawing.Size(60, 25);
             this.more.TabIndex = 7;
@@ -131,27 +116,113 @@
             this.more.Text = "more";
             this.more.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.more_LinkClicked);
             // 
+            // backspace
+            // 
+            this.backspace.BackColor = System.Drawing.Color.Transparent;
+            this.backspace.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backspace.BackgroundImage")));
+            this.backspace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.backspace.FlatAppearance.BorderSize = 0;
+            this.backspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backspace.Location = new System.Drawing.Point(52, 22);
+            this.backspace.Name = "backspace";
+            this.backspace.Size = new System.Drawing.Size(43, 41);
+            this.backspace.TabIndex = 8;
+            this.backspace.UseVisualStyleBackColor = false;
+            this.backspace.Click += new System.EventHandler(this.backspace_Click);
+            // 
+            // clean
+            // 
+            this.clean.BackColor = System.Drawing.Color.Transparent;
+            this.clean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clean.BackgroundImage")));
+            this.clean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.clean.FlatAppearance.BorderSize = 0;
+            this.clean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clean.Location = new System.Drawing.Point(146, 22);
+            this.clean.Name = "clean";
+            this.clean.Size = new System.Drawing.Size(43, 41);
+            this.clean.TabIndex = 9;
+            this.clean.UseVisualStyleBackColor = false;
+            this.clean.Click += new System.EventHandler(this.clean_Click);
+            // 
+            // tips
+            // 
+            this.tips.BackColor = System.Drawing.Color.Transparent;
+            this.tips.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tips.BackgroundImage")));
+            this.tips.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tips.FlatAppearance.BorderSize = 0;
+            this.tips.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tips.Location = new System.Drawing.Point(243, 22);
+            this.tips.Name = "tips";
+            this.tips.Size = new System.Drawing.Size(43, 41);
+            this.tips.TabIndex = 10;
+            this.tips.UseVisualStyleBackColor = false;
+            this.tips.Click += new System.EventHandler(this.tips_Click);
+            // 
+            // close
+            // 
+            this.close.BackColor = System.Drawing.Color.Transparent;
+            this.close.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("close.BackgroundImage")));
+            this.close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.close.FlatAppearance.BorderSize = 0;
+            this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close.Location = new System.Drawing.Point(344, 22);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(43, 41);
+            this.close.TabIndex = 11;
+            this.close.UseVisualStyleBackColor = false;
+            // 
+            // hanziPictureBox1
+            // 
+            this.hanziPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.hanziPictureBox1.Hanzi = null;
+            this.hanziPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("hanziPictureBox1.Image")));
+            this.hanziPictureBox1.IsInkMode = true;
+            this.hanziPictureBox1.IsShowHelper = false;
+            this.hanziPictureBox1.Location = new System.Drawing.Point(31, 88);
+            this.hanziPictureBox1.Name = "hanziPictureBox1";
+            this.hanziPictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.hanziPictureBox1.TabIndex = 12;
+            this.hanziPictureBox1.TabStop = false;
+            // 
+            // infoLabel
+            // 
+            this.infoLabel.AutoSize = true;
+            this.infoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.infoLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.infoLabel.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.infoLabel.ForeColor = System.Drawing.Color.Red;
+            this.infoLabel.Location = new System.Drawing.Point(26, 609);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(48, 25);
+            this.infoLabel.TabIndex = 13;
+            this.infoLabel.Text = "info";
+            // 
             // learn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(597, 536);
+            this.ClientSize = new System.Drawing.Size(615, 675);
+            this.Controls.Add(this.infoLabel);
+            this.Controls.Add(this.hanziPictureBox1);
+            this.Controls.Add(this.close);
+            this.Controls.Add(this.tips);
+            this.Controls.Add(this.clean);
+            this.Controls.Add(this.backspace);
             this.Controls.Add(this.more);
             this.Controls.Add(this.paraphrase);
             this.Controls.Add(this.next);
-            this.Controls.Add(this.exercise);
-            this.Controls.Add(this.write);
+            this.Controls.Add(this.prev);
             this.Controls.Add(this.close_it);
             this.Controls.Add(this.sound);
-            this.Controls.Add(this.picture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "learn";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "learn";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.learn_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hanziPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,13 +230,17 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Button sound;
         private System.Windows.Forms.Button close_it;
-        private System.Windows.Forms.Button write;
-        private System.Windows.Forms.Button exercise;
+        private System.Windows.Forms.Button prev;
         private System.Windows.Forms.Button next;
         private System.Windows.Forms.Label paraphrase;
         private System.Windows.Forms.LinkLabel more;
+        private System.Windows.Forms.Button backspace;
+        private System.Windows.Forms.Button clean;
+        private System.Windows.Forms.Button tips;
+        private System.Windows.Forms.Button close;
+        private Lib.HanziPictureBox hanziPictureBox1;
+        private System.Windows.Forms.Label infoLabel;
     }
 }

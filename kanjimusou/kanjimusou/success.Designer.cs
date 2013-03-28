@@ -40,6 +40,7 @@
             this.ClientSize = new System.Drawing.Size(327, 259);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "success";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "success";
             this.ResumeLayout(false);
 

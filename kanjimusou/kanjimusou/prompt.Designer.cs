@@ -90,6 +90,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "prompt";
             this.Opacity = 0.9D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "prompt";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.prompt_MouseDown);
             this.ResumeLayout(false);

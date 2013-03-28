@@ -24,41 +24,81 @@ namespace Kanjimusou
         public Form Aform;
         public User Auser;
 
+        private bool showing = true;
+        private bool doClose = true;
+        private System.Windows.Forms.Timer Atimer = new System.Windows.Forms.Timer();
 
         public prompt()
         {
             InitializeComponent();
+            Atimer.Tick += Atimer_Tick;
+            Atimer.Interval = 25;
         }
-        public prompt(Form A,User user): this()
+
+        public prompt(Form A,User user)
         {
+            InitializeComponent();
+            Atimer.Tick += Atimer_Tick;
+            Atimer.Interval = 25;
             Aform = A;
             Auser = user;
 
+        }
+
+        private void Atimer_Tick(object sender, EventArgs e)
+        {
+            double d = 0.05;
+            if (showing)
+            {
+                if (Opacity + d >= 0.9)
+                {
+                    Opacity = 0.85;
+                    Atimer.Stop();
+                }
+                else
+                {
+                    Opacity += d;
+                }
+            }
+            else
+            {
+
+                if (Opacity - d <= 0.0)
+                {
+                    Opacity = 0.0;
+                    Atimer.Stop();
+                    if (doClose) this.Close();
+                    else this.Visible = false;
+                }
+                else
+                {
+                    Opacity -= d;
+                }
+            }
         }
 
         private void closeAll_Click(object sender, EventArgs e)
         {
             UserManager.SaveFile(Auser);
             Sound.PlaySE("se_buttonclick");
-            DL.ADL.Close();
-            
+            (Aform as learn).OnClose(true);
+            this.OnClose(true);
+            DL.ADL.OnClose(true);
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
             Sound.PlaySE("se_buttonclick");
-            this.Close();
+            this.OnClose(true);
         }
 
         private void doNotClose_Click(object sender, EventArgs e)
         {
             Sound.PlaySE("se_buttonclick");
             welcome Welcome = new welcome(Auser);
-            Welcome.Show();
-            Aform.Close();
-            this.Close();
-            Sound.StopBGM();
+            (Aform as learn).OnClose(true);
+            this.OnClose(true);
+            Welcome.OnShow();
         }
 
         private void prompt_MouseDown(object sender, MouseEventArgs e)
@@ -66,5 +106,22 @@ namespace Kanjimusou
             ReleaseCapture();
             SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTTION, 0);
         }
+
+        public void OnShow()
+        {
+            this.Show();
+            showing = true;
+            Opacity = 0.0;      //窗体透明度为0
+            Atimer.Start(); //计时
+            this.Enabled = true;
+        }
+
+        public void OnClose(bool doClose)
+        {
+            this.doClose = doClose;
+            showing = false;
+            Atimer.Start();
+        }
+
     }
 }
