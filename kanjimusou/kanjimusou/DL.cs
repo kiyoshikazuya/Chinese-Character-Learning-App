@@ -47,6 +47,7 @@ namespace Kanjimusou
 
         private void log_on_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             ZC Logon = new ZC();
             Logon.Show();
         }
@@ -83,6 +84,7 @@ namespace Kanjimusou
 
         private void closethis_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             this.Close();
         }
 
@@ -95,6 +97,7 @@ namespace Kanjimusou
 
         private void dlu_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             try
            {
               Auser=UserManager.Login(this.name.Text,this.passwd.Text);

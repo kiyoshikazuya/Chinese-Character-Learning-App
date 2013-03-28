@@ -3,22 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Media;
+using System.Runtime.InteropServices;    
 
-namespace Kanjimusou.Lib.util
+namespace Kanjimusou.Lib
 {
     public static class Sound
     {
         private static SoundPlayer sePlayer = new SoundPlayer();
-        private static SoundPlayer bgmPlayer = new SoundPlayer();
 
         private static readonly Dictionary<String, String> fileDic = new Dictionary<string,string>();
         private const String path = "./resource/sound/";
 
-        static Sound()
+        private static bool isPlayingBGM = false;
+
+        [DllImport("winmm.dll")]
+        public static extern uint mciSendString(string lpstrCommand,
+            string lpstrReturnString, uint uReturnLength, uint hWndCallback);
+
+        public static bool IsPlayingBGM
         {
-            fileDic.Add("se1","11.wav");
+            get { return isPlayingBGM; }
         }
 
+        static Sound()
+        {
+            fileDic.Add("se_achievementfinish", "se_achievementfinish.wav");
+            fileDic.Add("se_buttonclick", "se_buttonclick.wav");
+            fileDic.Add("se_challenge_finish10hanzi", "se_challenge_finish10hanzi.wav");
+            fileDic.Add("se_study_hanzifinish", "se_study_hanzifinish.wav");
+            fileDic.Add("se_write", "se_write.wav");
+
+            fileDic.Add("bgm_study", "bgm_study.mp3");
+            fileDic.Add("bgm_challenge", "bgm_challenge.mp3");
+        }
 
         public static void PlaySE(String key)
         {
@@ -26,12 +43,21 @@ namespace Kanjimusou.Lib.util
             sePlayer.Play();
         }
 
-        public static void PlayBGM(String key)
+        public static void PlayBGM(String key)   
         {
-            bgmPlayer.SoundLocation = path + fileDic[key];
-            bgmPlayer.PlayLooping();
+
+            mciSendString("open " + path + fileDic[key] + " alias song", "", 0, 0);
+            mciSendString("play song", "", 0, 0);
+
+            isPlayingBGM = true;
+
+        }    
+
+        public static void StopBGM()
+        {
+            mciSendString("close song", "", 0, 0);
+            isPlayingBGM = false;
         }
-
-
+        
     }
 }

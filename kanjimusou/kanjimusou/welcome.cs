@@ -35,6 +35,7 @@ namespace Kanjimusou
 
         private void start_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             learn Learn = new learn(Auser);
             Learn.Show();
             this.Close();
@@ -42,6 +43,7 @@ namespace Kanjimusou
 
         private void information_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             achievement Achievement = new achievement(Auser);
             Achievement.Show();
             this.Close();
@@ -56,6 +58,7 @@ namespace Kanjimusou
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             prompt Apro = new prompt(this,Auser);
             Apro.Show();
         }

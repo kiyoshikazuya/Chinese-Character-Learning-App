@@ -39,6 +39,7 @@ namespace Kanjimusou
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             prompt Apro = new prompt(this,Auser);
             Apro.Show();
         }
@@ -51,6 +52,7 @@ namespace Kanjimusou
 
         private void share_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             prompt Apro = new prompt(this,Auser);
             Apro.Show();
         }
