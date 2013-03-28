@@ -30,6 +30,7 @@ namespace Kanjimusou
 
         private void submit_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             try
             {
                 Auser = UserManager.Register(this.Username.Text, this.passwd1.Text);
@@ -58,6 +59,7 @@ namespace Kanjimusou
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             this.Close();
         }
 

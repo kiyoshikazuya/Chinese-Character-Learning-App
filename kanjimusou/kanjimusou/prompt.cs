@@ -39,23 +39,28 @@ namespace Kanjimusou
         private void closeAll_Click(object sender, EventArgs e)
         {
             UserManager.SaveFile(Auser);
+            Sound.PlaySE("se_buttonclick");
             DL.ADL.Close();
-
+            
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             this.Close();
         }
 
         private void doNotClose_Click(object sender, EventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             welcome Welcome = new welcome(Auser);
             Welcome.Show();
             Aform.Close();
             this.Close();
+            Sound.StopBGM();
         }
+
         private void prompt_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

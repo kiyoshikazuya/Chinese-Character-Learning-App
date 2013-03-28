@@ -38,6 +38,7 @@ namespace Kanjimusou
         public learn()
         {
             InitializeComponent();
+            Sound.PlayBGM("bgm_study");
             Ale = this;
             Ahanzi = HanziIO.Read(Ahanzilist[i].Zi);
             this.picture.Image = Ahanzi.Picture;
@@ -65,21 +66,26 @@ namespace Kanjimusou
         }
 
         private void exercise_Click(object sender, EventArgs e)
-        {
+        {   
+            Sound.PlaySE("se_buttonclick");
             exercise_form AnexerciseForm = new exercise_form(Ahanzi);
+            
             AnexerciseForm.Show();
         }
 
         private void close_it_Click(object sender, EventArgs e)
-        {
+        {   
+            Sound.PlaySE("se_buttonclick");
             prompt Prompt = new prompt(this,Auser);
+      
             Prompt.Show();
         }
 
         private void next_Click(object sender, EventArgs e)
-        {
-            //Auser.addLearnLog(Ahanzi.Zi, exercise_form.Zi);
-
+        {   
+            Sound.PlaySE("se_buttonclick");
+            Auser.addLearnLog(Ahanzi.Zi, exercise_form.Zi);
+           
             try
             {
                 if (i+1 >= Ahanzilist.Count())
@@ -100,11 +106,14 @@ namespace Kanjimusou
 
         private void sound_Click(object sender, EventArgs e)
         {
-
+            Sound.PlaySE("se_buttonclick");
+            if (Sound.IsPlayingBGM) Sound.StopBGM(); 
+            else Sound.PlayBGM("bgm_study");
         }
 
         private void more_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Sound.PlaySE("se_buttonclick");
             string link = "http://zh.wikipedia.org/wiki/" + Ahanzi.Zi;
             System.Diagnostics.Process.Start("iexplore.exe", link); 
         }

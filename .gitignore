@@ -109,6 +109,3 @@ UpgradeLog*.XML
 
 # Test
 ConsoleApplication1/
-
-#temp resource
-*.wav
