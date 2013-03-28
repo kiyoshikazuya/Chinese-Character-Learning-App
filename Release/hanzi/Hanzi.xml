@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Hanzis>
+  <Node zi="中" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="100" y ="162"/>
+        <checkpoint x ="100" y ="285"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="106" y ="159"/>
+        <checkpoint x ="253" y ="157"/>
+        <checkpoint x ="401" y ="160"/>
+        <checkpoint x ="405" y ="286"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="106" y ="288"/>
+        <checkpoint x ="401" y ="283"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="253" y ="82"/>
+        <checkpoint x ="253" y ="232"/>
+        <checkpoint x ="254" y ="417"/>
+      </bihua>
+    </bihualist>
+    <info>中间 中华</info>
+    <path>./resource/hzImage/中.png</path>
+  </Node>
+
+  <Node zi="华" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="174" y ="82"/>
+        <checkpoint x ="81" y ="181"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="147" y ="144"/>
+        <checkpoint x ="147" y ="258"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="398" y ="107"/>
+        <checkpoint x ="194" y ="212"/>
+      </bihua>      
+      <bihua>
+        <checkpoint x ="285" y ="84"/>
+        <checkpoint x ="299" y ="246"/>
+        <checkpoint x ="427" y ="192"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="74" y ="337"/>
+        <checkpoint x ="433" y ="337"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="255" y ="284"/>
+        <checkpoint x ="250" y ="426"/>
+      </bihua>
+    </bihualist>
+    <info>华丽 华美</info>
+    <path>./resource/hzImage/华.png</path>
+  </Node>
+
+  <Node zi="民" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="103" y ="82"/>
+        <checkpoint x ="385" y ="86"/>
+        <checkpoint x ="388" y ="181"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="111" y ="178"/>
+        <checkpoint x ="382" y ="185"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="100" y ="85"/>
+        <checkpoint x ="99" y ="416"/>
+        <checkpoint x ="204" y ="382"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="112" y ="279"/>
+        <checkpoint x ="416" y ="281"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="266" y ="190"/>
+        <checkpoint x ="371" y ="419"/>
+        <checkpoint x ="418" y ="338"/>
+      </bihua>
+    </bihualist>
+    <info>民族 民权 民生</info>
+    <path>./resource/hzImage/民.png</path>
+  </Node>
+
+  <Node zi="国" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="100" y ="84"/>
+        <checkpoint x ="101" y ="416"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="100" y ="87"/>
+        <checkpoint x ="405" y ="83"/>
+        <checkpoint x ="405" y ="400"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="150" y ="148"/>
+        <checkpoint x ="358" y ="149"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="157" y ="230"/>
+        <checkpoint x ="349" y ="230"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="251" y ="153"/>
+        <checkpoint x ="251" y ="327"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="140" y ="329"/>
+        <checkpoint x ="362" y ="335"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="306" y ="263"/>
+        <checkpoint x ="328" y ="293"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="94" y ="399"/>
+        <checkpoint x ="409" y ="401"/>
+      </bihua>
+    </bihualist>
+    <info>国家 国民</info>
+    <path>./resource/hzImage/国.png</path>
+  </Node>
+
+  <Node zi="華" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="84" y ="107"/>
+        <checkpoint x ="420" y ="111"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="182" y ="76"/>
+        <checkpoint x ="181" y ="139"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="325" y ="76"/>
+        <checkpoint x ="325" y ="144"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="105" y ="179"/>
+        <checkpoint x ="404" y ="175"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="75" y ="246"/>
+        <checkpoint x ="428" y ="246"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="154" y ="183"/>
+        <checkpoint x ="156" y ="310"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="349" y ="185"/>
+        <checkpoint x ="350" y ="310"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="100" y ="319"/>
+        <checkpoint x ="409" y ="319"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="73" y ="384"/>
+        <checkpoint x ="428" y ="381"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="253" y ="185"/>
+        <checkpoint x ="253" y ="429"/>
+      </bihua>
+    </bihualist>
+    <info>華麗 中華</info>
+    <path>./resource/hzImage/華.png</path>
+  </Node>
+
+  <Node zi="國" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="96" y ="80"/>
+        <checkpoint x ="98" y ="413"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="99" y ="82"/>
+        <checkpoint x ="414" y ="82"/>
+        <checkpoint x ="414" y ="404"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="137" y ="154"/>
+        <checkpoint x ="378" y ="154"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="155" y ="207"/>
+        <checkpoint x ="158" y ="284"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="162" y ="204"/>
+        <checkpoint x ="231" y ="206"/>
+        <checkpoint x ="231" y ="278"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="157" y ="280"/>
+        <checkpoint x ="233" y ="279"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="139" y ="351"/>
+        <checkpoint x ="250" y ="326"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="284" y ="116"/>
+        <checkpoint x ="294" y ="269"/>
+        <checkpoint x ="352" y ="370"/>
+        <checkpoint x ="378" y ="298"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="365" y ="205"/>
+        <checkpoint x ="262" y ="365"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="331" y ="110"/>
+        <checkpoint x ="350" y ="132"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="96" y ="405"/>
+        <checkpoint x ="413" y ="406"/>
+      </bihua>
+    </bihualist>
+    <info>國民 國家</info>
+    <path>./resource/hzImage/國.png</path>
+  </Node>
+
+  <Node zi="亲" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="248" y ="57"/>
+        <checkpoint x ="264" y ="94"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="91" y ="104"/>
+        <checkpoint x ="415" y ="105"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="163" y ="143"/>
+        <checkpoint x ="188" y ="185"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="344" y ="141"/>
+        <checkpoint x ="311" y ="193"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="70" y ="209"/>
+        <checkpoint x ="437" y ="212"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="89" y ="288"/>
+        <checkpoint x ="416" y ="288"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="256" y ="226"/>
+        <checkpoint x ="253" y ="404"/>
+        <checkpoint x ="175" y ="415"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="159" y ="335"/>
+        <checkpoint x ="84" y ="396"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="331" y ="338"/>
+        <checkpoint x ="413" y ="396"/>
+      </bihua>
+    </bihualist>
+    <info>亲切 亲人</info>
+    <path>./resource/hzImage/亲.png</path>
+  </Node>
+
+  <Node zi="爱" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="417" y ="77"/>
+        <checkpoint x ="93" y ="90"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="135" y ="112"/>
+        <checkpoint x ="161" y ="146"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="241" y ="108"/>
+        <checkpoint x ="263" y ="142"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="377" y ="108"/>
+        <checkpoint x ="348" y ="148"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="93" y ="167"/>
+        <checkpoint x ="90" y ="205"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="96" y ="168"/>
+        <checkpoint x ="412" y ="169"/>
+        <checkpoint x ="412" y ="210"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="74" y ="242"/>
+        <checkpoint x ="433" y ="241"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="208" y ="204"/>
+        <checkpoint x ="68" y ="396"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="180" y ="297"/>
+        <checkpoint x ="380" y ="301"/>
+        <checkpoint x ="273" y ="382"/>
+        <checkpoint x ="120" y ="426"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="184" y ="311"/>
+        <checkpoint x ="285" y ="386"/>
+        <checkpoint x ="431" y ="420"/>
+      </bihua>
+    </bihualist>
+    <info>爱情 友爱</info>
+    <path>./resource/hzImage/爱.png</path>
+  </Node>
+
+  <Node zi="精" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="81" y ="97"/>
+        <checkpoint x ="99" y ="159"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="199" y ="101"/>
+        <checkpoint x ="172" y ="165"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="73" y ="212"/>
+        <checkpoint x ="194" y ="213"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="140" y ="66"/>
+        <checkpoint x ="138" y ="431"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="130" y ="237"/>
+        <checkpoint x ="72" y ="360"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="162" y ="274"/>
+        <checkpoint x ="204" y ="317"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="226" y ="100"/>
+        <checkpoint x ="438" y ="102"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="237" y ="155"/>
+        <checkpoint x ="426" y ="154"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="328" y ="65"/>
+        <checkpoint x ="328" y ="200"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="222" y ="207"/>
+        <checkpoint x ="443" y ="207"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="247" y ="255"/>
+        <checkpoint x ="245" y ="427"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="249" y ="254"/>
+        <checkpoint x ="414" y ="258"/>
+        <checkpoint x ="414" y ="410"/>
+        <checkpoint x ="332" y ="422"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="255" y ="307"/>
+        <checkpoint x ="412" y ="304"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="254" y ="359"/>
+        <checkpoint x ="408" y ="358"/>
+      </bihua>
+    </bihualist>
+    <info>精神 精力</info>
+    <path>./resource/hzImage/精.png</path>
+  </Node>
+
+  <Node zi="诚" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="94" y ="78"/>
+        <checkpoint x ="135" y ="128"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="63" y ="202"/>
+        <checkpoint x ="108" y ="201"/>
+        <checkpoint x ="102" y ="376"/>
+        <checkpoint x ="155" y ="321"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="196" y ="141"/>
+        <checkpoint x ="428" y ="139"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="195" y ="143"/>
+        <checkpoint x ="192" y ="282"/>
+        <checkpoint x ="149" y ="419"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="206" y ="225"/>
+        <checkpoint x ="278" y ="229"/>
+        <checkpoint x ="273" y ="346"/>
+        <checkpoint x ="217" y ="367"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="325" y ="64"/>
+        <checkpoint x ="333" y ="252"/>
+        <checkpoint x ="401" y ="418"/>
+        <checkpoint x ="432" y ="349"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="410" y ="215"/>
+        <checkpoint x ="277" y ="416"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="376" y ="69"/>
+        <checkpoint x ="409" y ="102"/>
+      </bihua>
+    </bihualist>
+    <info>诚恳 诚实</info>
+    <path>./resource/hzImage/诚.png</path>
+  </Node>
+
+  <Node zi="誠" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="112" y ="60"/>
+        <checkpoint x ="130" y ="100"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="63" y ="124"/>
+        <checkpoint x ="189" y ="121"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="79" y ="182"/>
+        <checkpoint x ="176" y ="182"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="77" y ="245"/>
+        <checkpoint x ="174" y ="244"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="88" y ="306"/>
+        <checkpoint x ="90" y ="397"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="89" y ="305"/>
+        <checkpoint x ="167" y ="308"/>
+        <checkpoint x ="167" y ="392"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="87" y ="392"/>
+        <checkpoint x ="167" y ="392"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="226" y ="142"/>
+        <checkpoint x ="438" y ="139"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="226" y ="139"/>
+        <checkpoint x ="225" y ="285"/>
+        <checkpoint x ="186" y ="422"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="235" y ="229"/>
+        <checkpoint x ="298" y ="227"/>
+        <checkpoint x ="295" y ="353"/>
+        <checkpoint x ="245" y ="367"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="344" y ="63"/>
+        <checkpoint x ="349" y ="252"/>
+        <checkpoint x ="408" y ="417"/>
+        <checkpoint x ="434" y ="347"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="424" y ="217"/>
+        <checkpoint x ="369" y ="326"/>
+        <checkpoint x ="288" y ="418"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="383" y ="70"/>
+        <checkpoint x ="416" y ="102"/>
+      </bihua>
+    </bihualist>
+    <info>誠懇 誠實</info>
+    <path>./resource/hzImage/誠.png</path>
+  </Node>
+
+  <Node zi="親" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="155" y ="61"/>
+        <checkpoint x ="168" y ="88"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="81" y ="111"/>
+        <checkpoint x ="242" y ="111"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="107" y ="140"/>
+        <checkpoint x ="130" y ="173"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="216" y ="137"/>
+        <checkpoint x ="189" y ="190"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="73" y ="203"/>
+        <checkpoint x ="248" y ="205"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="81" y ="274"/>
+        <checkpoint x ="239" y ="275"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="162" y ="213"/>
+        <checkpoint x ="163" y ="406"/>
+        <checkpoint x ="106" y ="419"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="111" y ="316"/>
+        <checkpoint x ="83" y ="381"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="213" y ="312"/>
+        <checkpoint x ="236" y ="356"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="284" y ="88"/>
+        <checkpoint x ="283" y ="286"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="282" y ="85"/>
+        <checkpoint x ="425" y ="90"/>
+        <checkpoint x ="424" y ="285"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="286" y ="153"/>
+        <checkpoint x ="415" y ="152"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="291" y ="218"/>
+        <checkpoint x ="422" y ="218"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="282" y ="285"/>
+        <checkpoint x ="422" y ="285"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="329" y ="294"/>
+        <checkpoint x ="303" y ="384"/>
+        <checkpoint x ="234" y ="417"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="376" y ="295"/>
+        <checkpoint x ="380" y ="407"/>
+        <checkpoint x ="429" y ="412"/>
+        <checkpoint x ="441" y ="350"/>
+      </bihua>
+    </bihualist>
+    <info>親切 親人</info>
+    <path>./resource/hzImage/親.png</path>
+  </Node>
+
+  <Node zi="愛" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="413" y ="81"/>
+        <checkpoint x ="90" y ="90"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="133" y ="114"/>
+        <checkpoint x ="156" y ="146"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="237" y ="110"/>
+        <checkpoint x ="263" y ="144"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="373" y ="111"/>
+        <checkpoint x ="344" y ="154"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="89" y ="170"/>
+        <checkpoint x ="86" y ="211"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="88" y ="170"/>
+        <checkpoint x ="414" y ="171"/>
+        <checkpoint x ="412" y ="211"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="130" y ="224"/>
+        <checkpoint x ="95" y ="274"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="177" y ="205"/>
+        <checkpoint x ="188" y ="266"/>
+        <checkpoint x ="312" y ="264"/>
+        <checkpoint x ="336" y ="219"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="249" y ="199"/>
+        <checkpoint x ="270" y ="227"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="374" y ="219"/>
+        <checkpoint x ="413" y ="272"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="176" y ="292"/>
+        <checkpoint x ="78" y ="374"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="167" y ="314"/>
+        <checkpoint x ="372" y ="317"/>
+        <checkpoint x ="252" y ="386"/>
+        <checkpoint x ="78" y ="426"/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="167" y ="330"/>
+        <checkpoint x ="262" y ="387"/>
+        <checkpoint x ="429" y ="423"/>
+      </bihua>
+    </bihualist>
+    <info>愛情 友愛</info>
+    <path>./resource/hzImage/愛.png</path>
+  </Node>
+
+  <Node zi="" ziti="雅黑">
+    <bihualist>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+      <bihua>
+        <checkpoint x ="" y =""/>
+        <checkpoint x ="" y =""/>
+      </bihua>
+    </bihualist>
+    <info>華麗 中華</info>
+    <path>./resource/hzImage/華.png</path>
+  </Node>
+    
+</Hanzis>
