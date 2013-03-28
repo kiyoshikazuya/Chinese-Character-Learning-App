@@ -33,6 +33,7 @@
             this.information = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.userName = new System.Windows.Forms.Label();
+            this.challengeMode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // start
@@ -43,7 +44,7 @@
             this.start.FlatAppearance.BorderSize = 0;
             this.start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.start.ForeColor = System.Drawing.Color.Transparent;
-            this.start.Location = new System.Drawing.Point(121, 146);
+            this.start.Location = new System.Drawing.Point(121, 153);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(114, 29);
             this.start.TabIndex = 1;
@@ -89,6 +90,21 @@
             this.userName.Size = new System.Drawing.Size(0, 25);
             this.userName.TabIndex = 4;
             // 
+            // challengeMode
+            // 
+            this.challengeMode.BackColor = System.Drawing.Color.Transparent;
+            this.challengeMode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("challengeMode.BackgroundImage")));
+            this.challengeMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.challengeMode.FlatAppearance.BorderSize = 0;
+            this.challengeMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.challengeMode.ForeColor = System.Drawing.Color.Transparent;
+            this.challengeMode.Location = new System.Drawing.Point(130, 198);
+            this.challengeMode.Name = "challengeMode";
+            this.challengeMode.Size = new System.Drawing.Size(94, 29);
+            this.challengeMode.TabIndex = 5;
+            this.challengeMode.UseVisualStyleBackColor = false;
+            this.challengeMode.Click += new System.EventHandler(this.challengeMode_Click);
+            // 
             // welcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -96,6 +112,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(368, 293);
+            this.Controls.Add(this.challengeMode);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.information);
@@ -117,5 +134,6 @@
         private System.Windows.Forms.Button information;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label userName;
+        private System.Windows.Forms.Button challengeMode;
     }
 }

@@ -91,6 +91,14 @@ namespace Kanjimusou
             Achievement.OnShow();
         }
 
+        private void challengeMode_Click(object sender, EventArgs e)
+        {
+            Sound.PlaySE("se_buttonclick");
+            challenge cha = new challenge(Auser);
+            cha.OnShow();
+            this.OnClose(true);
+        }
+
         private void welcome_MouseDown(object sender, MouseEventArgs e)
         {
 
@@ -101,6 +109,11 @@ namespace Kanjimusou
         private void button1_Click(object sender, EventArgs e)
         {
             Sound.PlaySE("se_buttonclick");
+            if (Auser != null)
+            {
+                Auser.Achievement.AchievementReach -= DL.ADL.OnAchievementReach;
+                UserManager.SaveFile(Auser);
+            }
             DL.ADL.OnShow();
             this.OnClose(true);
         }
@@ -131,6 +144,8 @@ namespace Kanjimusou
             showing = false;
             Atimer.Start();
         }
+
+
 
 
     }

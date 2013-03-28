@@ -33,6 +33,13 @@ namespace Kanjimusou
             ADL = this;
             Atimer.Interval = 25;
             OnShow();
+            
+        }
+
+        public void OnAchievementReach(Object sender, String info)
+        {
+            achievement_tips achTips = new achievement_tips(info);
+            achTips.Show();
         }
 
         public void Clear()
@@ -105,6 +112,8 @@ namespace Kanjimusou
               welcome Awelcom = new welcome(Auser);
 
               this.OnClose(false);
+              Auser.FinishHanzi += Auser.Achievement.OnFinishHanzi;
+              Auser.Achievement.AchievementReach += OnAchievementReach;
 
               Awelcom.OnShow();
                
@@ -141,6 +150,7 @@ namespace Kanjimusou
 
         public void OnClose( bool doClose )
         {
+            
             this.Opacity = 0.9;
             this.doClose = doClose;
             showing = false;

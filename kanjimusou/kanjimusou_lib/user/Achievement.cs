@@ -45,6 +45,7 @@ namespace Kanjimusou.Lib
         /// <summary>
         /// 当成就达成时产生的事件
         /// </summary>
+ 
         public event Action<Object, String> AchievementReach;
 
         public List<AchievementElement> ArcList
@@ -56,11 +57,6 @@ namespace Kanjimusou.Lib
         {
             user.FinishHanzi += OnFinishHanzi;
             arcList = new List<AchievementElement>();
-        }
-
-        public void setChallenge( Challenge cha )
-        {
-            cha.FinishLevel += OnFinishLevel;
         }
 
         public void OnFinishHanzi(Object sender, AchievementArgs args)

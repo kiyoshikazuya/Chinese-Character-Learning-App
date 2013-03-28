@@ -47,7 +47,6 @@ namespace Kanjimusou.Lib
         {
             this.user = user;
             this.hzlist = HanziIO.ReadAll();
-            this.user.FinishHanzi += OnFinishHanzi;
         }
 
         public void NextLevel()
@@ -66,11 +65,12 @@ namespace Kanjimusou.Lib
 
         public void NowTimeChange(object source, System.Timers.ElapsedEventArgs e)
         {
-            nowTime-=(25/1000);
+            nowTime = nowTime - 0.025;
             if (nowTime <= 0)
             {
                 nowLevel--;
                 t.Close();
+                Reset();
                 Lose(nowLevel);
             }
         }
@@ -82,7 +82,7 @@ namespace Kanjimusou.Lib
             nowZi = null;
         }
 
-        public void OnFinishHanzi(Object sender, AchievementArgs args)
+        public void OnFinishHanzi(Object sender, HanziEventArgs e)
         {
             if (nowTime > 0)
             {

@@ -79,6 +79,7 @@ namespace Kanjimusou
 
         private void closeAll_Click(object sender, EventArgs e)
         {
+            Auser.Achievement.AchievementReach -= DL.ADL.OnAchievementReach;
             UserManager.SaveFile(Auser);
             Sound.PlaySE("se_buttonclick");
             (Aform as learn).OnClose(true);

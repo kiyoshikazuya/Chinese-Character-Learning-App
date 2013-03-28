@@ -74,7 +74,8 @@ namespace Kanjimusou
                 Auser = UserManager.Register(this.Username.Text, this.passwd1.Text);
                 this.OnClose(true);
                 DL.ADL.OnClose(false);
-     
+                Auser.Achievement.AchievementReach += DL.ADL.OnAchievementReach;
+                Auser.FinishHanzi += Auser.Achievement.OnFinishHanzi;
                 welcome Awelcome = new welcome(Auser);
                 Awelcome.OnShow();
                 
