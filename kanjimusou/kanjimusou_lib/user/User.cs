@@ -157,7 +157,8 @@ namespace Kanjimusou.Lib
             if (image == null) return;
             if (log.pathList.Count >= 5)
             {
-                File.Delete(log.pathList[0]);
+                if (File.Exists(log.pathList[0]))
+                    File.Delete(log.pathList[0]);
                 log.pathList.RemoveAt(0);
             }
             DateTime now = DateTime.Now;

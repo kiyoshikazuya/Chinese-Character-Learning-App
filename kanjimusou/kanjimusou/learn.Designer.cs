@@ -199,6 +199,7 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "png图片|*.png";
+            this.saveFileDialog1.RestoreDirectory = true;
             // 
             // inkButton
             // 

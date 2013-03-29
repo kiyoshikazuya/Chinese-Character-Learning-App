@@ -273,5 +273,23 @@ namespace Kanjimusou
             Atimer.Start();
         }
 
+        private void save_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            String filename = String.Format("{0}-{1}-{2}-{3}-{4}_{5}_{6}.png", hanziPictureBox1.Hanzi.Zi,
+                    now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
+            saveFileDialog1.FileName = filename;
+            saveFileDialog1.ShowDialog();
+            try
+            {
+                hanziPictureBox1.DrawImage.Save(saveFileDialog1.FileName);
+            }
+            catch (ExternalException ex)
+            {
+            }
+            catch (ArgumentException ex)
+            {
+            }
+        }
     }
 }
