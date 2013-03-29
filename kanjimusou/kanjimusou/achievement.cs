@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Threading;
 using Kanjimusou.Lib;
 
 namespace Kanjimusou
@@ -129,7 +130,24 @@ namespace Kanjimusou
         private void share_Click(object sender, EventArgs e)
         {
             Sound.PlaySE("se_buttonclick");
-
+            saveFileDialog1.ShowDialog();
+            Image image = new Bitmap(Width, Height, CreateGraphics());
+            Graphics g = Graphics.FromImage(image);
+            Opacity = 1;
+            share.Hide();
+            g.CopyFromScreen(Location.X, Location.Y, 0, 0, Size);
+            Opacity = 0.9;
+            share.Show();
+            try
+            {
+                image.Save(saveFileDialog1.FileName);
+            }
+            catch (ExternalException ex)
+            {
+            }
+            catch (ArgumentException ex)
+            {
+            }
         }
 
         public void OnShow()

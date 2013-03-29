@@ -40,6 +40,7 @@
             this.arcListBox = new System.Windows.Forms.ListBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -145,7 +146,6 @@
             this.arcListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.arcListBox.Size = new System.Drawing.Size(258, 172);
             this.arcListBox.TabIndex = 10;
-          
             // 
             // pictureBox4
             // 
@@ -169,6 +169,11 @@
             this.button2.Size = new System.Drawing.Size(33, 30);
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = false;
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "PNG图片(*.png)|*.png";
+            this.saveFileDialog1.RestoreDirectory = true;
             // 
             // achievement
             // 
@@ -217,5 +222,6 @@
         private System.Windows.Forms.ListBox arcListBox;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
