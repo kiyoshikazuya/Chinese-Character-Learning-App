@@ -114,6 +114,21 @@ namespace Kanjimusou
             hanziPictureBox1.Refresh();
         }
 
+        private void save_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+            try
+            {
+                hanziPictureBox1.DrawImage.Save(saveFileDialog1.FileName);
+            }
+            catch (ExternalException ex)
+            {
+            }
+            catch (ArgumentException ex)
+            {
+            }
+        }
+
         private void Atimer_Tick(object sender, EventArgs e)
         {
             double d = 0.03;
@@ -216,11 +231,17 @@ namespace Kanjimusou
             else Sound.PlayBGM("bgm_study");
         }
 
-        private void more_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void more_Click(object sender, EventArgs e)
         {
             Sound.PlaySE("se_buttonclick");
             string link = "http://zh.wikipedia.org/wiki/" + Ahanzi.Zi;
-            System.Diagnostics.Process.Start("iexplore.exe", link); 
+            System.Diagnostics.Process.Start("iexplore.exe", link);
+        }
+
+        private void inkButton_Click(object sender, EventArgs e)
+        {
+            if (hanziPictureBox1.IsInkMode) hanziPictureBox1.IsInkMode = false;
+            else hanziPictureBox1.IsInkMode = true;
         }
 
         void UnblockWindow(object sender, FormClosedEventArgs e)
@@ -247,23 +268,9 @@ namespace Kanjimusou
         {
             Sound.StopBGM();
             this.doClose = doClose;
+            this.Enabled = false;
             showing = false;
             Atimer.Start();
-        }
-
-        private void save_Click(object sender, EventArgs e)
-        {
-            saveFileDialog1.ShowDialog();
-            try
-            {
-                hanziPictureBox1.DrawImage.Save(saveFileDialog1.FileName);
-            }
-            catch (ExternalException ex)
-            {
-            }
-            catch (ArgumentException ex)
-            {
-            }
         }
 
     }

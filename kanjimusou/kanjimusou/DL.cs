@@ -39,7 +39,7 @@ namespace Kanjimusou
         public void OnAchievementReach(Object sender, String info)
         {
             achievement_tips achTips = new achievement_tips(info);
-            achTips.Show();
+            achTips.OnShow();
         }
 
         public void Clear()
@@ -153,6 +153,7 @@ namespace Kanjimusou
             
             this.Opacity = 0.9;
             this.doClose = doClose;
+            this.Enabled = false;
             showing = false;
             Atimer.Start();
         }

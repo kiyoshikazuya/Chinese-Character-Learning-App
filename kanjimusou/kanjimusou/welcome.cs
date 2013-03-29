@@ -141,6 +141,7 @@ namespace Kanjimusou
         public void OnClose(bool doClose)
         {
             this.doClose = doClose;
+            this.Enabled = false;
             showing = false;
             Atimer.Start();
         }

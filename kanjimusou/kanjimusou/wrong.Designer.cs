@@ -29,21 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wrong));
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.wrongInfo = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(47, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "wrong";
             // 
             // button1
             // 
@@ -59,6 +47,20 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // wrongInfo
+            // 
+            this.wrongInfo.BackColor = System.Drawing.Color.Transparent;
+            this.wrongInfo.Enabled = false;
+            this.wrongInfo.FlatAppearance.BorderSize = 0;
+            this.wrongInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wrongInfo.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.wrongInfo.ForeColor = System.Drawing.Color.Red;
+            this.wrongInfo.Location = new System.Drawing.Point(12, 102);
+            this.wrongInfo.Name = "wrongInfo";
+            this.wrongInfo.Size = new System.Drawing.Size(253, 60);
+            this.wrongInfo.TabIndex = 2;
+            this.wrongInfo.UseVisualStyleBackColor = false;
+            // 
             // wrong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -66,8 +68,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(281, 217);
+            this.Controls.Add(this.wrongInfo);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "wrong";
             this.Opacity = 0.9D;
@@ -75,14 +77,13 @@
             this.Text = "wrong";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.wrong_MouseDown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button wrongInfo;
 
     }
 }

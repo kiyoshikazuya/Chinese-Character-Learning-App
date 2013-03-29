@@ -13,6 +13,16 @@ namespace Kanjimusou.Lib
         String arcName, arcInfo;
         bool finished = false;
 
+        public String ArcInfo
+        {
+            get { return arcInfo; }
+        }
+
+        public String ArcName
+        {
+            get { return arcName; }
+        }
+
         public AchievementElement( String arcName, String arcInfo, bool finished )
         {
             this.arcName = arcName;
@@ -24,7 +34,7 @@ namespace Kanjimusou.Lib
     [Serializable]
     public class Achievement
     {
-        private const String General = "达成了成就“{0}”！";
+        private const String General = "“{0}”！";
 
         private const String FirstWeekPlanFinishStr = "第一次完成周计划";
         private const String CompleteHanziStr = "完成了{0}个汉字";

@@ -36,7 +36,7 @@ namespace Kanjimusou
         public wrong(string S)
         {
             InitializeComponent();
-            this.label1.Text = S;
+            this.wrongInfo.Text = S;
             Atimer.Tick += Atimer_Tick;
             Atimer.Interval = 25;
         }
@@ -96,6 +96,7 @@ namespace Kanjimusou
         public void OnClose(bool doClose)
         {
             this.doClose = doClose;
+            this.Enabled = false;
             showing = false;
             Atimer.Start();
         }

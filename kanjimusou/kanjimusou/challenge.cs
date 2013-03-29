@@ -15,10 +15,10 @@ namespace Kanjimusou
 
         private User user;
         private Challenge cha;
+        private int timeMaxLength;
 
         private bool showing = true;
         private bool doClose = true;
-        private int timeMaxLength;
         private System.Windows.Forms.Timer Atimer = new System.Windows.Forms.Timer();
 
         public challenge( User user )
@@ -26,10 +26,15 @@ namespace Kanjimusou
             InitializeComponent();
             this.user = user;
             this.cha = new Challenge(user);
+
+            Atimer.Tick += Atimer_Tick;
+            Atimer.Interval = 25;
+
             Hanzi Ahanzi = HanziIO.Read("中");
             hanziPictureBox1.Hanzi = Ahanzi;
             hanziPictureBox1.Completed += cha.OnFinishHanzi;
             hanziPictureBox1.Enabled = false;
+
             cha.FinishLevel += OnFinishLevel;
             cha.FinishLevel += user.Achievement.OnFinishLevel;
             cha.Lose += OnLose;
@@ -38,8 +43,6 @@ namespace Kanjimusou
             next.Enabled = true;
             timer1.Interval = 25;
             timeMaxLength = resttime.Width;
-            Atimer.Tick += Atimer_Tick;
-            Atimer.Interval = 25;
             resttime.BackColor = Color.Cyan;
         }
 
@@ -90,6 +93,7 @@ namespace Kanjimusou
             resttime.BackColor = Color.Cyan;
             next.Enabled = false;
             cha.NextLevel();
+            if (cha.NowLevel == 1) Sound.PlayBGM("bgm_challenge");
             hanziPictureBox1.Hanzi = cha.NowZi;
             nowLevel.Text = cha.NowLevel.ToString();
             timer1.Start();
@@ -105,8 +109,6 @@ namespace Kanjimusou
 
         void OnFinishLevel(int lvl)
         {
-            timer1.Stop();
-            
             if (lvl % 10 == 0) Sound.PlaySE("se_challenge_finish10hanzi");
             if (next.InvokeRequired)
             {
@@ -114,6 +116,11 @@ namespace Kanjimusou
             }
             else
             {   
+                success resultWindow = new success( "完成！" );
+                resultWindow.Shown += BlockWindow;
+                resultWindow.FormClosed += UnblockWindow;
+                resultWindow.OnShow();
+                timer1.Stop();
                 hanziPictureBox1.Enabled = false;
                 next.Enabled = true;
             }
@@ -121,19 +128,21 @@ namespace Kanjimusou
 
         void OnLose(int lvl)
         {
-            timer1.Stop();
             if (next.InvokeRequired)
             {
                 next.Invoke(new Action<int>(OnLose), lvl);
             }
             else
-            {  
-                hanziPictureBox1.Enabled = false; 
+            {
+                success resultWindow = new success("败北！");
+                resultWindow.Shown += BlockWindow;
+                resultWindow.FormClosed += UnblockWindow;
+                resultWindow.OnShow();
                 Sound.PlayBGM("bgm_lose");
+                timer1.Stop();
+                hanziPictureBox1.Enabled = false; 
                 next.Enabled = true;
             }
-
-
         }
 
         void UnblockWindow(object sender, FormClosedEventArgs e)
@@ -152,7 +161,6 @@ namespace Kanjimusou
             showing = true;
             Opacity = 0.0;      //窗体透明度为0
             Atimer.Start(); //计时
-            Sound.PlayBGM("bgm_challenge");
             this.Enabled = true;
         }
 
@@ -160,6 +168,7 @@ namespace Kanjimusou
         {
             Sound.StopBGM();
             this.doClose = doClose;
+            this.Enabled = false;
             showing = false;
             Atimer.Start();
         }

@@ -34,7 +34,6 @@
             this.prev = new System.Windows.Forms.Button();
             this.next = new System.Windows.Forms.Button();
             this.paraphrase = new System.Windows.Forms.Label();
-            this.more = new System.Windows.Forms.LinkLabel();
             this.backspace = new System.Windows.Forms.Button();
             this.clean = new System.Windows.Forms.Button();
             this.tips = new System.Windows.Forms.Button();
@@ -42,6 +41,8 @@
             this.hanziPictureBox1 = new Kanjimusou.Lib.HanziPictureBox();
             this.infoLabel = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.inkButton = new System.Windows.Forms.Button();
+            this.more = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hanziPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,9 @@
             this.sound.BackColor = System.Drawing.Color.Transparent;
             this.sound.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sound.BackgroundImage")));
             this.sound.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.sound.Location = new System.Drawing.Point(548, 518);
+            this.sound.FlatAppearance.BorderSize = 0;
+            this.sound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sound.Location = new System.Drawing.Point(548, 508);
             this.sound.Name = "sound";
             this.sound.Size = new System.Drawing.Size(48, 51);
             this.sound.TabIndex = 1;
@@ -79,7 +82,7 @@
             this.prev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.prev.FlatAppearance.BorderSize = 0;
             this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prev.Location = new System.Drawing.Point(548, 252);
+            this.prev.Location = new System.Drawing.Point(548, 201);
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(48, 56);
             this.prev.TabIndex = 3;
@@ -93,7 +96,7 @@
             this.next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.next.FlatAppearance.BorderSize = 0;
             this.next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.next.Location = new System.Drawing.Point(548, 389);
+            this.next.Location = new System.Drawing.Point(548, 304);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(48, 56);
             this.next.TabIndex = 5;
@@ -110,20 +113,6 @@
             this.paraphrase.Size = new System.Drawing.Size(115, 24);
             this.paraphrase.TabIndex = 6;
             this.paraphrase.Text = "paraphrase";
-            // 
-            // more
-            // 
-            this.more.AutoSize = true;
-            this.more.BackColor = System.Drawing.Color.Transparent;
-            this.more.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.more.ForeColor = System.Drawing.Color.Transparent;
-            this.more.Location = new System.Drawing.Point(471, 607);
-            this.more.Name = "more";
-            this.more.Size = new System.Drawing.Size(60, 25);
-            this.more.TabIndex = 7;
-            this.more.TabStop = true;
-            this.more.Text = "more";
-            this.more.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.more_LinkClicked);
             // 
             // backspace
             // 
@@ -211,6 +200,34 @@
             // 
             this.saveFileDialog1.Filter = "png图片|*.png";
             // 
+            // inkButton
+            // 
+            this.inkButton.BackColor = System.Drawing.Color.Transparent;
+            this.inkButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inkButton.BackgroundImage")));
+            this.inkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.inkButton.FlatAppearance.BorderSize = 0;
+            this.inkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inkButton.Location = new System.Drawing.Point(548, 406);
+            this.inkButton.Name = "inkButton";
+            this.inkButton.Size = new System.Drawing.Size(48, 56);
+            this.inkButton.TabIndex = 14;
+            this.inkButton.UseVisualStyleBackColor = false;
+            this.inkButton.Click += new System.EventHandler(this.inkButton_Click);
+            // 
+            // more
+            // 
+            this.more.BackColor = System.Drawing.Color.Transparent;
+            this.more.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("more.BackgroundImage")));
+            this.more.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.more.FlatAppearance.BorderSize = 0;
+            this.more.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.more.Location = new System.Drawing.Point(483, 603);
+            this.more.Name = "more";
+            this.more.Size = new System.Drawing.Size(48, 51);
+            this.more.TabIndex = 15;
+            this.more.UseVisualStyleBackColor = false;
+            this.more.Click += new System.EventHandler(this.more_Click);
+            // 
             // learn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -218,13 +235,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(615, 675);
+            this.Controls.Add(this.more);
+            this.Controls.Add(this.inkButton);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.hanziPictureBox1);
             this.Controls.Add(this.save);
             this.Controls.Add(this.tips);
             this.Controls.Add(this.clean);
             this.Controls.Add(this.backspace);
-            this.Controls.Add(this.more);
             this.Controls.Add(this.paraphrase);
             this.Controls.Add(this.next);
             this.Controls.Add(this.prev);
@@ -249,7 +267,6 @@
         private System.Windows.Forms.Button prev;
         private System.Windows.Forms.Button next;
         private System.Windows.Forms.Label paraphrase;
-        private System.Windows.Forms.LinkLabel more;
         private System.Windows.Forms.Button backspace;
         private System.Windows.Forms.Button clean;
         private System.Windows.Forms.Button tips;
@@ -257,5 +274,7 @@
         private Lib.HanziPictureBox hanziPictureBox1;
         private System.Windows.Forms.Label infoLabel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button inkButton;
+        private System.Windows.Forms.Button more;
     }
 }

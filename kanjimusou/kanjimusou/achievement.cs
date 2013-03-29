@@ -40,10 +40,49 @@ namespace Kanjimusou
         public achievement(User A)
         {
             InitializeComponent();
-            Auser = A;
             Atimer.Tick += Atimer_Tick;
             Atimer.Interval = 25;
+            Auser = A;
             this.nameOfAch.Text = Auser.Username;
+
+            if (Auser.LearnLog.Count == 0) label1.Visible = true;
+            else label1.Visible = false;
+
+            int tmp = Auser.LearnLog.Count;
+            if ((tmp - 4 >= 0) && Auser.LearnLog.Keys.ElementAt(tmp - 4) != null)
+            {
+                pictureBox1.Image = new Bitmap(
+                    Auser.LearnLog[Auser.LearnLog.Keys.ElementAt(tmp-4)].ImageList[0],
+                    new Size(pictureBox1.Width, pictureBox1.Height));
+            }
+            if ((tmp - 3 >= 0) && Auser.LearnLog.Keys.ElementAt(tmp - 3) != null)
+            {
+                pictureBox2.Image = new Bitmap(
+                    Auser.LearnLog[Auser.LearnLog.Keys.ElementAt(tmp - 3)].ImageList[0],
+                    new Size(pictureBox2.Width, pictureBox2.Height));
+            }
+            if ((tmp - 2 >= 0) && Auser.LearnLog.Keys.ElementAt(tmp - 2) != null)
+            {
+                pictureBox3.Image = new Bitmap(
+                    Auser.LearnLog[Auser.LearnLog.Keys.ElementAt(tmp - 2)].ImageList[0],
+                    new Size(pictureBox3.Width, pictureBox3.Height));
+            }
+            if ((tmp - 1 >= 0) && Auser.LearnLog.Keys.ElementAt(tmp - 1) != null)
+            {
+                pictureBox4.Image = new Bitmap(
+                    Auser.LearnLog[Auser.LearnLog.Keys.ElementAt(tmp - 1)].ImageList[0],
+                    new Size(pictureBox4.Width, pictureBox4.Height));
+            }
+
+            foreach (AchievementElement achE in Auser.Achievement.ArcList)
+            {
+                arcListBox.Items.Add(achE.ArcInfo);
+            }
+
+            maxLevel.Text = Auser.MaxReachedLevel.ToString();
+
+
+
         }
 
         private void Atimer_Tick(object sender, EventArgs e)
@@ -108,6 +147,7 @@ namespace Kanjimusou
         public void OnClose(bool doClose)
         {
             this.doClose = doClose;
+            this.Enabled = false;
             showing = false;
             Atimer.Start();
         }

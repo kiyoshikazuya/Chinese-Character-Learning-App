@@ -244,6 +244,7 @@ namespace Kanjimusou.Lib
 
         protected override void OnMouseDown(MouseEventArgs e)
         {
+            Sound.PlaySE("se_write");
             base.OnMouseDown(e);
             if (e.Button != MouseButtons.Left) return;
             if (stage >= hanzi.BihuaBiao.Count) return;
