@@ -101,6 +101,7 @@
             // 
             // dlu
             // 
+            this.dlu.BackColor = System.Drawing.Color.Transparent;
             this.dlu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dlu.BackgroundImage")));
             this.dlu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dlu.FlatAppearance.BorderSize = 0;
@@ -109,7 +110,7 @@
             this.dlu.Name = "dlu";
             this.dlu.Size = new System.Drawing.Size(38, 21);
             this.dlu.TabIndex = 9;
-            this.dlu.UseVisualStyleBackColor = true;
+            this.dlu.UseVisualStyleBackColor = false;
             this.dlu.Click += new System.EventHandler(this.dlu_Click);
             // 
             // DL

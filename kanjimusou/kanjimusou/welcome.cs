@@ -32,6 +32,9 @@ namespace Kanjimusou
             InitializeComponent();
             Atimer.Tick += Atimer_Tick;
             Atimer.Interval = 25;
+
+            chanllenge Aaa = new chanllenge();
+            Aaa.Show();
         }
 
         public welcome(User A):this()

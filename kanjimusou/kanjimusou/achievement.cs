@@ -32,6 +32,7 @@ namespace Kanjimusou
             InitializeComponent();
             Atimer.Tick += Atimer_Tick;
             Atimer.Interval = 25;
+            this.pictureBox1.Image = 
             //课程
             //今日
             //总

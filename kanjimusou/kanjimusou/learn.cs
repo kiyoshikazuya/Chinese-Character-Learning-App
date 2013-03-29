@@ -246,5 +246,13 @@ namespace Kanjimusou
             }
         }
 
+        private void save_Click(object sender, EventArgs e)
+        {
+            //Image TheHanzi = hanziPictureBox1.DrawImage;
+            //TheHanzi.Save(, ImageFormat.Png);
+            //TheHanzi.Dispose();
+
+        }
+
     }
 }
