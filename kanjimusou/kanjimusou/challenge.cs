@@ -21,6 +21,8 @@ namespace Kanjimusou
         private bool doClose = true;
         private System.Windows.Forms.Timer Atimer = new System.Windows.Forms.Timer();
 
+        private bool isFinish = false;
+
         public challenge( User user )
         {
             InitializeComponent();
@@ -115,7 +117,8 @@ namespace Kanjimusou
                 next.Invoke(new Action<int>(OnFinishLevel), lvl);
             }
             else
-            {   
+            {
+                isFinish = true;
                 success resultWindow = new success( "完成！" );
                 resultWindow.Shown += BlockWindow;
                 resultWindow.FormClosed += UnblockWindow;
@@ -134,6 +137,7 @@ namespace Kanjimusou
             }
             else
             {
+                isFinish = false;
                 success resultWindow = new success("败北！");
                 resultWindow.Shown += BlockWindow;
                 resultWindow.FormClosed += UnblockWindow;
@@ -148,6 +152,7 @@ namespace Kanjimusou
         void UnblockWindow(object sender, FormClosedEventArgs e)
         {
             this.Enabled = true;
+            if (isFinish) next.PerformClick();
         }
 
         void BlockWindow(object sender, EventArgs e)

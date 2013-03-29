@@ -32,9 +32,6 @@ namespace Kanjimusou
             InitializeComponent();
             Atimer.Tick += Atimer_Tick;
             Atimer.Interval = 25;
-            //课程
-            //今日
-            //总
         }
 
         public achievement(User A)
@@ -152,6 +149,6 @@ namespace Kanjimusou
             Atimer.Start();
         }
 
-
     }
+
 }

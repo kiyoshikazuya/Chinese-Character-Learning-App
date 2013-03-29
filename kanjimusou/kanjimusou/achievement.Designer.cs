@@ -145,6 +145,7 @@
             this.arcListBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.arcListBox.Size = new System.Drawing.Size(258, 172);
             this.arcListBox.TabIndex = 10;
+          
             // 
             // pictureBox4
             // 
@@ -188,6 +189,7 @@
             this.Controls.Add(this.maxLevel);
             this.Controls.Add(this.nameOfAch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "achievement";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

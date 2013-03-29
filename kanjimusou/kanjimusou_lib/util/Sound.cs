@@ -49,7 +49,7 @@ namespace Kanjimusou.Lib
         {
             mciSendString("close song", "", 0, 0);
             mciSendString("open " + path + fileDic[key] + " alias song", "0", 0, 0);
-            mciSendString("play song", "0", 0, 0);
+            mciSendString("play song repeat", "0", 0, 0);
 
             isPlayingBGM = true;
 

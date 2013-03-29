@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Kanjimusou.Lib;
 
 namespace Kanjimusou
 {
@@ -81,6 +82,7 @@ namespace Kanjimusou
         public void OnShow()
         {
             this.Show();
+            Sound.PlaySE("se_achievementfinish");
             showing = true;
             Opacity = 0.0;      //窗体透明度为0
             Atimer.Start(); //计时

@@ -71,6 +71,7 @@
             this.Controls.Add(this.resultButton);
             this.Controls.Add(this.closeButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "success";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "success";
