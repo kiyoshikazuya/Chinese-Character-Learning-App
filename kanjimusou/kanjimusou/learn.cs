@@ -114,21 +114,6 @@ namespace Kanjimusou
             hanziPictureBox1.Refresh();
         }
 
-        private void save_Click(object sender, EventArgs e)
-        {
-            saveFileDialog1.ShowDialog();
-            try
-            {
-                hanziPictureBox1.DrawImage.Save(saveFileDialog1.FileName);
-            }
-            catch (ExternalException ex)
-            {
-            }
-            catch (ArgumentException ex)
-            {
-            }
-        }
-
         private void Atimer_Tick(object sender, EventArgs e)
         {
             double d = 0.03;
