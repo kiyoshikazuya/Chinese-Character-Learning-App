@@ -121,7 +121,7 @@ namespace Kanjimusou
             {
                 if (Opacity + d >= 0.9)
                 {
-                    Opacity = 0.85;
+                    Opacity = 1;
                     Atimer.Stop();
                 }
                 else

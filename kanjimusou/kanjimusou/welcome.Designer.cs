@@ -32,8 +32,8 @@
             this.start = new System.Windows.Forms.Button();
             this.information = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.userName = new System.Windows.Forms.Label();
             this.challengeMode = new System.Windows.Forms.Button();
+            this.userName = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // start
@@ -44,7 +44,7 @@
             this.start.FlatAppearance.BorderSize = 0;
             this.start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.start.ForeColor = System.Drawing.Color.Transparent;
-            this.start.Location = new System.Drawing.Point(121, 153);
+            this.start.Location = new System.Drawing.Point(118, 153);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(114, 29);
             this.start.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.information.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.information.FlatAppearance.BorderSize = 0;
             this.information.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.information.Location = new System.Drawing.Point(113, 233);
+            this.information.Location = new System.Drawing.Point(111, 233);
             this.information.Name = "information";
             this.information.Size = new System.Drawing.Size(122, 39);
             this.information.TabIndex = 2;
@@ -79,17 +79,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // userName
-            // 
-            this.userName.AutoSize = true;
-            this.userName.BackColor = System.Drawing.Color.Transparent;
-            this.userName.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.userName.ForeColor = System.Drawing.Color.Red;
-            this.userName.Location = new System.Drawing.Point(155, 109);
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(0, 25);
-            this.userName.TabIndex = 4;
-            // 
             // challengeMode
             // 
             this.challengeMode.BackColor = System.Drawing.Color.Transparent;
@@ -98,12 +87,25 @@
             this.challengeMode.FlatAppearance.BorderSize = 0;
             this.challengeMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.challengeMode.ForeColor = System.Drawing.Color.Transparent;
-            this.challengeMode.Location = new System.Drawing.Point(130, 198);
+            this.challengeMode.Location = new System.Drawing.Point(127, 198);
             this.challengeMode.Name = "challengeMode";
             this.challengeMode.Size = new System.Drawing.Size(94, 29);
             this.challengeMode.TabIndex = 5;
             this.challengeMode.UseVisualStyleBackColor = false;
             this.challengeMode.Click += new System.EventHandler(this.challengeMode_Click);
+            // 
+            // userName
+            // 
+            this.userName.BackColor = System.Drawing.Color.Transparent;
+            this.userName.Enabled = false;
+            this.userName.FlatAppearance.BorderSize = 0;
+            this.userName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userName.Font = new System.Drawing.Font("新宋体", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.userName.Location = new System.Drawing.Point(88, 97);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(177, 39);
+            this.userName.TabIndex = 6;
+            this.userName.UseVisualStyleBackColor = false;
             // 
             // welcome
             // 
@@ -112,8 +114,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(368, 293);
-            this.Controls.Add(this.challengeMode);
             this.Controls.Add(this.userName);
+            this.Controls.Add(this.challengeMode);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.information);
             this.Controls.Add(this.start);
@@ -124,7 +126,6 @@
             this.Text = "welcome";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.welcome_MouseDown);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -133,7 +134,7 @@
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.Button information;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label userName;
         private System.Windows.Forms.Button challengeMode;
+        private System.Windows.Forms.Button userName;
     }
 }

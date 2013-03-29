@@ -36,6 +36,7 @@ namespace Kanjimusou.Lib
             fileDic.Add("bgm_opening", "bgm_opening.mp3");
             fileDic.Add("bgm_study", "bgm_study.mp3");
             fileDic.Add("bgm_challenge", "bgm_challenge.mp3");
+            fileDic.Add("bgm_lose", "bgm_lose.mp3");
         }
 
         public static void PlaySE(String key)

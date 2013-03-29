@@ -29,6 +29,7 @@ namespace Kanjimusou
             Hanzi Ahanzi = HanziIO.Read("中");
             hanziPictureBox1.Hanzi = Ahanzi;
             hanziPictureBox1.Completed += cha.OnFinishHanzi;
+            hanziPictureBox1.Enabled = false;
             cha.FinishLevel += OnFinishLevel;
             cha.FinishLevel += user.Achievement.OnFinishLevel;
             cha.Lose += OnLose;
@@ -39,6 +40,7 @@ namespace Kanjimusou
             timeMaxLength = resttime.Width;
             Atimer.Tick += Atimer_Tick;
             Atimer.Interval = 25;
+            resttime.BackColor = Color.Cyan;
         }
 
         private void Atimer_Tick(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace Kanjimusou
             {
                 if (Opacity + d >= 0.9)
                 {
-                    Opacity = 0.85;
+                    Opacity = 0.9;
                     Atimer.Stop();
                 }
                 else
@@ -77,11 +79,15 @@ namespace Kanjimusou
         {
             this.resttime.Width = (int)(timeMaxLength*
                 (cha.NowTime)/cha.NowMaxTime);
+            if (((cha.NowTime) / cha.NowMaxTime) <= 0.5) resttime.BackColor = Color.Gold;
+            if (((cha.NowTime) / cha.NowMaxTime) <= 0.3) resttime.BackColor = Color.Red;
         }
 
         private void next_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+            hanziPictureBox1.Enabled = true;
+            resttime.BackColor = Color.Cyan;
             next.Enabled = false;
             cha.NextLevel();
             hanziPictureBox1.Hanzi = cha.NowZi;
@@ -100,12 +106,15 @@ namespace Kanjimusou
         void OnFinishLevel(int lvl)
         {
             timer1.Stop();
+            
+            if (lvl % 10 == 0) Sound.PlaySE("se_challenge_finish10hanzi");
             if (next.InvokeRequired)
             {
                 next.Invoke(new Action<int>(OnFinishLevel), lvl);
             }
             else
-            {
+            {   
+                hanziPictureBox1.Enabled = false;
                 next.Enabled = true;
             }
         }
@@ -115,10 +124,12 @@ namespace Kanjimusou
             timer1.Stop();
             if (next.InvokeRequired)
             {
-                next.Invoke(new Action<int>(OnFinishLevel), lvl);
+                next.Invoke(new Action<int>(OnLose), lvl);
             }
             else
-            {
+            {  
+                hanziPictureBox1.Enabled = false; 
+                Sound.PlayBGM("bgm_lose");
                 next.Enabled = true;
             }
 

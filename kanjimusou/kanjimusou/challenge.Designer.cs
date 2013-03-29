@@ -74,7 +74,6 @@
             // resttime
             // 
             this.resttime.BackColor = System.Drawing.Color.Transparent;
-            this.resttime.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resttime.BackgroundImage")));
             this.resttime.Location = new System.Drawing.Point(99, 681);
             this.resttime.Name = "resttime";
             this.resttime.Size = new System.Drawing.Size(440, 20);
