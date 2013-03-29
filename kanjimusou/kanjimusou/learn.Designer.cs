@@ -104,10 +104,10 @@
             // 
             this.paraphrase.AutoSize = true;
             this.paraphrase.BackColor = System.Drawing.Color.Transparent;
-            this.paraphrase.Font = new System.Drawing.Font("仿宋", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.paraphrase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.paraphrase.Location = new System.Drawing.Point(295, 613);
             this.paraphrase.Name = "paraphrase";
-            this.paraphrase.Size = new System.Drawing.Size(119, 19);
+            this.paraphrase.Size = new System.Drawing.Size(115, 24);
             this.paraphrase.TabIndex = 6;
             this.paraphrase.Text = "paraphrase";
             // 
@@ -206,6 +206,10 @@
             this.infoLabel.Size = new System.Drawing.Size(48, 25);
             this.infoLabel.TabIndex = 13;
             this.infoLabel.Text = "info";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "png图片|*.png";
             // 
             // learn
             // 
