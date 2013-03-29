@@ -45,8 +45,7 @@ namespace Kanjimusou
                 {
                     Opacity = 0.0;
                     Atimer.Stop();
-                    if (doClose) this.Close();
-                    else this.Visible = false;
+                    this.Close();
                 }
                 else
                 {

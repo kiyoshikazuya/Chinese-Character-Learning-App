@@ -168,9 +168,7 @@
       <Name>kanjimusou_lib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="tb.ico" />
   </ItemGroup>

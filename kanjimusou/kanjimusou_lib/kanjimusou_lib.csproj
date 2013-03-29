@@ -108,9 +108,6 @@
     <Content Include="resource\sound\bgm_challenge.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="resource\sound\bgm_lose.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="resource\sound\bgm_opening.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -126,7 +123,7 @@
     <Content Include="resource\sound\se_challenge_finish10hanzi.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="resource\sound\se_study_hanzifinish.wav">
+    <Content Include="resource\sound\se_lose.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="resource\sound\se_write.wav">

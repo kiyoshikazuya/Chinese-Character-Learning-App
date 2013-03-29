@@ -142,7 +142,8 @@ namespace Kanjimusou
                 resultWindow.Shown += BlockWindow;
                 resultWindow.FormClosed += UnblockWindow;
                 resultWindow.OnShow();
-                Sound.PlayBGM("bgm_lose");
+                Sound.StopBGM();
+                Sound.PlaySE("se_lose");
                 timer1.Stop();
                 hanziPictureBox1.Enabled = false; 
                 next.Enabled = true;

@@ -30,13 +30,12 @@ namespace Kanjimusou.Lib
             fileDic.Add("se_achievementfinish", "se_achievementfinish.wav");
             fileDic.Add("se_buttonclick", "se_buttonclick.wav");
             fileDic.Add("se_challenge_finish10hanzi", "se_challenge_finish10hanzi.wav");
-            fileDic.Add("se_study_hanzifinish", "se_study_hanzifinish.wav");
             fileDic.Add("se_write", "se_write.wav");
+            fileDic.Add("se_lose", "se_lose.wav");
 
             fileDic.Add("bgm_opening", "bgm_opening.mp3");
-            fileDic.Add("bgm_study", "bgm_study.mp3");
             fileDic.Add("bgm_challenge", "bgm_challenge.mp3");
-            fileDic.Add("bgm_lose", "bgm_lose.mp3");
+            fileDic.Add("bgm_study", "bgm_study.mp3");
         }
 
         public static void PlaySE(String key)
